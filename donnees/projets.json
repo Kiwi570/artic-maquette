@@ -1,0 +1,236 @@
+{
+  "principaux": [
+    {
+      "cle": "distribotion",
+      "nom": "distriBOtion.CH",
+      "secteur": "Distribution",
+      "etiquette": "2013 – 2020",
+      "accroche": "L’innovation au service de l’art de vivre",
+      "resume": "La distribution exclusive, en Suisse, de produits innovants pour le vin, la bière, les cocktails et la gastronomie, avec un showroom sur la Riviera vaudoise.",
+      "page": "projet-distribotion",
+      "image": "projets/distribotion-photo",
+      "cadrage": "50% 55%",
+      "alt": "distriBOtion.CH : bar équipé de distributeurs de vin au verre"
+    },
+    {
+      "cle": "botaniq",
+      "nom": "BOtaniq.CH",
+      "secteur": "Restauration et boutique",
+      "etiquette": "Concept",
+      "accroche": "Mineral Food, Beverage & Cosmetics",
+      "resume": "Un restaurant et une boutique urbains autour du minéral : des mets sains préparés sur place, des produits artisanaux locaux et une gamme de cosmétiques minéraux faits maison.",
+      "page": null,
+      "image": "projets/botaniq-02",
+      "cadrage": "50% 50%",
+      "alt": "BOtaniq.CH : rendu 3D du restaurant-boutique"
+    },
+    {
+      "cle": "vers",
+      "nom": "VERS.CH",
+      "secteur": "Éco-resort de montagne",
+      "etiquette": "Concept",
+      "accroche": "Un nouveau souffle pour l’hôtellerie de montagne",
+      "resume": "Redonner vie à un hameau de raccards valaisans de plus de 300 ans, pour en faire un lieu unique d’éco-tourisme haut de gamme.",
+      "page": null,
+      "image": "projets/vers-01",
+      "cadrage": "45% 60%",
+      "alt": "VERS.CH : raccard valaisan éclairé au crépuscule"
+    },
+    {
+      "cle": "swisswaters",
+      "nom": "SwissWaters.CH",
+      "secteur": "Purification d’eau",
+      "etiquette": "Fontaines à eau",
+      "accroche": "La solution d’eau durable pour les professionnels",
+      "resume": "Des fontaines qui filtrent l’eau du réseau public et la servent fraîche, tempérée, gazeuse ou oxygénée, pour alléger les coûts, la logistique et l’empreinte des bouteilles.",
+      "page": null,
+      "image": "grok/fiche-swisswaters-ambiance",
+      "cadrage": "50% 50%",
+      "alt": "Carafe d’eau pétillante sur une table dressée (illustration)"
+    }
+  ],
+  "autres": [
+    {
+      "nom": "moBOo.CH",
+      "secteur": "Financement participatif",
+      "etiquette": "2012 – 2018",
+      "texte": "La première plateforme de financement participatif de Suisse romande, basée à Nendaz, pour soutenir les projets locaux de micro-entrepreneurs et d’artisans. Elle s’est éteinte fin 2018, après six ans de soutien à de nombreux projets.",
+      "image": null,
+      "alt": "moBOo.CH : visuel de la plateforme"
+    },
+    {
+      "nom": "BOestate.CH",
+      "secteur": "Immobilier",
+      "etiquette": "Conciergerie",
+      "texte": "L’idée de deux amis rencontrés aux Maldives : servir, avec les techniques hôtelières, une clientèle qui cherche son bien immobilier de rêve, en Suisse et dans le monde. Une approche personnalisée, en toute discrétion.",
+      "image": null,
+      "alt": "BOestate.CH : visuel du service"
+    },
+    {
+      "nom": "ECOthic.CH",
+      "secteur": "Label de qualité",
+      "etiquette": "Concept",
+      "texte": "Un label de qualité pour les aliments livrés et consommés en ville : l’écologie et l’éthique assurées pour les produits de la ferme et de l’agriculture locale, du champ à l’assiette.",
+      "image": "grok/projets-ecothic",
+      "alt": "Légumes de ferme dans une caisse sur un marché (illustration)"
+    },
+    {
+      "nom": "Drink’N’tec.CH",
+      "secteur": "Food & Beverage",
+      "etiquette": "Bar 4.0",
+      "texte": "Une plateforme de vente et de location de systèmes de débit de boissons automatisés et connectés, fixes ou mobiles, pour maîtriser la qualité, la température, le dosage et la vitesse de service.",
+      "image": null,
+      "alt": "Drink’N’tec.CH : visuel de la plateforme"
+    }
+  ],
+  "enCours": [
+    {
+      "nom": "Foodtruck",
+      "texte": "La création d’un foodtruck dans une caravane vintage : business plan, recherche de fonds, fabrication de la caravane et branding.",
+      "image": null,
+      "alt": "Caravane vintage du projet de foodtruck"
+    },
+    {
+      "nom": "Hôtel",
+      "texte": "L’accompagnement du nouveau propriétaire d’un hôtel de charme en montagne : ouverture, rénovation, transformation et gestion complète.",
+      "image": null,
+      "alt": "Hôtel de charme en montagne"
+    },
+    {
+      "nom": "Gelateria",
+      "texte": "La mise en place du réseau de distribution pour la Suisse d’une glace artisanale italienne, l’ouverture de boutiques et la gestion globale des affaires en tant qu’importateur exclusif.",
+      "image": null,
+      "alt": "Glaces artisanales italiennes"
+    },
+    {
+      "nom": "Wine & Spirit",
+      "texte": "Le soutien à l’implantation d’un distributeur sur le marché suisse.",
+      "image": null,
+      "alt": "Bouteilles de vin"
+    }
+  ],
+  "distribotion": {
+    "intro": [
+      "distriBOtion.CH distribuait en exclusivité, en Suisse, des produits innovants et technologiques dédiés au vin, à la bière, aux cocktails et à la gastronomie. Du distributeur de vins au verre à la tireuse à bière inversée, des machines à cocktails aux vitrines à vin, charcuterie et fromage, chaque produit associait design moderne, ergonomie et fonctionnalité pour sublimer l’expérience culinaire.",
+      "Née en 2013 de ma vision et d’un partenariat avec Ricardo Gosi, la société a incarné une alliance entre tradition gastronomique et innovation technologique."
+    ],
+    "showroom": "Installée sur la Riviera vaudoise, au cœur des vignobles de Lavaux classés au patrimoine mondial de l’UNESCO, la société disposait d’un showroom unique. Véritable lieu de rencontres, il accueillait chefs étoilés, artistes et passionnés lors de fêtes, de démonstrations et d’événements : lancements de produits, assemblées générales, repas d’entreprises, anniversaires.",
+    "frise": [
+      {
+        "annee": "2010",
+        "titre": "Vitrines-Expo.CH",
+        "texte": "Des vitrines à vin, charcuterie, fromage et chocolat.",
+        "episode": "s01e03",
+        "image": "journal/s01e03-vitrines-expo"
+      },
+      {
+        "annee": "2013",
+        "titre": "distriBOtion.CH et WineEmotion.CH",
+        "texte": "Naissance de la société, et le vin servi au verre par un distributeur.",
+        "episode": "s01e01",
+        "image": "journal/s01e01-wineemotion"
+      },
+      {
+        "annee": "2015",
+        "titre": "CocktailsMachine.CH",
+        "texte": "Des machines à cocktails pour servir vite et juste.",
+        "episode": "s01e04",
+        "image": "journal/s01e04-cocktailsmachine"
+      },
+      {
+        "annee": "2016",
+        "titre": "ReverseTap.CH",
+        "texte": "La tireuse à bière inversée, qui remplit le verre par le fond.",
+        "episode": "s01e02",
+        "image": "journal/s01e02-reversetap"
+      },
+      {
+        "annee": "2020",
+        "titre": "Fin de l’aventure",
+        "texte": "Sept années de distribution et d’événements.",
+        "episode": null,
+        "image": "projets/distribotion-01"
+      }
+    ],
+    "marques": [
+      {
+        "nom": "WineEmotion",
+        "logo": "logos/wineemotion"
+      },
+      {
+        "nom": "ReverseTap",
+        "logo": "logos/reverse-tap"
+      },
+      {
+        "nom": "CocktailsMachine",
+        "logo": "logos/cocktailsmachine"
+      },
+      {
+        "nom": "Vitrines-Expo",
+        "logo": "logos/vitrines-expo"
+      }
+    ],
+    "references": [
+      {
+        "groupe": "Palaces",
+        "noms": [
+          "Baur au Lac, Zurich",
+          "Cresta Palace, St.\u00a0Moritz",
+          "Thermes de Vals"
+        ]
+      },
+      {
+        "groupe": "Chefs",
+        "noms": [
+          "Philippe Chevrier",
+          "Andreas Caminada"
+        ]
+      },
+      {
+        "groupe": "Vignerons",
+        "noms": [
+          "Raymond Paccot",
+          "Alain Bettems",
+          "Claude Dizerens"
+        ]
+      },
+      {
+        "groupe": "Distributeurs de vin",
+        "noms": [
+          "Martel Wein",
+          "Trésors du Chai",
+          "Baur au Lac Wein",
+          "Weinstein Wein"
+        ]
+      },
+      {
+        "groupe": "Patinoires",
+        "noms": [
+          "PostFinance Arena, Berne",
+          "Les Vernets, Genève",
+          "La Resega, Lugano"
+        ]
+      },
+      {
+        "groupe": "Écoles hôtelières",
+        "noms": [
+          "Lausanne",
+          "Glion",
+          "Lucerne"
+        ]
+      }
+    ],
+    "galerie": [
+      "projets/distribotion-01",
+      "projets/distribotion-02",
+      "projets/distribotion-03",
+      "projets/distribotion-04",
+      "projets/distribotion-05",
+      "projets/distribotion-06",
+      "projets/distribotion-07",
+      "projets/distribotion-08",
+      "projets/distribotion-09",
+      "projets/distribotion-10"
+    ]
+  }
+}

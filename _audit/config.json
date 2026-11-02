@@ -1,0 +1,30 @@
+{
+  "siteActuel": "www.artic.agency",
+  "pagesTypes": [
+    "/",
+    "/expertises",
+    "/projets",
+    "/projets/distribotion",
+    "/a-propos",
+    "/journal",
+    "/journal/s02-e06-parler-fort-agir-en-silence",
+    "/contact",
+    "/mentions-legales"
+  ],
+  "effets": [
+    "bouchon",
+    "encre",
+    "cycle",
+    "etiquette",
+    "audit",
+    "parcours",
+    "cartes-menu",
+    "point-final",
+    "anneau-sommaire",
+    "tirage",
+    "fil-du-temps",
+    "eventail",
+    "fil-rouge",
+    "plan"
+  ]
+}

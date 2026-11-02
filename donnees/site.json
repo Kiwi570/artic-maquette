@@ -1,0 +1,54 @@
+{
+  "nom": "Artic!Agency",
+  "adresse": "https://artic-maquette.vercel.app",
+  "siteActuel": "www.artic.agency",
+  "version": 1,
+  "langues": [
+    "fr"
+  ],
+  "navigation": [
+    "accueil",
+    "expertises",
+    "projets",
+    "a-propos",
+    "journal",
+    "contact"
+  ],
+  "actionEntete": {
+    "page": "contact",
+    "ancre": ""
+  },
+  "couleurs": {
+    "fond": "#f3eee4",
+    "texte": "#161412",
+    "voile": "#e4d9c6",
+    "ouverture": "#f3eee4",
+    "menu": "#161412",
+    "theme": "#f3eee4"
+  },
+  "contact": {
+    "telephone": "+41 78 630 02 72",
+    "telephoneLien": "+41786300272",
+    "email": "michel@artic.agency",
+    "adresse": "Rue des Remparts 2, 1350 Orbe, Vaud, Suisse",
+    "rue": "Rue des Remparts 2",
+    "ville": "1350 Orbe",
+    "region": "Vaud, Suisse"
+  },
+  "reseaux": [
+    {
+      "nom": "Instagram",
+      "url": "https://www.instagram.com/artic.agency/"
+    },
+    {
+      "nom": "LinkedIn",
+      "url": "https://www.linkedin.com/company/michel-grand-ch/"
+    }
+  ],
+  "polices": [
+    "/assets/polices/fraunces-600.woff2",
+    "/assets/polices/inter-400.woff2"
+  ],
+  "imagePartage": "grok/accueil-ouverture-1168.webp",
+  "curseur": true
+}

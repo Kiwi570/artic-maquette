@@ -1,0 +1,262 @@
+{
+  "etapes": [
+    {
+      "periode": "1988 – 1991",
+      "titre": "Cuisinier",
+      "texte": "Apprentissage de cuisinier de trois ans, CFC obtenu avec mention très bien.",
+      "image": "parcours/1988-cuisinier"
+    },
+    {
+      "periode": "1991 – 1992",
+      "titre": "Sommelier",
+      "texte": "Apprentissage de sommelier, CFC avec mention très bien : premier apprenti du canton de Vaud, quatrième de Suisse.",
+      "image": "parcours/1991-sommelier"
+    },
+    {
+      "periode": "1993 – 1995",
+      "titre": "Master EHL",
+      "texte": "Études hôtelières avec spécialisation en restauration et obtention d’un master. Premier prix du cours, avec les honneurs.",
+      "image": "grok/parcours-ecole"
+    },
+    {
+      "periode": "1994",
+      "titre": "Armée suisse",
+      "texte": "Pilote puis commandant de char Leopard II, de soldat à caporal. École de fourrier à Thoune.",
+      "image": "parcours/1994-armee"
+    },
+    {
+      "periode": "1996 – 2001",
+      "titre": "Directeur F&B",
+      "texte": "Spécialiste des ouvertures d’hôtels en Afrique et en Asie pour les groupes Hilton, Sheraton et Accor.",
+      "image": "grok/fiche-distribotion-salon"
+    },
+    {
+      "periode": "2002 – 2007",
+      "titre": "Directeur d’unités",
+      "texte": "Direction des unités de Londres Gatwick, Dublin et Oslo pour Gate Gourmet, comme chef d’unité et chef de projets.",
+      "image": "grok/parcours-catering-aerien"
+    },
+    {
+      "periode": "2008",
+      "titre": "MBA",
+      "texte": "Master of Business Administration à Monaco, spécialisations Entrepreneurship et Luxury Goods Management. GPA 3,7.",
+      "image": "grok/parcours-mba"
+    },
+    {
+      "periode": "2009 – 2013",
+      "titre": "Directeur",
+      "texte": "Gestion et développement de la distribution d’Enomatic et d’autres produits autour du vin, en Suisse et en Autriche.",
+      "image": "grok/parcours-vin"
+    },
+    {
+      "periode": "2013 – 2020",
+      "titre": "distriBOtion.CH",
+      "texte": "Fondation et direction d’une société de distribution de produits innovants au service du vin et de la gastronomie en Suisse.",
+      "image": "parcours/2014-distribotion"
+    },
+    {
+      "periode": "Depuis 2014",
+      "titre": "Senior Lecturer",
+      "texte": "Enseignement de modules de Food & Beverage et d’Hospitality Management à des étudiants de MBA, de master et de bachelor.",
+      "image": "parcours/2014-enseignement"
+    },
+    {
+      "periode": "Sept. – déc. 2020",
+      "titre": "Pèlerin",
+      "texte": "Trois mois de marche et 2 643 km, de Constance à Genève, Le Puy-en-Velay, Saint-Jean-Pied-de-Port, Saint-Jacques-de-Compostelle et le cap Finisterre.",
+      "image": "parcours/2020-pelerin"
+    },
+    {
+      "periode": "Depuis 2021",
+      "titre": "Artic!Agency",
+      "texte": "Création de l’agence : conseil et gestion spécialisés dans la transformation et la transition culinaire et hôtelière en Suisse.",
+      "image": "parcours/2021-artic"
+    }
+  ],
+  "carte": {
+    "cadre": {
+      "ouest": -12.5,
+      "est": 22,
+      "nord": 61.5,
+      "sud": 39.5
+    },
+    "lieux": [
+      {
+        "cle": "vaud",
+        "nom": "Vaud",
+        "lat": 46.6,
+        "lon": 6.6,
+        "annee": 1988,
+        "suisse": true
+      },
+      {
+        "cle": "afrique",
+        "nom": "Afrique",
+        "direction": "sud",
+        "lat": 39.5,
+        "lon": 9.5,
+        "annee": 1996
+      },
+      {
+        "cle": "asie",
+        "nom": "Asie",
+        "direction": "est",
+        "lat": 49.5,
+        "lon": 22,
+        "annee": 1998
+      },
+      {
+        "cle": "londres",
+        "nom": "Londres Gatwick",
+        "lat": 51.15,
+        "lon": -0.19,
+        "annee": 2002
+      },
+      {
+        "cle": "dublin",
+        "nom": "Dublin",
+        "lat": 53.35,
+        "lon": -6.26,
+        "annee": 2004
+      },
+      {
+        "cle": "oslo",
+        "nom": "Oslo",
+        "lat": 59.91,
+        "lon": 10.75,
+        "annee": 2006
+      },
+      {
+        "cle": "monaco",
+        "nom": "Monaco",
+        "lat": 43.73,
+        "lon": 7.42,
+        "annee": 2008
+      },
+      {
+        "cle": "suisse",
+        "nom": "Suisse",
+        "lat": 46.8,
+        "lon": 7.4,
+        "annee": 2009,
+        "suisse": true
+      },
+      {
+        "cle": "constance",
+        "nom": "Constance",
+        "lat": 47.66,
+        "lon": 9.17,
+        "annee": 2020
+      },
+      {
+        "cle": "geneve",
+        "nom": "Genève",
+        "lat": 46.2,
+        "lon": 6.14,
+        "annee": 2020
+      },
+      {
+        "cle": "lepuy",
+        "nom": "Le Puy-en-Velay",
+        "lat": 45.04,
+        "lon": 3.88,
+        "annee": 2020
+      },
+      {
+        "cle": "stjean",
+        "nom": "Saint-Jean-Pied-de-Port",
+        "lat": 43.16,
+        "lon": -1.24,
+        "annee": 2020
+      },
+      {
+        "cle": "santiago",
+        "nom": "Saint-Jacques-de-Compostelle",
+        "lat": 42.88,
+        "lon": -8.54,
+        "annee": 2020
+      },
+      {
+        "cle": "finisterre",
+        "nom": "Cap Finisterre",
+        "lat": 42.88,
+        "lon": -9.26,
+        "annee": 2020
+      },
+      {
+        "cle": "orbe",
+        "nom": "Orbe",
+        "lat": 46.72,
+        "lon": 6.53,
+        "annee": 2021,
+        "suisse": true
+      }
+    ],
+    "route": [
+      "vaud",
+      "afrique",
+      "asie",
+      "londres",
+      "dublin",
+      "oslo",
+      "monaco",
+      "suisse",
+      "constance",
+      "geneve",
+      "lepuy",
+      "stjean",
+      "santiago",
+      "finisterre",
+      "orbe"
+    ]
+  },
+  "valeurs": [
+    "CURIOSITÉ",
+    "RESPECT",
+    "AMOUR",
+    "EMPATHIE",
+    "HUMILITÉ",
+    "TEAMSPIRIT",
+    "PARTAGE",
+    "BIENVEILLANCE",
+    "SENS",
+    "HONNÊTETÉ",
+    "ENTRAIDE"
+  ],
+  "outils": [
+    {
+      "titre": "Audit opérationnel complet",
+      "texte": "Des outils d’analyse innovants, des indicateurs de performance clés (KPI), des benchmarks sectoriels, des observations sur le terrain et des entretiens ciblés, pour un audit opérationnel complet de votre hôtel ou restaurant. L’objectif : identifier les forces, révéler les points d’amélioration et faire de vos opérations un modèle d’efficacité, de durabilité et d’excellence humaine."
+    },
+    {
+      "titre": "Amélioration continue",
+      "texte": "Grâce à des processus structurés, des indicateurs de suivi et une écoute active des équipes et des clients, j’installe une culture d’amélioration continue au cœur de votre hôtel ou restaurant. Chaque expérience devient un apprentissage, chaque détail une opportunité, et chaque progrès un pas vers l’excellence."
+    },
+    {
+      "titre": "Formation et coaching",
+      "texte": "Avec des programmes sur mesure, un accompagnement personnalisé et une pédagogie active, j’aide vos équipes à développer leurs compétences et leur confiance. La formation transmet le savoir, le coaching libère le potentiel : ensemble, ils créent une dynamique d’excellence durable."
+    }
+  ],
+  "milieux": [
+    {
+      "nom": "Food",
+      "image": "grok/apropos-food",
+      "alt": "Poste de travail d’un chef avec la mise en place (illustration)"
+    },
+    {
+      "nom": "Beverage",
+      "image": "grok/apropos-beverage",
+      "alt": "Poste d’un barman avec shaker et verres (illustration)"
+    },
+    {
+      "nom": "Retail",
+      "image": "grok/apropos-retail",
+      "alt": "Étagères d’une épicerie fine (illustration)"
+    },
+    {
+      "nom": "Catering",
+      "image": "grok/apropos-catering",
+      "alt": "Cloches de service argentées sur un chariot (illustration)"
+    }
+  ]
+}

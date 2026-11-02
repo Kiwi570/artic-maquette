@@ -1,0 +1,139 @@
+[
+  {
+    "cle": "conception",
+    "nom": "Conception",
+    "cycle": true,
+    "hashtags": ["DESIGN", "VIRTUEL", "MARKETING", "TOURISME"],
+    "accroche": "Créer des concepts visionnaires et réalisables, en harmonie avec vos valeurs et vos ressources, tout en ouvrant la voie aux innovations qui façonneront demain.",
+    "esprit": [
+      "Concevoir en hospitalité, c’est imaginer des lieux et des expériences qui racontent une histoire, la vôtre. Chaque projet reflète vos valeurs et votre identité, tout en créant une connexion sincère avec vos clients.",
+      "Je cherche l’équilibre entre rêve et réalité, entre authenticité et innovation, pour offrir des concepts qui inspirent aujourd’hui et restent pertinents demain."
+    ],
+    "methode": [
+      "La conception en hospitalité exige une approche structurée et visionnaire. À partir de vos ressources, de vos contraintes et de vos objectifs, j’élabore des concepts opérationnels, économiquement viables et durables.",
+      "Étude de marché, planification des espaces, identité de marque et anticipation des tendances futures : chaque étape est pensée pour transformer vos idées en projets concrets et performants."
+    ],
+    "image": "grok/cycle-conception",
+    "alt": "Plans d’un restaurant et échantillons de matériaux sur une table de travail (illustration)"
+  },
+  {
+    "cle": "gestion",
+    "nom": "Gestion",
+    "cycle": true,
+    "hashtags": ["FINANCIÈRE", "OPÉRATIONNELLE", "P&L", "COSTCONTROL"],
+    "accroche": "J’accompagne vos opérations avec exigence et souplesse, pour viser l’excellence sans jamais perdre de vue l’essentiel : l’humain au cœur de votre organisation.",
+    "esprit": [
+      "Gérer en hospitalité, c’est avant tout prendre soin des personnes. Derrière chaque opération, il y a des équipes, des clients et des histoires uniques. Je place l’humain au centre de mes actions, en cultivant l’écoute, la bienveillance et la flexibilité.",
+      "Ma mission : créer des environnements où chacun se sent reconnu, inspiré et fier de contribuer à l’excellence."
+    ],
+    "methode": [
+      "La gestion en hospitalité repose sur une organisation précise et adaptable. Grâce à des outils de pilotage performants, j’optimise les opérations, de la planification des ressources à la gestion des coûts, en passant par le contrôle qualité.",
+      "L’objectif : allier rigueur opérationnelle et flexibilité stratégique pour garantir l’excellence du service et la satisfaction durable des clients."
+    ],
+    "image": "grok/cycle-gestion",
+    "alt": "Passe d’une cuisine de restaurant en plein service (illustration)"
+  },
+  {
+    "cle": "transformation",
+    "nom": "Transformation",
+    "cycle": true,
+    "hashtags": ["NUMÉRIQUE", "OPÉRATIONNELLE", "ARCHITECTURALE", "DÉCORATIVE", "REBRANDING"],
+    "accroche": "Je transforme le changement en un mouvement fluide, durable et porteur de nouvelles opportunités.",
+    "esprit": [
+      "La vraie transformation commence dans les esprits. Elle consiste à changer les regards, à ouvrir les mentalités et à libérer les énergies collectives.",
+      "En accompagnant vos équipes avec bienveillance et créativité, je favorise l’adoption de nouvelles pratiques et la confiance dans le changement.",
+      "Mon but : transformer la peur en enthousiasme et bâtir une culture durable où chaque individu se sent acteur de l’avenir."
+    ],
+    "methode": [
+      "La transformation exige méthode et innovation. Grâce à mes audits, à des outils digitaux et à l’optimisation des processus, j’aide mes clients à gagner en efficacité et en agilité.",
+      "Digitalisation, automatisation, réorganisation : chaque action vise à simplifier, fiabiliser et accélérer vos opérations. Le résultat ? Des organisations plus performantes, durables et prêtes à relever les défis de demain."
+    ],
+    "image": "grok/cycle-transformation",
+    "alt": "Salle de restaurant en travaux, une chaise dans un rayon de lumière (illustration)"
+  },
+  {
+    "cle": "transition",
+    "nom": "Transition",
+    "cycle": true,
+    "hashtags": ["ÉCOLOGIQUE", "DIGITALE", "ÉNERGÉTIQUE"],
+    "accroche": "Je rends vos transitions stratégiques plus simples et sereines, en vous guidant avec une vision claire vers de nouveaux horizons.",
+    "esprit": [
+      "La transition en hospitalité, c’est accompagner les moments de changement avec sérénité. Qu’il s’agisse d’un nouveau marché ou d’une nouvelle équipe, je mets l’accent sur l’écoute, la confiance et la clarté.",
+      "Ma mission : transformer ces passages délicats en opportunités positives, où chacun trouve sa place et contribue à bâtir un futur solide."
+    ],
+    "methode": [
+      "Les phases de transition exigent méthode et anticipation. Je structure chaque étape : diagnostic des enjeux, plan d’action clair, accompagnement opérationnel et suivi rigoureux.",
+      "Qu’il s’agisse de restructuration, de diversification ou de changements organisationnels, j’apporte une vision pragmatique et stratégique pour sécuriser la continuité et garantir la performance à long terme."
+    ],
+    "image": "grok/cycle-transition",
+    "alt": "Porte d’un hôtel de montagne entrouverte au lever du jour (illustration)"
+  },
+  {
+    "cle": "transmission",
+    "nom": "Transmission",
+    "cycle": true,
+    "hashtags": ["ENSEIGNEMENT", "FORMATION", "ENTREPRISES", "COMMERCES"],
+    "accroche": "Je veille à ce que chaque passage de relais soit une transition harmonieuse, où savoir-faire et valeurs se transmettent avec respect, justesse et sens de la relation.",
+    "esprit": [
+      "Transmettre, c’est plus que former : c’est honorer un héritage. Chaque savoir-faire, chaque valeur partagée est une graine qui se perpétue et s’enrichit avec le temps.",
+      "J’accompagne ces passages de relais avec respect, clarté et humanité, pour que l’histoire continue de s’écrire tout en ouvrant la voie aux générations futures."
+    ],
+    "methode": [
+      "La transmission exige méthode et précision. Je structure les passages de relais en capitalisant les savoir-faire, procédures et valeurs qui font la force de votre organisation.",
+      "Grâce à des outils de formation, de mentorat et de documentation, je garantis la continuité et la pérennité de vos compétences clés, tout en facilitant l’intégration des nouvelles générations."
+    ],
+    "image": "grok/cycle-transmission",
+    "alt": "Les mains d’un chef guident celles d’un apprenti pendant le dressage d’une assiette (illustration)"
+  },
+  {
+    "cle": "recrutement",
+    "nom": "Recrutement & Management",
+    "cycle": false,
+    "hashtags": ["CHEF", "SOMMELIER", "MANAGER", "EXECUTIVE"],
+    "accroche": "J’identifie les talents porteurs d’avenir, je développe leur plein potentiel et je façonne une culture de leadership qui inspire et transforme durablement.",
+    "esprit": [
+      "Recruter et manager en hospitalité, c’est avant tout révéler des vocations. Derrière chaque chef, sommelier ou hôtelier, il y a une passion et un potentiel uniques.",
+      "Je valorise ces talents, je les aide à grandir et à s’exprimer pleinement. Mon approche place le leadership positif au centre, pour créer des équipes soudées, inspirées et fières de porter l’excellence au quotidien."
+    ],
+    "methode": [
+      "Le recrutement et le management en hospitalité nécessitent méthode et exigence. J’identifie les profils adaptés grâce à une évaluation fine des compétences et des valeurs, puis je construis des parcours de développement sur mesure : formation, mentorat, gestion de carrière.",
+      "En instaurant une culture de leadership collaboratif, je travaille à une performance durable, à la fidélisation des talents et à une qualité constante des services."
+    ],
+    "image": "grok/expertise-recrutement",
+    "alt": "Vestes de chef et tabliers suspendus dans un vestiaire (illustration)"
+  },
+  {
+    "cle": "design-interieur",
+    "nom": "Design d’intérieurs",
+    "cycle": false,
+    "hashtags": [],
+    "accroche": "Imaginer des lieux où esthétique, confort et sens se rencontrent, pour que chaque client se sente à la fois accueilli et inspiré.",
+    "esprit": [
+      "Le design d’intérieur en hospitalité, c’est bien plus que des murs et du mobilier : c’est une expérience vécue. Chaque espace raconte une histoire, reflète une identité et crée une émotion.",
+      "Je place l’humain au centre, en imaginant des lieux où esthétique, confort et sens se rencontrent, pour que chaque client se sente à la fois accueilli et inspiré."
+    ],
+    "methode": [
+      "Concevoir des intérieurs en hospitalité demande rigueur et créativité. J’associe esthétique, ergonomie et identité de marque, tout en intégrant des matériaux durables et des pratiques responsables.",
+      "De la planification des flux à l’optimisation des espaces, chaque détail est pensé pour offrir fonctionnalité, cohérence et valeur ajoutée à vos projets hôteliers et de restauration."
+    ],
+    "image": "grok/expertise-design-interieur",
+    "alt": "Bar d’hôtel en noyer et laiton, vide, en lumière douce (illustration)"
+  },
+  {
+    "cle": "durabilite",
+    "nom": "Durabilité & Digitalisation",
+    "cycle": false,
+    "hashtags": [],
+    "accroche": "Une hospitalité où la technologie soutient l’humain, où l’innovation rime avec responsabilité, et où chaque geste compte.",
+    "esprit": [
+      "La durabilité et la digitalisation transforment l’hospitalité en profondeur. Il s’agit de créer des expériences respectueuses de la planète et des personnes, tout en simplifiant la vie des équipes et des clients.",
+      "Je crois à une hospitalité où la technologie soutient l’humain, où l’innovation rime avec responsabilité, et où chaque geste compte pour construire un futur plus harmonieux et durable."
+    ],
+    "methode": [
+      "Je développe des stratégies concrètes pour intégrer la responsabilité environnementale et sociale au cœur de vos opérations, tout en tirant parti de la digitalisation.",
+      "Optimisation énergétique, réduction des déchets, traçabilité numérique, automatisation des processus : chaque action vise à combiner performance économique, profit éthique et impact positif à long terme, pour une hospitalité moderne, efficace et durable."
+    ],
+    "image": "grok/expertise-durabilite",
+    "alt": "Potager sur le toit d’un hôtel en ville, à l’heure dorée (illustration)"
+  }
+]

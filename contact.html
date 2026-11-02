@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur data-page="contact">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact : Artic!Agency, Orbe</title>
+<meta name="description" content="Demandez un premier échange avec Michel Grand : Rue des Remparts 2, 1350 Orbe, +41 78 630 02 72.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://artic-maquette.vercel.app/contact">
+<style>:root{--fond:#f3eee4;--texte:#161412;--voile-fond:#e4d9c6;--ouverture-fond:#f3eee4;--menu-fond:#161412}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(innerWidth<720){d.classList.add('nav-compacte');setTimeout(function(){if(!d.classList.contains('demarre'))d.classList.remove('nav-compacte');},2000);}})();</script>
+<link rel="preload" href="/assets/polices/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f3eee4">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artic!Agency">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Contact : Artic!Agency, Orbe">
+<meta property="og:description" content="Demandez un premier échange avec Michel Grand : Rue des Remparts 2, 1350 Orbe, +41 78 630 02 72.">
+<meta property="og:url" content="https://artic-maquette.vercel.app/contact">
+<meta property="og:image" content="https://artic-maquette.vercel.app/assets/partage/contact-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Contacter Artic!Agency">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Artic!Agency","description":"Conseil et gestion en hôtellerie-restauration : conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.","slogan":"L’Art de l’Intelligence Commerciale en Hospitalité","email":"michel@artic.agency","telephone":"+41 78 630 02 72","address":{"@type":"PostalAddress","streetAddress":"Rue des Remparts 2","postalCode":"1350","addressLocality":"Orbe","addressRegion":"Vaud","addressCountry":"CH"},"founder":{"@type":"Person","name":"Michel Grand","jobTitle":"Fondateur"},"foundingDate":"2021","areaServed":"CH","sameAs":["https://www.instagram.com/artic.agency/","https://www.linkedin.com/company/michel-grand-ch/"],"url":"https://www.artic.agency"}</script>
+</head>
+<body id="haut">
+<div data-voile aria-hidden="true"><div class="voile-contenu"><span class="voile-logo" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span data-voile-libelle>Contact</span></div></div>
+<div class="ouverture-panneau" data-ouverture data-gouttiere="#f3eee4" aria-hidden="true">
+  <div class="intro-demi intro-demi--haut"></div>
+  <div class="intro-demi intro-demi--bas"></div>
+  <p class="intro-phrase" data-typo-ignorer><span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="0">A</span><span class="intro-c" data-garde="1">R</span><span class="intro-c" data-garde="2">T</span></span> <span class="intro-p"><span class="intro-c">D</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="3">I</span><span class="intro-c">N</span><span class="intro-c">T</span><span class="intro-c">E</span><span class="intro-c">L</span><span class="intro-c">L</span><span class="intro-c">I</span><span class="intro-c">G</span><span class="intro-c">E</span><span class="intro-c">N</span><span class="intro-c">C</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c" data-garde="4">C</span><span class="intro-c">O</span><span class="intro-c">M</span><span class="intro-c">M</span><span class="intro-c">E</span><span class="intro-c">R</span><span class="intro-c">C</span><span class="intro-c">I</span><span class="intro-c">A</span><span class="intro-c">L</span><span class="intro-c">E</span></span> </p>
+  <p class="intro-mot" data-typo-ignorer data-effet="bouchon"><span class="intro-l">A</span><span class="intro-l">R</span><span class="intro-l">T</span><span class="intro-l">I</span><span class="intro-l">C</span><span class="intro-point">!</span></p>
+  <span class="intro-onde"></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Artic!Agency, retour à l’accueil"><span class="logo-mot" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span class="logo-agence">AGENCY</span></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/expertises" class="nav-lien" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" class="nav-lien" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" class="nav-lien" data-libelle="À propos">À propos</a></li><li><a href="/journal" class="nav-lien" data-libelle="Journal">Journal</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a href="/contact" class="bouton bouton--entete" data-libelle="Contact" aria-current="page" data-survol="magnetique">Premier échange</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span class="menu-icone" aria-hidden="true"><span></span><span></span></span><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-grille">
+    <ul><li style="--i:0"><span class="menu-num" aria-hidden="true">01</span><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><span class="menu-num" aria-hidden="true">02</span><a href="/expertises" class="menu-lien" data-libelle="Expertises">Expertises</a></li><li style="--i:2"><span class="menu-num" aria-hidden="true">03</span><a href="/projets" class="menu-lien" data-libelle="Projets">Projets</a></li><li style="--i:3"><span class="menu-num" aria-hidden="true">04</span><a href="/a-propos" class="menu-lien" data-libelle="À propos">À propos</a></li><li style="--i:4"><span class="menu-num" aria-hidden="true">05</span><a href="/journal" class="menu-lien" data-libelle="Journal">Journal</a></li><li style="--i:5"><span class="menu-num" aria-hidden="true">06</span><a href="/contact" class="menu-lien" data-libelle="Contact" aria-current="page">Contact</a></li></ul>
+    <div class="menu-infos">
+      <p><a class="bouton bouton--clair" href="tel:+41786300272">Appeler +41 78 630 02 72</a></p>
+      <p><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+      <p>Rue des Remparts 2<br>1350 Orbe</p>
+      <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+    </div>
+  </div>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="page-tete page-tete--contact" id="debut">
+  <div class="conteneur page-tete-grille">
+    <div>
+      <p class="surtitre">Contact</p>
+      <h1 data-anime="lignes">Parlons de votre projet</h1>
+      <p class="chapeau" data-anime>Un établissement à ouvrir, à reprendre, à réorganiser ou à transmettre ? Décrivez votre projet en quatre étapes : je lis chaque demande et vous réponds personnellement.</p>
+      <p data-anime><a class="bouton bouton--grand" href="#demande" data-action-principale>Commencer la demande</a></p>
+      <p class="contact-info" data-info-cle data-anime><a href="tel:+41786300272">+41 78 630 02 72</a> · <a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <figure class="media page-tete-media" data-grok data-fx="parallaxe" style="--cadrage:45% 55%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/contact-ouverture-mobile-640.webp 640w, /assets/images/grok/contact-ouverture-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 46vw">
+    <img src="/assets/images/grok/contact-ouverture-1168.webp" srcset="/assets/images/grok/contact-ouverture-640.webp 640w, /assets/images/grok/contact-ouverture-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 46vw" alt="Table dressée pour deux avec carnet ouvert (illustration)" width="1168" height="784" fetchpriority="high" loading="eager" decoding="sync">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<section class="demande" id="demande" data-masque-barre data-sans-visuel>
+  <div class="conteneur demande-grille">
+    <div class="demande-col">
+      <h2 class="titre-section" data-anime="lignes">Votre demande, en quatre étapes</h2>
+      <p class="demande-deroule" data-anime>Quatre étapes, environ deux minutes.</p>
+      <ol class="etapes-reperes" data-effet="fil-rouge" aria-hidden="true">
+        <li class="fil-rouge"><svg viewBox="0 0 4 100" preserveAspectRatio="none"><path d="M2 0 V100" pathLength="1"/></svg></li>
+        <li class="etape-repere" data-repere-etape="1"><span>1</span><em class="etape-nom">Votre besoin</em></li><li class="etape-repere" data-repere-etape="2"><span>2</span><em class="etape-nom">Votre projet</em></li><li class="etape-repere" data-repere-etape="3"><span>3</span><em class="etape-nom">Votre calendrier</em></li><li class="etape-repere" data-repere-etape="4"><span>4</span><em class="etape-nom">Vos coordonnées</em></li>
+      </ol>
+      <form class="formulaire-etapes" data-formulaire data-etapes action="#" novalidate>
+        <fieldset class="etape-champs" data-etape="1">
+          <legend>Étape 1 sur 4 · Quelle expertise recherchez-vous ?</legend>
+          <p class="etape-aide" id="aide-expertise">Choisissez une ou plusieurs expertises.</p>
+          <div class="choix-grille" role="group" aria-describedby="aide-expertise">
+            <label class="choix"><input type="checkbox" name="expertise" value="conception"><span>Conception</span></label><label class="choix"><input type="checkbox" name="expertise" value="gestion"><span>Gestion</span></label><label class="choix"><input type="checkbox" name="expertise" value="transformation"><span>Transformation</span></label><label class="choix"><input type="checkbox" name="expertise" value="transition"><span>Transition</span></label><label class="choix"><input type="checkbox" name="expertise" value="transmission"><span>Transmission</span></label><label class="choix"><input type="checkbox" name="expertise" value="recrutement"><span>Recrutement &amp; Management</span></label><label class="choix"><input type="checkbox" name="expertise" value="design-interieur"><span>Design d’intérieurs</span></label><label class="choix"><input type="checkbox" name="expertise" value="durabilite"><span>Durabilité &amp; Digitalisation</span></label>
+          </div>
+          <p class="champ-erreur" id="erreur-expertise" data-erreur-expertise data-texte="Choisissez au moins une expertise." aria-live="polite"></p>
+          <p class="etape-boutons"><button type="button" class="bouton" data-suivant>Continuer</button></p>
+        </fieldset>
+        <fieldset class="etape-champs" data-etape="2" hidden>
+          <legend>Étape 2 sur 4 · Que voulez-vous construire ou améliorer ?</legend>
+          <div class="champ"><label for="f-projet">Décrivez votre projet en quelques mots.</label><textarea id="f-projet" name="projet" rows="6" required data-erreur="Quelques mots suffisent pour continuer." placeholder="Votre établissement, votre idée, vos enjeux…"></textarea></div>
+          <p class="etape-boutons"><button type="button" class="bouton bouton--contour" data-precedent>Retour</button><button type="button" class="bouton" data-suivant>Continuer</button></p>
+        </fieldset>
+        <fieldset class="etape-champs" data-etape="3" hidden>
+          <legend>Étape 3 sur 4 · Quand souhaitez-vous commencer ?</legend>
+          <div class="choix-grille choix-grille--quatre">
+            <label class="choix"><input type="radio" name="debut" value="c1"><span>Dès que possible</span></label><label class="choix"><input type="radio" name="debut" value="c2"><span>Dans les trois mois</span></label><label class="choix"><input type="radio" name="debut" value="c3"><span>Dans l’année</span></label><label class="choix"><input type="radio" name="debut" value="c4" checked><span>Je ne sais pas encore</span></label>
+          </div>
+          <p class="etape-boutons"><button type="button" class="bouton bouton--contour" data-precedent>Retour</button><button type="button" class="bouton" data-suivant>Continuer</button></p>
+        </fieldset>
+        <fieldset class="etape-champs" data-etape="4" hidden>
+          <legend>Étape 4 sur 4 · Vos coordonnées</legend>
+          <div class="champs-deux">
+            <div class="champ"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" autocomplete="given-name" required></div>
+            <div class="champ"><label for="f-nom">Nom</label><input id="f-nom" name="nom" autocomplete="family-name" required></div>
+          </div>
+          <div class="champ"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="champs-deux">
+            <div class="champ"><label for="f-tel">Téléphone (facultatif)</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+            <div class="champ"><label for="f-entreprise">Établissement ou entreprise (facultatif)</label><input id="f-entreprise" name="entreprise" autocomplete="organization"></div>
+          </div>
+          <p class="mention-donnees">Vos données servent seulement à répondre à votre demande. <a href="/mentions-legales#confidentialite">Confidentialité</a> (politique à compléter, nLPD).</p>
+          <p class="etape-boutons"><button type="button" class="bouton bouton--contour" data-precedent>Retour</button><button type="submit" class="bouton">Demander un premier échange</button></p>
+          <p data-message-envoi data-texte="Maquette : rien n’a été envoyé. Sur le site final, cette demande parviendra à Michel Grand." role="status" tabindex="-1" hidden></p>
+        </fieldset>
+      </form>
+    </div>
+    <aside class="recap" aria-live="polite">
+      <h2 class="petit-titre">Votre demande</h2>
+      <dl class="recap-liste" data-recap data-vide="Vos choix s’afficheront ici.">
+        <div><dt>Votre besoin</dt><dd data-recap-champ="expertise">—</dd></div>
+        <div><dt>Votre projet</dt><dd data-recap-champ="projet">—</dd></div>
+        <div><dt>Votre calendrier</dt><dd data-recap-champ="debut">—</dd></div>
+        <div><dt>Vos coordonnées</dt><dd data-recap-champ="coordonnees">—</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+<section class="coordonnees" id="coordonnees">
+  <div class="conteneur coordonnees-grille">
+    <div>
+      <h2 class="titre-section" data-anime="lignes">Coordonnées</h2>
+      <dl class="coordonnees-liste" data-anime="cascade">
+        <div><dt>Adresse</dt><dd>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</dd></div>
+        <div><dt>Téléphone</dt><dd><a href="tel:+41786300272">+41 78 630 02 72</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:michel@artic.agency">michel@artic.agency</a></dd></div>
+        <div><dt>à compléter</dt><dd>Horaires : à compléter</dd></div>
+      </dl>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=46.7252773,6.5313855" target="_blank" rel="noopener" aria-describedby="nouvel-onglet" class="lien-fleche">Voir le plan</a></p>
+    </div>
+    <figure class="plan-cadre" data-effet="plan">
+      <svg class="plan" viewBox="0 0 600 664" role="img" aria-label="Plan : Orbe, au nord du lac Léman"><rect class="plan-fond" width="600" height="664" rx="6"/><path class="plan-grille" d="M0 581.0H600M0 498.0H600M0 415.0H600M0 332.0H600M0 249.0H600M0 166.0H600M0 83.0H600M28.6 0V664M85.7 0V664M142.9 0V664M200.0 0V664M257.1 0V664M314.3 0V664M371.4 0V664M428.6 0V664M485.7 0V664M542.9 0V664M600.0 0V664"/><path class="plan-lac" d="M115.4 576.9L125.7 529.5L142.9 489.7L164.6 431.6L188.6 400.1L220.0 369.4L257.1 346.1L312.6 325.4L348.6 317.1L387.4 327.0L428.6 337.8L508.6 363.5L542.9 388.4L558.3 418.3L520.0 427.5L485.7 427.5L428.6 412.5L365.7 412.5L314.3 431.6L268.6 436.6L217.1 448.2L182.9 473.1L151.4 522.9L122.9 568.5ZM396.0 101.3L402.9 74.7L440.0 41.5L480.0 4.1L520.0 -41.5L571.4 -83.0L628.6 -83.0L588.6 -49.8L537.1 0.0L502.9 33.2L457.1 66.4L417.1 91.3Z"/><g class="plan-ville plan-ville--orbe"><circle cx="332.2" cy="145.0" r="9"/><circle class="plan-onde" cx="332.2" cy="145.0" r="9"/><text x="316.2" y="151.0" text-anchor="end">Orbe</text></g><g class="plan-ville"><circle cx="395.0" cy="100.8" r="5"/><text x="379.0" y="92.8" text-anchor="end">Yverdon-les-Bains</text></g><g class="plan-ville"><circle cx="389.9" cy="315.6" r="5"/><text x="403.9" y="321.6" text-anchor="start">Lausanne</text></g><g class="plan-ville"><circle cx="110.4" cy="577.3" r="5"/><text x="124.4" y="583.3" text-anchor="start">Genève</text></g></svg>
+      <figcaption>46,7253° N · 6,5314° E</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <p class="pied-titre">Contact</p>
+      <p>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</p>
+      <p><a href="tel:+41786300272">+41 78 630 02 72</a><br><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/expertises" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" data-libelle="À propos">À propos</a></li><li><a href="/journal" data-libelle="Journal">Journal</a></li><li><a href="/contact" data-libelle="Contact" aria-current="page">Contact</a></li><li><a href="/mentions-legales" data-libelle="Mentions légales">Mentions légales</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Suivre</p>
+      <ul><li><a href="https://www.instagram.com/artic.agency/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Instagram</a></li><li><a href="https://www.linkedin.com/company/michel-grand-ch/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">LinkedIn</a></li></ul>
+    </div>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-marque" aria-hidden="true" data-typo-ignorer><span>ARTIC<span class="logo-point">!</span></span><span class="pied-agence">AGENCY</span></div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le client.</p><p>© <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> · Orbe</p></div>
+  <p id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</p>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+41786300272">Appeler</a>
+  <a href="/contact" class="bouton" data-libelle="Contact" aria-current="page">Premier échange</a>
+</div>
+</body>
+</html>

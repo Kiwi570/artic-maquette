@@ -1,0 +1,322 @@
+{
+  "saisons": [
+    {
+      "cle": "s02",
+      "nom": "Saison 2",
+      "sousTitre": "Réflexions personnelles",
+      "annees": "2025"
+    },
+    {
+      "cle": "s01",
+      "nom": "Saison 1",
+      "sousTitre": "J’ai créé…",
+      "annees": "2022"
+    },
+    {
+      "cle": "chroniques",
+      "nom": "Chroniques",
+      "sousTitre": "Tendances et parcours",
+      "annees": "2020 – 2022"
+    }
+  ],
+  "articles": [
+    {
+      "cle": "s02e06",
+      "saison": "s02",
+      "episode": "S02 · E06",
+      "date": "2025-10-21",
+      "lecture": 2,
+      "titre": "Entre ceux qui parlent fort et ceux qui agissent en silence",
+      "extrait": "Il y a deux types de profils dans le monde professionnel : ceux qui se mettent en avant, et ceux qui agissent en silence, qui ne postent pas leurs succès mais les construisent.",
+      "image": "journal/s02e06",
+      "page": "article-s02e06"
+    },
+    {
+      "cle": "s02e05",
+      "saison": "s02",
+      "episode": "S02 · E05",
+      "date": "2025-10-21",
+      "lecture": 2,
+      "titre": "Faut-il repenser la clause du besoin en restauration ?",
+      "extrait": "En Suisse, la clause du besoin a disparu depuis plusieurs années : aujourd’hui, toute personne disposant d’une patente peut ouvrir un établissement public.",
+      "image": "journal/s02e05",
+      "page": null
+    },
+    {
+      "cle": "s02e04",
+      "saison": "s02",
+      "episode": "S02 · E04",
+      "date": "2025-09-19",
+      "lecture": 2,
+      "titre": "Le « lèche-bottes », ce faux raccourci vers le succès",
+      "extrait": "Dans chaque organisation, il y a ces profils bien connus…",
+      "image": "journal/s02e04",
+      "page": null
+    },
+    {
+      "cle": "s02e03",
+      "saison": "s02",
+      "episode": "S02 · E03",
+      "date": "2025-09-18",
+      "lecture": 2,
+      "titre": "Quand le copinage prend le dessus",
+      "extrait": "En Suisse, nous aimons dire que notre force repose sur la qualité, la rigueur…",
+      "image": "journal/s02e03",
+      "page": null
+    },
+    {
+      "cle": "s02e02",
+      "saison": "s02",
+      "episode": "S02 · E02",
+      "date": "2025-09-18",
+      "lecture": 2,
+      "titre": "Quand la reconnaissance arrive… bien après nos efforts",
+      "extrait": "Il existe un moment très particulier dans une vie…",
+      "image": "journal/s02e02",
+      "page": null
+    },
+    {
+      "cle": "s02e01",
+      "saison": "s02",
+      "episode": "S02 · E01",
+      "date": "2025-09-18",
+      "lecture": 2,
+      "titre": "Commencer petit sur un grand chemin",
+      "extrait": "Il y a quelques années, j’ai décidé de marcher de Constance au cap Finisterre…",
+      "image": "journal/s02e01",
+      "page": null
+    },
+    {
+      "cle": "s01e04",
+      "saison": "s01",
+      "episode": "S01 · E04",
+      "date": "2022-07-08",
+      "lecture": 1,
+      "titre": "J’ai créé le verre de cocktails de demain : CocktailsMachine.CH (2015 – 2020)",
+      "extrait": "Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…",
+      "image": "journal/s01e04-cocktailsmachine",
+      "video": "j-adRm7spNk",
+      "page": null
+    },
+    {
+      "cle": "s01e03",
+      "saison": "s01",
+      "episode": "S01 · E03",
+      "date": "2022-06-30",
+      "lecture": 1,
+      "titre": "J’ai installé des vitrines à vin, charcuterie, fromage et chocolat : Vitrines-Expo.CH (2010 – 2020)",
+      "extrait": "Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…",
+      "image": "journal/s01e03-vitrines-expo",
+      "video": "-Sn8YhVyPRY",
+      "page": null
+    },
+    {
+      "cle": "s01e02",
+      "saison": "s01",
+      "episode": "S01 · E02",
+      "date": "2022-06-24",
+      "lecture": 1,
+      "titre": "J’ai créé le verre de bière de demain : ReverseTap.CH (2016 – 2020)",
+      "extrait": "Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…",
+      "image": "journal/s01e02-reversetap",
+      "video": "OEWQoyeg1JA",
+      "page": null
+    },
+    {
+      "cle": "s01e01",
+      "saison": "s01",
+      "episode": "S01 · E01",
+      "date": "2022-06-18",
+      "lecture": 1,
+      "titre": "J’ai créé le verre de vin de demain : WineEmotion.CH (2013 – 2020)",
+      "extrait": "Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…",
+      "image": "journal/s01e01-wineemotion",
+      "video": "YER1q9YFjn8",
+      "page": null
+    },
+    {
+      "cle": "optimisme",
+      "saison": "chroniques",
+      "episode": "Chronique",
+      "date": "2022-01-25",
+      "lecture": 2,
+      "titre": "Optimisme, bien-être, spiritualité et méditation en chambres…",
+      "extrait": "Être optimiste pour cette nouvelle année, vivre avec la notion de bien-être, l’approche de la spiritualité et la pratique de la méditation…",
+      "image": null,
+      "page": null
+    },
+    {
+      "cle": "noel",
+      "saison": "chroniques",
+      "episode": "Chronique",
+      "date": "2021-12-13",
+      "lecture": 2,
+      "titre": "Melting-pot de Noël : neige, montagne, pics, spiritualité et différenciation…",
+      "extrait": "Nous voilà déjà en décembre, à l’approche imminente de Noël. Malgré la joie des décorations et des tombées de neige…",
+      "image": null,
+      "page": null
+    },
+    {
+      "cle": "quel-service",
+      "saison": "chroniques",
+      "episode": "Chronique",
+      "date": "2021-11-17",
+      "lecture": 3,
+      "titre": "Mais, quel service de…",
+      "extrait": "Durant cette période de COVID, nous parlons essentiellement de coûts, d’aides financières, de manque de main-d’œuvre… mais qu’en est-il du service ?",
+      "image": null,
+      "page": null
+    },
+    {
+      "cle": "rebondir",
+      "saison": "chroniques",
+      "episode": "Chronique",
+      "date": "2021-10-11",
+      "lecture": 2,
+      "titre": "Rebondir en tendances en 2021…",
+      "extrait": "Depuis quelques semaines, l’économie HORECA reprend doucement, mais avec des lueurs d’espoir.",
+      "image": null,
+      "page": null
+    },
+    {
+      "cle": "crowdfunding",
+      "saison": "chroniques",
+      "episode": "Chronique",
+      "date": "2021-08-31",
+      "lecture": 2,
+      "titre": "Le crowdfunding, ou financement participatif, en hôtellerie et restauration",
+      "extrait": "Je me souviens lorsque, en 2012, j’ai créé la première plateforme de financement participatif de Suisse romande, moBOo.CH…",
+      "image": null,
+      "page": null
+    },
+    {
+      "cle": "harvard",
+      "saison": "chroniques",
+      "episode": "Chronique",
+      "date": "2021-05-23",
+      "lecture": 3,
+      "titre": "Les trois règles de la réussite, selon l’université de Harvard…",
+      "extrait": "Un article de la Harvard Business Review propose trois règles de réussite communes aux grandes entreprises du monde entier.",
+      "image": null,
+      "page": null
+    },
+    {
+      "cle": "food-trucks",
+      "saison": "chroniques",
+      "episode": "Chronique",
+      "date": "2021-05-04",
+      "lecture": 2,
+      "titre": "Tendance de consommation : les restaurants emportent et servent leur nourriture sur la route",
+      "extrait": "Les food trucks avaient en quelque sorte disparu des projecteurs ces dernières années. Mais la pandémie mondiale prolongée…",
+      "image": null,
+      "page": null
+    },
+    {
+      "cle": "etape-21",
+      "saison": "chroniques",
+      "episode": "Parcours",
+      "date": "2021-01-18",
+      "lecture": 1,
+      "titre": "Mon parcours de vie professionnelle : 21e étape",
+      "extrait": "Ce n’est pas un hasard : la 21e étape commence à la nouvelle année 2021. Un nouveau départ, une envie de donner plus de sens à ma vie…",
+      "image": "journal/2021-01-etape-21",
+      "page": null
+    },
+    {
+      "cle": "etape-20",
+      "saison": "chroniques",
+      "episode": "Parcours",
+      "date": "2020-12-24",
+      "lecture": 1,
+      "titre": "Mon parcours de vie professionnelle : 20e étape",
+      "extrait": "Pèlerinage… Trekking en pèlerin de Constance, en Allemagne, au cap Finisterre, en Espagne, en passant par Saint-Jacques-de-Compostelle…",
+      "image": "journal/2020-12-etape-20",
+      "page": null
+    },
+    {
+      "cle": "etape-19",
+      "saison": "chroniques",
+      "episode": "Parcours",
+      "date": "2020-12-21",
+      "lecture": 1,
+      "titre": "Mon parcours de vie professionnelle : 19e étape",
+      "extrait": "Senior Lecturer à l’International Management Institute (IMI) de Lucerne… Une passion est née : enseigner la gestion à des étudiants de MBA.",
+      "image": "journal/2020-12-etape-19",
+      "page": null
+    }
+  ],
+  "s02e06": {
+    "chapeau": "Il y a deux types de profils dans le monde professionnel.",
+    "corps": [
+      {
+        "t": "p",
+        "x": "Ceux qui parlent fort, se mettent en avant, s’autoproclament « inspirants » et affichent des « résultats extraordinaires »."
+      },
+      {
+        "t": "p",
+        "x": "Et puis, il y a ceux qui agissent en silence. Ceux qui ne postent pas leurs succès, mais qui les construisent."
+      },
+      {
+        "t": "p",
+        "x": "Les premiers maîtrisent l’art du « storytelling » — ils savent vendre, se vendre, et parfois même se survendre."
+      },
+      {
+        "t": "p",
+        "x": "Les seconds maîtrisent l’art du faire — ils avancent sans bruit, concentrés sur la qualité de leur travail."
+      },
+      {
+        "t": "p",
+        "x": "Mais dans ce monde de communication permanente, les discrets se retrouvent souvent éclipsés par le vacarme des beaux discours."
+      },
+      {
+        "t": "p",
+        "x": "Et pourtant, ce sont eux qui font tourner les entreprises, qui innovent, qui forment, qui tiennent le cap quand tout vacille."
+      },
+      {
+        "t": "p",
+        "x": "J’ai souvent observé que ceux qui « se la pètent » finissent par se heurter à leurs limites."
+      },
+      {
+        "t": "citation",
+        "x": "Car la lumière, sans fondation solide, finit toujours par éblouir… puis s’éteindre."
+      },
+      {
+        "t": "h2",
+        "x": "Ma conviction"
+      },
+      {
+        "t": "li",
+        "x": "La compétence finit toujours par parler — même sans micro."
+      },
+      {
+        "t": "li",
+        "x": "L’authenticité, la constance et la fiabilité sont des qualités qui ne font peut-être pas de bruit, mais qui bâtissent des réussites durables."
+      }
+    ],
+    "hashtags": [
+      "réflexion",
+      "valeurs",
+      "leadership",
+      "authenticité",
+      "compétences",
+      "management",
+      "humilité",
+      "suisse"
+    ],
+    "anglais": {
+      "titre": "Between the loud voices and the silent doers",
+      "corps": [
+        "In the professional world, I’ve noticed two kinds of people.",
+        "Those who speak loudly — the ones who put themselves in the spotlight, call themselves “inspiring,” and proudly share their “extraordinary results.”",
+        "And then there are those who act in silence. They don’t post their wins — they build them.",
+        "The first group masters the art of storytelling. They know how to sell, to self-promote… and sometimes, to oversell.",
+        "The second group masters the art of doing. They move quietly, focused on the substance and quality of their work.",
+        "But in this age of constant communication, the quiet ones are often overshadowed by the noise of grand speeches.",
+        "Yet they are the ones who keep organizations running — who innovate, teach, and hold the line when everything starts to shake.",
+        "Over the years, I’ve seen that those who shine too brightly too fast often end up burning out or hitting their limits.",
+        "Because light without a solid foundation always dazzles… then fades.",
+        "My conviction: competence always speaks for itself — even without a microphone. Authenticity, consistency, and reliability may not make noise, but they build lasting success."
+      ]
+    }
+  }
+}

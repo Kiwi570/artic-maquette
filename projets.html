@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur data-page="projets">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projets : Artic!Agency</title>
+<meta name="description" content="distriBOtion.CH, BOtaniq.CH, VERS.CH, SwissWaters.CH et d’autres réalisations de Michel Grand.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://artic-maquette.vercel.app/projets">
+<style>:root{--fond:#f3eee4;--texte:#161412;--voile-fond:#e4d9c6;--ouverture-fond:#f3eee4;--menu-fond:#161412}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(innerWidth<720){d.classList.add('nav-compacte');setTimeout(function(){if(!d.classList.contains('demarre'))d.classList.remove('nav-compacte');},2000);}})();</script>
+<link rel="preload" href="/assets/polices/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f3eee4">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artic!Agency">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Projets : Artic!Agency">
+<meta property="og:description" content="distriBOtion.CH, BOtaniq.CH, VERS.CH, SwissWaters.CH et d’autres réalisations de Michel Grand.">
+<meta property="og:url" content="https://artic-maquette.vercel.app/projets">
+<meta property="og:image" content="https://artic-maquette.vercel.app/assets/partage/projets-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Les projets d’Artic!Agency">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Artic!Agency","description":"Conseil et gestion en hôtellerie-restauration : conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.","slogan":"L’Art de l’Intelligence Commerciale en Hospitalité","email":"michel@artic.agency","telephone":"+41 78 630 02 72","address":{"@type":"PostalAddress","streetAddress":"Rue des Remparts 2","postalCode":"1350","addressLocality":"Orbe","addressRegion":"Vaud","addressCountry":"CH"},"founder":{"@type":"Person","name":"Michel Grand","jobTitle":"Fondateur"},"foundingDate":"2021","areaServed":"CH","sameAs":["https://www.instagram.com/artic.agency/","https://www.linkedin.com/company/michel-grand-ch/"],"url":"https://www.artic.agency"}</script>
+</head>
+<body id="haut">
+<div data-voile aria-hidden="true"><div class="voile-contenu"><span class="voile-logo" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span data-voile-libelle>Projets</span></div></div>
+<div class="ouverture-panneau" data-ouverture data-gouttiere="#f3eee4" aria-hidden="true">
+  <div class="intro-demi intro-demi--haut"></div>
+  <div class="intro-demi intro-demi--bas"></div>
+  <p class="intro-phrase" data-typo-ignorer><span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="0">A</span><span class="intro-c" data-garde="1">R</span><span class="intro-c" data-garde="2">T</span></span> <span class="intro-p"><span class="intro-c">D</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="3">I</span><span class="intro-c">N</span><span class="intro-c">T</span><span class="intro-c">E</span><span class="intro-c">L</span><span class="intro-c">L</span><span class="intro-c">I</span><span class="intro-c">G</span><span class="intro-c">E</span><span class="intro-c">N</span><span class="intro-c">C</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c" data-garde="4">C</span><span class="intro-c">O</span><span class="intro-c">M</span><span class="intro-c">M</span><span class="intro-c">E</span><span class="intro-c">R</span><span class="intro-c">C</span><span class="intro-c">I</span><span class="intro-c">A</span><span class="intro-c">L</span><span class="intro-c">E</span></span> </p>
+  <p class="intro-mot" data-typo-ignorer data-effet="bouchon"><span class="intro-l">A</span><span class="intro-l">R</span><span class="intro-l">T</span><span class="intro-l">I</span><span class="intro-l">C</span><span class="intro-point">!</span></p>
+  <span class="intro-onde"></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Artic!Agency, retour à l’accueil"><span class="logo-mot" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span class="logo-agence">AGENCY</span></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/expertises" class="nav-lien" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" class="nav-lien" data-libelle="Projets" aria-current="page">Projets</a></li><li><a href="/a-propos" class="nav-lien" data-libelle="À propos">À propos</a></li><li><a href="/journal" class="nav-lien" data-libelle="Journal">Journal</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a href="/contact" class="bouton bouton--entete" data-libelle="Contact" data-survol="magnetique">Premier échange</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span class="menu-icone" aria-hidden="true"><span></span><span></span></span><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-grille">
+    <ul><li style="--i:0"><span class="menu-num" aria-hidden="true">01</span><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><span class="menu-num" aria-hidden="true">02</span><a href="/expertises" class="menu-lien" data-libelle="Expertises">Expertises</a></li><li style="--i:2"><span class="menu-num" aria-hidden="true">03</span><a href="/projets" class="menu-lien" data-libelle="Projets" aria-current="page">Projets</a></li><li style="--i:3"><span class="menu-num" aria-hidden="true">04</span><a href="/a-propos" class="menu-lien" data-libelle="À propos">À propos</a></li><li style="--i:4"><span class="menu-num" aria-hidden="true">05</span><a href="/journal" class="menu-lien" data-libelle="Journal">Journal</a></li><li style="--i:5"><span class="menu-num" aria-hidden="true">06</span><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+    <div class="menu-infos">
+      <p><a class="bouton bouton--clair" href="tel:+41786300272">Appeler +41 78 630 02 72</a></p>
+      <p><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+      <p>Rue des Remparts 2<br>1350 Orbe</p>
+      <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+    </div>
+  </div>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="page-tete" id="debut">
+  <div class="conteneur page-tete-grille">
+    <div>
+      <p class="surtitre">Projets</p>
+      <h1 data-anime="lignes">Des projets menés de bout en bout</h1>
+      <p class="chapeau" data-anime>Chaque projet reflète un défi relevé et une solution concrète. De la création de concepts à la réorganisation complexe d’équipes, mes réalisations montrent comment transformer les idées en réussites.</p>
+      <p data-anime><a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un premier échange</a></p>
+    </div>
+    <figure class="media page-tete-media" data-grok data-fx="parallaxe" style="--cadrage:60% 60%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/projets-ouverture-mobile-640.webp 640w, /assets/images/grok/projets-ouverture-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 46vw">
+    <img src="/assets/images/grok/projets-ouverture-1168.webp" srcset="/assets/images/grok/projets-ouverture-640.webp 640w, /assets/images/grok/projets-ouverture-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 46vw" alt="Atelier avec maquettes d’architecture en bois (illustration)" width="1168" height="784" fetchpriority="high" loading="eager" decoding="sync">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<section class="projets-liste conteneur" id="principaux">
+  <h2 class="petit-titre">Quatre projets en détail</h2>
+  <article class="projet-ligne" id="distribotion" data-section>
+    <div class="projet-ligne-visuel">
+      <figure class="media projet-ligne-media" data-fx="zoom" data-fx-force="12" style="--cadrage:50% 55%;aspect-ratio:4 / 3">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/projets/distribotion-photo-mobile-640.webp 640w, /assets/images/projets/distribotion-photo-mobile-768.webp 768w" sizes="(max-width: 760px) 100vw, 50vw">
+    <img src="/assets/images/projets/distribotion-photo-1280.webp" srcset="/assets/images/projets/distribotion-photo-640.webp 640w, /assets/images/projets/distribotion-photo-1280.webp 1280w, /assets/images/projets/distribotion-photo-1920.webp 1920w" sizes="(max-width: 760px) 100vw, 50vw" alt="distriBOtion.CH : bar équipé de distributeurs de vin au verre" width="1280" height="853" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Distribution</span><strong>2013 – 2020</strong></span></div>
+    </div>
+    <div class="projet-ligne-texte">
+      <p class="carte-projet-num">01 · Distribution</p>
+      <h3 data-anime="lignes">distriBOtion.CH</h3>
+      <p class="carte-projet-accroche">L’innovation au service de l’art de vivre</p>
+      <p>La distribution exclusive, en Suisse, de produits innovants pour le vin, la bière, les cocktails et la gastronomie, avec un showroom sur la Riviera vaudoise.</p>
+      <a href="/projets/distribotion" class="bouton bouton--contour" data-libelle="distriBOtion.CH" data-survol="magnetique">Voir la fiche<span class="visuellement-cache"> : distriBOtion.CH</span></a>
+    </div>
+  </article><article class="projet-ligne projet-ligne--inverse" id="botaniq" data-section>
+    <div class="projet-ligne-visuel">
+      <figure class="media projet-ligne-media" data-fx="zoom" data-fx-force="12" style="--cadrage:50% 50%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/projets/botaniq-02-1280.webp" srcset="/assets/images/projets/botaniq-02-640.webp 640w, /assets/images/projets/botaniq-02-1280.webp 1280w, /assets/images/projets/botaniq-02-1920.webp 1920w" sizes="(max-width: 760px) 100vw, 50vw" alt="BOtaniq.CH : rendu 3D du restaurant-boutique" width="1280" height="734" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Restauration et boutique</span><strong>Concept</strong></span></div>
+    </div>
+    <div class="projet-ligne-texte">
+      <p class="carte-projet-num">02 · Restauration et boutique</p>
+      <h3 data-anime="lignes">BOtaniq.CH</h3>
+      <p class="carte-projet-accroche">Mineral Food, Beverage &amp; Cosmetics</p>
+      <p>Un restaurant et une boutique urbains autour du minéral : des mets sains préparés sur place, des produits artisanaux locaux et une gamme de cosmétiques minéraux faits maison.</p>
+      <p class="note-statut">BOtaniq.CH et VERS.CH sont présentés comme des concepts : statut exact à compléter.</p>
+      <p class="carte-projet-bientot">Fiche détaillée dans la prochaine version</p>
+    </div>
+  </article><article class="projet-ligne" id="vers" data-section>
+    <div class="projet-ligne-visuel">
+      <figure class="media projet-ligne-media" data-fx="zoom" data-fx-force="12" style="--cadrage:45% 60%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/projets/vers-01-1280.webp" srcset="/assets/images/projets/vers-01-640.webp 640w, /assets/images/projets/vers-01-1280.webp 1280w, /assets/images/projets/vers-01-1570.webp 1570w" sizes="(max-width: 760px) 100vw, 50vw" alt="VERS.CH : raccard valaisan éclairé au crépuscule" width="1280" height="952" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Éco-resort de montagne</span><strong>Concept</strong></span></div>
+    </div>
+    <div class="projet-ligne-texte">
+      <p class="carte-projet-num">03 · Éco-resort de montagne</p>
+      <h3 data-anime="lignes">VERS.CH</h3>
+      <p class="carte-projet-accroche">Un nouveau souffle pour l’hôtellerie de montagne</p>
+      <p>Redonner vie à un hameau de raccards valaisans de plus de 300 ans, pour en faire un lieu unique d’éco-tourisme haut de gamme.</p>
+      <p class="note-statut">BOtaniq.CH et VERS.CH sont présentés comme des concepts : statut exact à compléter.</p>
+      <p class="carte-projet-bientot">Fiche détaillée dans la prochaine version</p>
+    </div>
+  </article><article class="projet-ligne projet-ligne--inverse" id="swisswaters" data-section>
+    <div class="projet-ligne-visuel">
+      <figure class="media projet-ligne-media" data-grok data-fx="zoom" data-fx-force="12" style="--cadrage:50% 50%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/grok/fiche-swisswaters-ambiance-1168.webp" srcset="/assets/images/grok/fiche-swisswaters-ambiance-640.webp 640w, /assets/images/grok/fiche-swisswaters-ambiance-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 50vw" alt="Carafe d’eau pétillante sur une table dressée (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Purification d’eau</span><strong>Fontaines à eau</strong></span></div>
+    </div>
+    <div class="projet-ligne-texte">
+      <p class="carte-projet-num">04 · Purification d’eau</p>
+      <h3 data-anime="lignes">SwissWaters.CH</h3>
+      <p class="carte-projet-accroche">La solution d’eau durable pour les professionnels</p>
+      <p>Des fontaines qui filtrent l’eau du réseau public et la servent fraîche, tempérée, gazeuse ou oxygénée, pour alléger les coûts, la logistique et l’empreinte des bouteilles.</p>
+      <p class="carte-projet-bientot">Fiche détaillée dans la prochaine version</p>
+    </div>
+  </article>
+</section>
+<section class="autres" id="autres" data-sans-visuel>
+  <div class="conteneur">
+    <div class="autres-tete">
+      <h2 class="titre-section" data-anime="lignes">Autres réalisations</h2>
+      <p>D’autres projets menés par Michel Grand, présentés sur michelgrand.ch.</p>
+    </div>
+    <ul class="autres-liste" data-anime="cascade">
+      <li class="autre">
+        <p class="autre-num" aria-hidden="true">01</p>
+        <p class="carte-projet-num">Financement participatif · 2012 – 2018</p>
+        <h3>moBOo.CH</h3>
+        <p>La première plateforme de financement participatif de Suisse romande, basée à Nendaz, pour soutenir les projets locaux de micro-entrepreneurs et d’artisans. Elle s’est éteinte fin 2018, après six ans de soutien à de nombreux projets.</p>
+      </li><li class="autre">
+        <p class="autre-num" aria-hidden="true">02</p>
+        <p class="carte-projet-num">Immobilier · Conciergerie</p>
+        <h3>BOestate.CH</h3>
+        <p>L’idée de deux amis rencontrés aux Maldives : servir, avec les techniques hôtelières, une clientèle qui cherche son bien immobilier de rêve, en Suisse et dans le monde. Une approche personnalisée, en toute discrétion.</p>
+      </li><li class="autre">
+        <p class="autre-num" aria-hidden="true">03</p>
+        <p class="carte-projet-num">Label de qualité · Concept</p>
+        <h3>ECOthic.CH</h3>
+        <p>Un label de qualité pour les aliments livrés et consommés en ville : l’écologie et l’éthique assurées pour les produits de la ferme et de l’agriculture locale, du champ à l’assiette.</p>
+      </li><li class="autre">
+        <p class="autre-num" aria-hidden="true">04</p>
+        <p class="carte-projet-num">Food &amp; Beverage · Bar 4.0</p>
+        <h3>Drink’N’tec.CH</h3>
+        <p>Une plateforme de vente et de location de systèmes de débit de boissons automatisés et connectés, fixes ou mobiles, pour maîtriser la qualité, la température, le dosage et la vitesse de service.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="en-cours conteneur" id="en-cours">
+  <div class="autres-tete">
+    <h2 class="titre-section" data-anime="lignes">Projets en cours</h2>
+    <p class="note-statut">Projets présentés sur michelgrand.ch, à actualiser par le client.</p>
+  </div>
+  <ol class="en-cours-liste" data-anime="cascade">
+    <li><span class="en-cours-num" data-visuel aria-hidden="true">01</span><div><h3>Foodtruck</h3><p>La création d’un foodtruck dans une caravane vintage : business plan, recherche de fonds, fabrication de la caravane et branding.</p></div></li><li><span class="en-cours-num" data-visuel aria-hidden="true">02</span><div><h3>Hôtel</h3><p>L’accompagnement du nouveau propriétaire d’un hôtel de charme en montagne : ouverture, rénovation, transformation et gestion complète.</p></div></li><li><span class="en-cours-num" data-visuel aria-hidden="true">03</span><div><h3>Gelateria</h3><p>La mise en place du réseau de distribution pour la Suisse d’une glace artisanale italienne, l’ouverture de boutiques et la gestion globale des affaires en tant qu’importateur exclusif.</p></div></li><li><span class="en-cours-num" data-visuel aria-hidden="true">04</span><div><h3>Wine &amp; Spirit</h3><p>Le soutien à l’implantation d’un distributeur sur le marché suisse.</p></div></li>
+  </ol>
+</section>
+<section class="fin fin--court" id="fin">
+  <div class="conteneur fin-grille">
+    <figure class="media fin-media" data-grok data-fx="zoom" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/fiche-vers-ambiance-1168.webp" srcset="/assets/images/grok/fiche-vers-ambiance-640.webp 640w, /assets/images/grok/fiche-vers-ambiance-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 40vw" alt="Sentier de montagne entre les mélèzes au lever du jour (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div class="fin-texte">
+      <h2 class="titre-section" data-anime="lignes">Un concept à imaginer, un établissement à transformer ?</h2>
+      <p data-anime>Chaque projet commence par un échange.</p>
+      <p class="fin-actions" data-anime><a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-survol="magnetique">Demander un premier échange</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <p class="pied-titre">Contact</p>
+      <p>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</p>
+      <p><a href="tel:+41786300272">+41 78 630 02 72</a><br><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/expertises" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" data-libelle="Projets" aria-current="page">Projets</a></li><li><a href="/a-propos" data-libelle="À propos">À propos</a></li><li><a href="/journal" data-libelle="Journal">Journal</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/mentions-legales" data-libelle="Mentions légales">Mentions légales</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Suivre</p>
+      <ul><li><a href="https://www.instagram.com/artic.agency/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Instagram</a></li><li><a href="https://www.linkedin.com/company/michel-grand-ch/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">LinkedIn</a></li></ul>
+    </div>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-marque" aria-hidden="true" data-typo-ignorer><span>ARTIC<span class="logo-point">!</span></span><span class="pied-agence">AGENCY</span></div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le client.</p><p>© <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> · Orbe</p></div>
+  <p id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</p>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+41786300272">Appeler</a>
+  <a href="/contact" class="bouton" data-libelle="Contact">Premier échange</a>
+</div>
+</body>
+</html>

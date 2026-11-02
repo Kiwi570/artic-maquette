@@ -1,0 +1,18 @@
+{
+  "echecs": [],
+  "aRegarder": [],
+  "nonLances": [],
+  "oks": {
+    "vercel.json": 1,
+    ".vercelignore": 1,
+    "robots.txt": 1,
+    "numéro de version": 1,
+    "langues": 1,
+    "captures": 1
+  },
+  "infos": [
+    "Numéro de version des fichiers : ?v=1",
+    "Audit standard : étapes lourdes sur /, /a-propos, /contact, /expertises, /journal, /journal/s02-e06-parler-fort-agir-en-silence, /mentions-legales, /projets, /projets/distribotion.",
+    "Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés."
+  ]
+}

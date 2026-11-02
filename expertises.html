@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur data-page="expertises">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Expertises : Artic!Agency</title>
+<meta name="description" content="Conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://artic-maquette.vercel.app/expertises">
+<style>:root{--fond:#f3eee4;--texte:#161412;--voile-fond:#e4d9c6;--ouverture-fond:#f3eee4;--menu-fond:#161412}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(innerWidth<720){d.classList.add('nav-compacte');setTimeout(function(){if(!d.classList.contains('demarre'))d.classList.remove('nav-compacte');},2000);}})();</script>
+<link rel="preload" href="/assets/polices/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f3eee4">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artic!Agency">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Expertises : Artic!Agency">
+<meta property="og:description" content="Conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.">
+<meta property="og:url" content="https://artic-maquette.vercel.app/expertises">
+<meta property="og:image" content="https://artic-maquette.vercel.app/assets/partage/expertises-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Les huit expertises d’Artic!Agency">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Artic!Agency","description":"Conseil et gestion en hôtellerie-restauration : conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.","slogan":"L’Art de l’Intelligence Commerciale en Hospitalité","email":"michel@artic.agency","telephone":"+41 78 630 02 72","address":{"@type":"PostalAddress","streetAddress":"Rue des Remparts 2","postalCode":"1350","addressLocality":"Orbe","addressRegion":"Vaud","addressCountry":"CH"},"founder":{"@type":"Person","name":"Michel Grand","jobTitle":"Fondateur"},"foundingDate":"2021","areaServed":"CH","sameAs":["https://www.instagram.com/artic.agency/","https://www.linkedin.com/company/michel-grand-ch/"],"url":"https://www.artic.agency"}</script>
+</head>
+<body id="haut">
+<div data-voile aria-hidden="true"><div class="voile-contenu"><span class="voile-logo" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span data-voile-libelle>Expertises</span></div></div>
+<div class="ouverture-panneau" data-ouverture data-gouttiere="#f3eee4" aria-hidden="true">
+  <div class="intro-demi intro-demi--haut"></div>
+  <div class="intro-demi intro-demi--bas"></div>
+  <p class="intro-phrase" data-typo-ignorer><span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="0">A</span><span class="intro-c" data-garde="1">R</span><span class="intro-c" data-garde="2">T</span></span> <span class="intro-p"><span class="intro-c">D</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="3">I</span><span class="intro-c">N</span><span class="intro-c">T</span><span class="intro-c">E</span><span class="intro-c">L</span><span class="intro-c">L</span><span class="intro-c">I</span><span class="intro-c">G</span><span class="intro-c">E</span><span class="intro-c">N</span><span class="intro-c">C</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c" data-garde="4">C</span><span class="intro-c">O</span><span class="intro-c">M</span><span class="intro-c">M</span><span class="intro-c">E</span><span class="intro-c">R</span><span class="intro-c">C</span><span class="intro-c">I</span><span class="intro-c">A</span><span class="intro-c">L</span><span class="intro-c">E</span></span> </p>
+  <p class="intro-mot" data-typo-ignorer data-effet="bouchon"><span class="intro-l">A</span><span class="intro-l">R</span><span class="intro-l">T</span><span class="intro-l">I</span><span class="intro-l">C</span><span class="intro-point">!</span></p>
+  <span class="intro-onde"></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Artic!Agency, retour à l’accueil"><span class="logo-mot" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span class="logo-agence">AGENCY</span></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/expertises" class="nav-lien" data-libelle="Expertises" aria-current="page">Expertises</a></li><li><a href="/projets" class="nav-lien" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" class="nav-lien" data-libelle="À propos">À propos</a></li><li><a href="/journal" class="nav-lien" data-libelle="Journal">Journal</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a href="/contact" class="bouton bouton--entete" data-libelle="Contact" data-survol="magnetique">Premier échange</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span class="menu-icone" aria-hidden="true"><span></span><span></span></span><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-grille">
+    <ul><li style="--i:0"><span class="menu-num" aria-hidden="true">01</span><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><span class="menu-num" aria-hidden="true">02</span><a href="/expertises" class="menu-lien" data-libelle="Expertises" aria-current="page">Expertises</a></li><li style="--i:2"><span class="menu-num" aria-hidden="true">03</span><a href="/projets" class="menu-lien" data-libelle="Projets">Projets</a></li><li style="--i:3"><span class="menu-num" aria-hidden="true">04</span><a href="/a-propos" class="menu-lien" data-libelle="À propos">À propos</a></li><li style="--i:4"><span class="menu-num" aria-hidden="true">05</span><a href="/journal" class="menu-lien" data-libelle="Journal">Journal</a></li><li style="--i:5"><span class="menu-num" aria-hidden="true">06</span><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+    <div class="menu-infos">
+      <p><a class="bouton bouton--clair" href="tel:+41786300272">Appeler +41 78 630 02 72</a></p>
+      <p><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+      <p>Rue des Remparts 2<br>1350 Orbe</p>
+      <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+    </div>
+  </div>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="page-tete" id="debut">
+  <div class="conteneur page-tete-grille">
+    <div>
+      <p class="surtitre">Expertises</p>
+      <h1 data-anime="lignes">Huit expertises, un seul cycle</h1>
+      <p class="chapeau" data-anime>Mes interventions couvrent tout le cycle de vie d’un projet ou d’une entreprise. De la conception à la transmission, en passant par la gestion et la transformation, je mets mon expérience et ma créativité au service de vos ambitions.</p>
+      <p data-anime><a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un premier échange</a></p>
+    </div>
+    <figure class="media page-tete-media" data-grok data-fx="parallaxe" style="--cadrage:50% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/expertises-ouverture-mobile-640.webp 640w, /assets/images/grok/expertises-ouverture-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 46vw">
+    <img src="/assets/images/grok/expertises-ouverture-1168.webp" srcset="/assets/images/grok/expertises-ouverture-640.webp 640w, /assets/images/grok/expertises-ouverture-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 46vw" alt="Table de travail avec menus, plans et échantillons (illustration)" width="1168" height="784" fetchpriority="high" loading="eager" decoding="sync">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<section class="chapitres" id="chapitres">
+  <div class="conteneur chapitres-grille">
+    <aside class="sommaire-expertises" data-effet="anneau-sommaire" aria-label="Les huit expertises">
+      <svg class="sommaire-anneau" viewBox="0 0 120 120" aria-hidden="true"><g transform="rotate(-90 60 60)"><circle class="sommaire-arc" data-arc="0" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="0.00"/><circle class="sommaire-arc" data-arc="1" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="-36.13"/><circle class="sommaire-arc" data-arc="2" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="-72.26"/><circle class="sommaire-arc" data-arc="3" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="-108.38"/><circle class="sommaire-arc" data-arc="4" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="-144.51"/><circle class="sommaire-arc" data-arc="5" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="-180.64"/><circle class="sommaire-arc" data-arc="6" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="-216.77"/><circle class="sommaire-arc" data-arc="7" cx="60" cy="60" r="46" stroke-dasharray="32.13 256.90" stroke-dashoffset="-252.90"/></g><text class="sommaire-num" x="60" y="66" text-anchor="middle">01</text></svg>
+      <p class="sommaire-courant" aria-hidden="true">Conception</p>
+      <ol class="sommaire-liste"><li><a href="#conception" data-sommaire-lien="0"><span>01</span>Conception</a></li><li><a href="#gestion" data-sommaire-lien="1"><span>02</span>Gestion</a></li><li><a href="#transformation" data-sommaire-lien="2"><span>03</span>Transformation</a></li><li><a href="#transition" data-sommaire-lien="3"><span>04</span>Transition</a></li><li><a href="#transmission" data-sommaire-lien="4"><span>05</span>Transmission</a></li><li><a href="#recrutement" data-sommaire-lien="5"><span>06</span>Recrutement &amp; Management</a></li><li><a href="#design-interieur" data-sommaire-lien="6"><span>07</span>Design d’intérieurs</a></li><li><a href="#durabilite" data-sommaire-lien="7"><span>08</span>Durabilité &amp; Digitalisation</a></li></ol>
+    </aside>
+    <div class="chapitres-liste">
+      <article class="chapitre" id="conception" data-chapitre="0" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>01</span> Étape du cycle</p>
+          <h2 data-anime="lignes">Conception</h2>
+          <p class="hashtags">#DESIGN #VIRTUEL #MARKETING #TOURISME</p>
+        </header>
+        <figure class="media chapitre-media chapitre-media--rond" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/cycle-conception-1168.webp" srcset="/assets/images/grok/cycle-conception-640.webp 640w, /assets/images/grok/cycle-conception-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 52vw" alt="Plans d’un restaurant et échantillons de matériaux sur une table de travail (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>Concevoir en hospitalité, c’est imaginer des lieux et des expériences qui racontent une histoire, la vôtre. Chaque projet reflète vos valeurs et votre identité, tout en créant une connexion sincère avec vos clients.</p><p>Je cherche l’équilibre entre rêve et réalité, entre authenticité et innovation, pour offrir des concepts qui inspirent aujourd’hui et restent pertinents demain.</p></div>
+          <div><h3>La méthode</h3><p>La conception en hospitalité exige une approche structurée et visionnaire. À partir de vos ressources, de vos contraintes et de vos objectifs, j’élabore des concepts opérationnels, économiquement viables et durables.</p><p>Étude de marché, planification des espaces, identité de marque et anticipation des tendances futures : chaque étape est pensée pour transformer vos idées en projets concrets et performants.</p></div>
+        </div>
+        <p><a href="/contact?expertise=conception" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Conception</span></a></p>
+      </article><article class="chapitre" id="gestion" data-chapitre="1" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>02</span> Étape du cycle</p>
+          <h2 data-anime="lignes">Gestion</h2>
+          <p class="hashtags">#FINANCIÈRE #OPÉRATIONNELLE #P&amp;L #COSTCONTROL</p>
+        </header>
+        <figure class="media chapitre-media chapitre-media--rond" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/cycle-gestion-1168.webp" srcset="/assets/images/grok/cycle-gestion-640.webp 640w, /assets/images/grok/cycle-gestion-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 52vw" alt="Passe d’une cuisine de restaurant en plein service (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>Gérer en hospitalité, c’est avant tout prendre soin des personnes. Derrière chaque opération, il y a des équipes, des clients et des histoires uniques. Je place l’humain au centre de mes actions, en cultivant l’écoute, la bienveillance et la flexibilité.</p><p>Ma mission : créer des environnements où chacun se sent reconnu, inspiré et fier de contribuer à l’excellence.</p></div>
+          <div><h3>La méthode</h3><p>La gestion en hospitalité repose sur une organisation précise et adaptable. Grâce à des outils de pilotage performants, j’optimise les opérations, de la planification des ressources à la gestion des coûts, en passant par le contrôle qualité.</p><p>L’objectif : allier rigueur opérationnelle et flexibilité stratégique pour garantir l’excellence du service et la satisfaction durable des clients.</p></div>
+        </div>
+        <p><a href="/contact?expertise=gestion" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Gestion</span></a></p>
+      </article><article class="chapitre" id="transformation" data-chapitre="2" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>03</span> Étape du cycle</p>
+          <h2 data-anime="lignes">Transformation</h2>
+          <p class="hashtags">#NUMÉRIQUE #OPÉRATIONNELLE #ARCHITECTURALE #DÉCORATIVE #REBRANDING</p>
+        </header>
+        <figure class="media chapitre-media chapitre-media--rond" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/cycle-transformation-1168.webp" srcset="/assets/images/grok/cycle-transformation-640.webp 640w, /assets/images/grok/cycle-transformation-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 52vw" alt="Salle de restaurant en travaux, une chaise dans un rayon de lumière (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>La vraie transformation commence dans les esprits. Elle consiste à changer les regards, à ouvrir les mentalités et à libérer les énergies collectives.</p><p>En accompagnant vos équipes avec bienveillance et créativité, je favorise l’adoption de nouvelles pratiques et la confiance dans le changement.</p><p>Mon but : transformer la peur en enthousiasme et bâtir une culture durable où chaque individu se sent acteur de l’avenir.</p></div>
+          <div><h3>La méthode</h3><p>La transformation exige méthode et innovation. Grâce à mes audits, à des outils digitaux et à l’optimisation des processus, j’aide mes clients à gagner en efficacité et en agilité.</p><p>Digitalisation, automatisation, réorganisation : chaque action vise à simplifier, fiabiliser et accélérer vos opérations. Le résultat ? Des organisations plus performantes, durables et prêtes à relever les défis de demain.</p></div>
+        </div>
+        <p><a href="/contact?expertise=transformation" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Transformation</span></a></p>
+      </article><article class="chapitre" id="transition" data-chapitre="3" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>04</span> Étape du cycle</p>
+          <h2 data-anime="lignes">Transition</h2>
+          <p class="hashtags">#ÉCOLOGIQUE #DIGITALE #ÉNERGÉTIQUE</p>
+        </header>
+        <figure class="media chapitre-media chapitre-media--rond" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/cycle-transition-1168.webp" srcset="/assets/images/grok/cycle-transition-640.webp 640w, /assets/images/grok/cycle-transition-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 52vw" alt="Porte d’un hôtel de montagne entrouverte au lever du jour (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>La transition en hospitalité, c’est accompagner les moments de changement avec sérénité. Qu’il s’agisse d’un nouveau marché ou d’une nouvelle équipe, je mets l’accent sur l’écoute, la confiance et la clarté.</p><p>Ma mission : transformer ces passages délicats en opportunités positives, où chacun trouve sa place et contribue à bâtir un futur solide.</p></div>
+          <div><h3>La méthode</h3><p>Les phases de transition exigent méthode et anticipation. Je structure chaque étape : diagnostic des enjeux, plan d’action clair, accompagnement opérationnel et suivi rigoureux.</p><p>Qu’il s’agisse de restructuration, de diversification ou de changements organisationnels, j’apporte une vision pragmatique et stratégique pour sécuriser la continuité et garantir la performance à long terme.</p></div>
+        </div>
+        <p><a href="/contact?expertise=transition" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Transition</span></a></p>
+      </article><article class="chapitre" id="transmission" data-chapitre="4" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>05</span> Étape du cycle</p>
+          <h2 data-anime="lignes">Transmission</h2>
+          <p class="hashtags">#ENSEIGNEMENT #FORMATION #ENTREPRISES #COMMERCES</p>
+        </header>
+        <figure class="media chapitre-media chapitre-media--rond" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/cycle-transmission-1168.webp" srcset="/assets/images/grok/cycle-transmission-640.webp 640w, /assets/images/grok/cycle-transmission-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 52vw" alt="Les mains d’un chef guident celles d’un apprenti pendant le dressage d’une assiette (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>Transmettre, c’est plus que former : c’est honorer un héritage. Chaque savoir-faire, chaque valeur partagée est une graine qui se perpétue et s’enrichit avec le temps.</p><p>J’accompagne ces passages de relais avec respect, clarté et humanité, pour que l’histoire continue de s’écrire tout en ouvrant la voie aux générations futures.</p></div>
+          <div><h3>La méthode</h3><p>La transmission exige méthode et précision. Je structure les passages de relais en capitalisant les savoir-faire, procédures et valeurs qui font la force de votre organisation.</p><p>Grâce à des outils de formation, de mentorat et de documentation, je garantis la continuité et la pérennité de vos compétences clés, tout en facilitant l’intégration des nouvelles générations.</p></div>
+        </div>
+        <p><a href="/contact?expertise=transmission" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Transmission</span></a></p>
+      </article><article class="chapitre" id="recrutement" data-chapitre="5" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>06</span> Tout au long du cycle</p>
+          <h2 data-anime="lignes">Recrutement &amp; Management</h2>
+          <p class="hashtags">#CHEF #SOMMELIER #MANAGER #EXECUTIVE</p>
+        </header>
+        <figure class="media chapitre-media" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/expertise-recrutement-784.webp" srcset="/assets/images/grok/expertise-recrutement-640.webp 640w, /assets/images/grok/expertise-recrutement-784.webp 784w" sizes="(max-width: 760px) 100vw, 52vw" alt="Vestes de chef et tabliers suspendus dans un vestiaire (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>Recruter et manager en hospitalité, c’est avant tout révéler des vocations. Derrière chaque chef, sommelier ou hôtelier, il y a une passion et un potentiel uniques.</p><p>Je valorise ces talents, je les aide à grandir et à s’exprimer pleinement. Mon approche place le leadership positif au centre, pour créer des équipes soudées, inspirées et fières de porter l’excellence au quotidien.</p></div>
+          <div><h3>La méthode</h3><p>Le recrutement et le management en hospitalité nécessitent méthode et exigence. J’identifie les profils adaptés grâce à une évaluation fine des compétences et des valeurs, puis je construis des parcours de développement sur mesure : formation, mentorat, gestion de carrière.</p><p>En instaurant une culture de leadership collaboratif, je travaille à une performance durable, à la fidélisation des talents et à une qualité constante des services.</p></div>
+        </div>
+        <p><a href="/contact?expertise=recrutement" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Recrutement &amp; Management</span></a></p>
+      </article><article class="chapitre" id="design-interieur" data-chapitre="6" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>07</span> Tout au long du cycle</p>
+          <h2 data-anime="lignes">Design d’intérieurs</h2>
+        </header>
+        <figure class="media chapitre-media" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/expertise-design-interieur-784.webp" srcset="/assets/images/grok/expertise-design-interieur-640.webp 640w, /assets/images/grok/expertise-design-interieur-784.webp 784w" sizes="(max-width: 760px) 100vw, 52vw" alt="Bar d’hôtel en noyer et laiton, vide, en lumière douce (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>Le design d’intérieur en hospitalité, c’est bien plus que des murs et du mobilier : c’est une expérience vécue. Chaque espace raconte une histoire, reflète une identité et crée une émotion.</p><p>Je place l’humain au centre, en imaginant des lieux où esthétique, confort et sens se rencontrent, pour que chaque client se sente à la fois accueilli et inspiré.</p></div>
+          <div><h3>La méthode</h3><p>Concevoir des intérieurs en hospitalité demande rigueur et créativité. J’associe esthétique, ergonomie et identité de marque, tout en intégrant des matériaux durables et des pratiques responsables.</p><p>De la planification des flux à l’optimisation des espaces, chaque détail est pensé pour offrir fonctionnalité, cohérence et valeur ajoutée à vos projets hôteliers et de restauration.</p></div>
+        </div>
+        <p><a href="/contact?expertise=design-interieur" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Design d’intérieurs</span></a></p>
+      </article><article class="chapitre" id="durabilite" data-chapitre="7" data-section>
+        <header class="chapitre-tete">
+          <p class="chapitre-num"><span>08</span> Tout au long du cycle</p>
+          <h2 data-anime="lignes">Durabilité &amp; Digitalisation</h2>
+        </header>
+        <figure class="media chapitre-media" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:16 / 10">
+  <picture>
+    <img src="/assets/images/grok/expertise-durabilite-784.webp" srcset="/assets/images/grok/expertise-durabilite-640.webp 640w, /assets/images/grok/expertise-durabilite-784.webp 784w" sizes="(max-width: 760px) 100vw, 52vw" alt="Potager sur le toit d’un hôtel en ville, à l’heure dorée (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="chapitre-colonnes">
+          <div><h3>L’esprit</h3><p>La durabilité et la digitalisation transforment l’hospitalité en profondeur. Il s’agit de créer des expériences respectueuses de la planète et des personnes, tout en simplifiant la vie des équipes et des clients.</p><p>Je crois à une hospitalité où la technologie soutient l’humain, où l’innovation rime avec responsabilité, et où chaque geste compte pour construire un futur plus harmonieux et durable.</p></div>
+          <div><h3>La méthode</h3><p>Je développe des stratégies concrètes pour intégrer la responsabilité environnementale et sociale au cœur de vos opérations, tout en tirant parti de la digitalisation.</p><p>Optimisation énergétique, réduction des déchets, traçabilité numérique, automatisation des processus : chaque action vise à combiner performance économique, profit éthique et impact positif à long terme, pour une hospitalité moderne, efficace et durable.</p></div>
+        </div>
+        <p><a href="/contact?expertise=durabilite" class="lien-fleche" data-libelle="Contact">Parler de ce besoin<span class="visuellement-cache"> : Durabilité &amp; Digitalisation</span></a></p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="fin fin--court" id="fin">
+  <div class="conteneur fin-grille">
+    <figure class="media fin-media" data-grok data-fx="zoom" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/legal-confidentialite-1168.webp" srcset="/assets/images/grok/legal-confidentialite-640.webp 640w, /assets/images/grok/legal-confidentialite-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 40vw" alt="Clé posée sur un comptoir de réception, près d’une sonnette (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div class="fin-texte">
+      <h2 class="titre-section" data-anime="lignes">Une étape à franchir ?</h2>
+      <p data-anime>Dites-moi où vous en êtes : je vous propose un premier échange pour comprendre votre projet.</p>
+      <p class="fin-actions" data-anime><a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-survol="magnetique">Demander un premier échange</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <p class="pied-titre">Contact</p>
+      <p>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</p>
+      <p><a href="tel:+41786300272">+41 78 630 02 72</a><br><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/expertises" data-libelle="Expertises" aria-current="page">Expertises</a></li><li><a href="/projets" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" data-libelle="À propos">À propos</a></li><li><a href="/journal" data-libelle="Journal">Journal</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/mentions-legales" data-libelle="Mentions légales">Mentions légales</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Suivre</p>
+      <ul><li><a href="https://www.instagram.com/artic.agency/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Instagram</a></li><li><a href="https://www.linkedin.com/company/michel-grand-ch/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">LinkedIn</a></li></ul>
+    </div>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-marque" aria-hidden="true" data-typo-ignorer><span>ARTIC<span class="logo-point">!</span></span><span class="pied-agence">AGENCY</span></div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le client.</p><p>© <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> · Orbe</p></div>
+  <p id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</p>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+41786300272">Appeler</a>
+  <a href="/contact" class="bouton" data-libelle="Contact">Premier échange</a>
+</div>
+</body>
+</html>

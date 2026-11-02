@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur data-page="accueil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Artic!Agency : conseil et gestion en hôtellerie-restauration, Orbe</title>
+<meta name="description" content="Michel Grand accompagne hôtels, restaurants et porteurs de projets sur tout le cycle de vie : conception, gestion, transformation, transition et transmission.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://artic-maquette.vercel.app/">
+<style>:root{--fond:#f3eee4;--texte:#161412;--voile-fond:#e4d9c6;--ouverture-fond:#f3eee4;--menu-fond:#161412}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(innerWidth<720){d.classList.add('nav-compacte');setTimeout(function(){if(!d.classList.contains('demarre'))d.classList.remove('nav-compacte');},2000);}})();</script>
+<link rel="preload" href="/assets/polices/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f3eee4">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artic!Agency">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Artic!Agency : conseil et gestion en hôtellerie-restauration, Orbe">
+<meta property="og:description" content="Michel Grand accompagne hôtels, restaurants et porteurs de projets sur tout le cycle de vie : conception, gestion, transformation, transition et transmission.">
+<meta property="og:url" content="https://artic-maquette.vercel.app/">
+<meta property="og:image" content="https://artic-maquette.vercel.app/assets/partage/accueil-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Artic!Agency, l’Art de l’Intelligence Commerciale en Hospitalité">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Artic!Agency","description":"Conseil et gestion en hôtellerie-restauration : conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.","slogan":"L’Art de l’Intelligence Commerciale en Hospitalité","email":"michel@artic.agency","telephone":"+41 78 630 02 72","address":{"@type":"PostalAddress","streetAddress":"Rue des Remparts 2","postalCode":"1350","addressLocality":"Orbe","addressRegion":"Vaud","addressCountry":"CH"},"founder":{"@type":"Person","name":"Michel Grand","jobTitle":"Fondateur"},"foundingDate":"2021","areaServed":"CH","sameAs":["https://www.instagram.com/artic.agency/","https://www.linkedin.com/company/michel-grand-ch/"],"url":"https://www.artic.agency"}</script>
+</head>
+<body id="haut">
+<div data-voile aria-hidden="true"><div class="voile-contenu"><span class="voile-logo" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span data-voile-libelle>Accueil</span></div></div>
+<div class="ouverture-panneau" data-ouverture data-gouttiere="#f3eee4" aria-hidden="true">
+  <div class="intro-demi intro-demi--haut"></div>
+  <div class="intro-demi intro-demi--bas"></div>
+  <p class="intro-phrase" data-typo-ignorer><span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="0">A</span><span class="intro-c" data-garde="1">R</span><span class="intro-c" data-garde="2">T</span></span> <span class="intro-p"><span class="intro-c">D</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="3">I</span><span class="intro-c">N</span><span class="intro-c">T</span><span class="intro-c">E</span><span class="intro-c">L</span><span class="intro-c">L</span><span class="intro-c">I</span><span class="intro-c">G</span><span class="intro-c">E</span><span class="intro-c">N</span><span class="intro-c">C</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c" data-garde="4">C</span><span class="intro-c">O</span><span class="intro-c">M</span><span class="intro-c">M</span><span class="intro-c">E</span><span class="intro-c">R</span><span class="intro-c">C</span><span class="intro-c">I</span><span class="intro-c">A</span><span class="intro-c">L</span><span class="intro-c">E</span></span> </p>
+  <p class="intro-mot" data-typo-ignorer data-effet="bouchon"><span class="intro-l">A</span><span class="intro-l">R</span><span class="intro-l">T</span><span class="intro-l">I</span><span class="intro-l">C</span><span class="intro-point">!</span></p>
+  <span class="intro-onde"></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Artic!Agency, retour à l’accueil" aria-current="page"><span class="logo-mot" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span class="logo-agence">AGENCY</span></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/expertises" class="nav-lien" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" class="nav-lien" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" class="nav-lien" data-libelle="À propos">À propos</a></li><li><a href="/journal" class="nav-lien" data-libelle="Journal">Journal</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a href="/contact" class="bouton bouton--entete" data-libelle="Contact" data-survol="magnetique">Premier échange</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span class="menu-icone" aria-hidden="true"><span></span><span></span></span><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-grille">
+    <ul><li style="--i:0"><span class="menu-num" aria-hidden="true">01</span><a href="/" class="menu-lien" data-libelle="Accueil" aria-current="page">Accueil</a></li><li style="--i:1"><span class="menu-num" aria-hidden="true">02</span><a href="/expertises" class="menu-lien" data-libelle="Expertises">Expertises</a></li><li style="--i:2"><span class="menu-num" aria-hidden="true">03</span><a href="/projets" class="menu-lien" data-libelle="Projets">Projets</a></li><li style="--i:3"><span class="menu-num" aria-hidden="true">04</span><a href="/a-propos" class="menu-lien" data-libelle="À propos">À propos</a></li><li style="--i:4"><span class="menu-num" aria-hidden="true">05</span><a href="/journal" class="menu-lien" data-libelle="Journal">Journal</a></li><li style="--i:5"><span class="menu-num" aria-hidden="true">06</span><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+    <div class="menu-infos">
+      <p><a class="bouton bouton--clair" href="tel:+41786300272">Appeler +41 78 630 02 72</a></p>
+      <p><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+      <p>Rue des Remparts 2<br>1350 Orbe</p>
+      <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+    </div>
+  </div>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="hero" id="debut">
+  <div class="hero-texte">
+    <p class="surtitre hero-sur" data-anime="gsap">Conseil et gestion en hôtellerie-restauration</p>
+    <h1 class="hero-titre" data-superpose>
+      <span class="ligne-masque"><span class="hero-ligne" data-anime="gsap">L’Art de l’Intelligence</span></span>
+      <span class="ligne-masque"><span class="hero-ligne" data-anime="gsap"><em>Commerciale</em></span></span>
+      <span class="ligne-masque"><span class="hero-ligne" data-anime="gsap">en Hospitalité<span class="titre-point" aria-hidden="true"> !</span></span></span>
+    </h1>
+    <p class="hero-intro" data-anime="gsap">J’accompagne les entreprises et les porteurs de projets dans leurs défis de transformation, de transition et de croissance.</p>
+    <p class="hero-actions" data-anime="gsap">
+      <a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un premier échange</a>
+      <span class="hero-info" data-info-cle>Michel Grand, fondateur · Orbe, Suisse</span>
+    </p>
+  </div>
+  <figure class="media hero-media" data-grok data-fx="onde" style="--cadrage:50% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/accueil-ouverture-mobile-640.webp 640w, /assets/images/grok/accueil-ouverture-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 52vw">
+    <img src="/assets/images/grok/accueil-ouverture-1168.webp" srcset="/assets/images/grok/accueil-ouverture-640.webp 640w, /assets/images/grok/accueil-ouverture-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 52vw" alt="Salle de restaurant dressée au petit matin (illustration)" width="1168" height="784" fetchpriority="high" loading="eager" decoding="sync">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <a class="hero-defiler" href="#manifeste" aria-label="Faire défiler" data-sans-transition><span aria-hidden="true"></span></a>
+</section>
+<section class="manifeste" id="manifeste">
+  <div class="conteneur manifeste-grille">
+    <div class="manifeste-texte">
+      <h2 class="titre-section" data-anime="lignes">Transformer l’expertise en opportunités durables</h2>
+      <p class="encre" data-effet="encre"><span class="mot">Avec</span> <span class="mot">une</span> <span class="mot">vision</span> <span class="mot">globale,</span> <span class="mot">je</span> <span class="mot">mets</span> <span class="mot">l’accent</span> <span class="mot">sur</span> <span class="mot">l’excellence,</span> <span class="mot">la</span> <span class="mot">durabilité</span> <span class="mot">et</span> <span class="mot">l’humain,</span> <span class="mot">pour</span> <span class="mot">bâtir</span> <span class="mot">des</span> <span class="mot">solutions</span> <span class="mot">créatives</span> <span class="mot">qui</span> <span class="mot">allient</span> <span class="mot">performance</span> <span class="mot">et</span> <span class="mot-cle"><span class="mot">profit</span> <span class="mot">éthique.</span></span> <span class="mot">Ici,</span> <span class="mot">chaque</span> <span class="mot">mission</span> <span class="mot">est</span> <span class="mot">unique,</span> <span class="mot">chaque</span> <span class="mot">résultat</span> <span class="mot">est</span> <span class="mot">concret,</span> <span class="mot">et</span> <span class="mot">chaque</span> <span class="mot">collaboration</span> <span class="mot">est</span> <span class="mot">un</span> <span class="mot">engagement</span> <span class="mot">sincère.</span></p>
+    </div>
+    <figure class="media manifeste-media" data-grok data-fx="parallaxe" data-fx-force="12" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/accueil-manifeste-lin-784.webp" srcset="/assets/images/grok/accueil-manifeste-lin-640.webp 640w, /assets/images/grok/accueil-manifeste-lin-784.webp 784w" sizes="(max-width: 760px) 100vw, 30vw" alt="Nappe de lin crème en gros plan (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+  <div class="conteneur piliers">
+    <h3 class="petit-titre">Mon approche repose sur trois piliers</h3>
+    <ol class="piliers-liste" data-anime="cascade">
+      <li><span class="pilier-num">01</span><h4>L’Excellence</h4><p>Viser toujours le meilleur, sans compromis sur la qualité.</p></li><li><span class="pilier-num">02</span><h4>La Durabilité</h4><p>Créer de la valeur qui perdure, pour les entreprises, les équipes et la planète.</p></li><li><span class="pilier-num">03</span><h4>L’Humain</h4><p>Placer les relations et la confiance au centre de chaque action.</p></li>
+    </ol>
+  </div>
+</section>
+<section class="cycle" id="cycle">
+  <div class="conteneur cycle-tete">
+    <p class="surtitre">Le cycle</p>
+    <h2 class="titre-section" data-anime="lignes">De la conception à la transmission</h2>
+    <p class="chapeau" data-anime>Mes interventions couvrent tout le cycle de vie d’un projet ou d’une entreprise.</p>
+  </div>
+  <div class="conteneur cycle-corps">
+    <div class="cycle-scene" data-effet="cycle">
+      <div class="cycle-cadre">
+        <svg class="cycle-svg" viewBox="0 0 700 700" aria-hidden="true">
+  <g class="cycle-tourne">
+    <g class="cycle-graduations"><line x1="350.0" y1="74.0" x2="350.0" y2="52.0"/><line x1="364.4" y1="74.4" x2="364.8" y2="68.4"/><line x1="378.8" y1="75.5" x2="379.5" y2="69.5"/><line x1="393.2" y1="77.4" x2="394.1" y2="71.5"/><line x1="407.4" y1="80.0" x2="408.6" y2="74.2"/><line x1="421.4" y1="83.4" x2="423.0" y2="77.6"/><line x1="435.3" y1="87.5" x2="439.0" y2="76.1"/><line x1="448.9" y1="92.3" x2="451.1" y2="86.7"/><line x1="462.3" y1="97.9" x2="464.7" y2="92.4"/><line x1="475.3" y1="104.1" x2="478.0" y2="98.7"/><line x1="488.0" y1="111.0" x2="491.0" y2="105.8"/><line x1="500.3" y1="118.5" x2="503.6" y2="113.5"/><line x1="512.2" y1="126.7" x2="519.3" y2="117.0"/><line x1="523.7" y1="135.5" x2="527.5" y2="130.8"/><line x1="534.7" y1="144.9" x2="538.7" y2="140.4"/><line x1="545.2" y1="154.8" x2="549.4" y2="150.6"/><line x1="555.1" y1="165.3" x2="559.6" y2="161.3"/><line x1="564.5" y1="176.3" x2="569.2" y2="172.5"/><line x1="573.3" y1="187.8" x2="583.0" y2="180.7"/><line x1="581.5" y1="199.7" x2="586.5" y2="196.4"/><line x1="589.0" y1="212.0" x2="594.2" y2="209.0"/><line x1="595.9" y1="224.7" x2="601.3" y2="222.0"/><line x1="602.1" y1="237.7" x2="607.6" y2="235.3"/><line x1="607.7" y1="251.1" x2="613.3" y2="248.9"/><line x1="612.5" y1="264.7" x2="633.4" y2="257.9"/><line x1="616.6" y1="278.6" x2="622.4" y2="277.0"/><line x1="620.0" y1="292.6" x2="625.8" y2="291.4"/><line x1="622.6" y1="306.8" x2="628.5" y2="305.9"/><line x1="624.5" y1="321.2" x2="630.5" y2="320.5"/><line x1="625.6" y1="335.6" x2="631.6" y2="335.2"/><line x1="626.0" y1="350.0" x2="638.0" y2="350.0"/><line x1="625.6" y1="364.4" x2="631.6" y2="364.8"/><line x1="624.5" y1="378.8" x2="630.5" y2="379.5"/><line x1="622.6" y1="393.2" x2="628.5" y2="394.1"/><line x1="620.0" y1="407.4" x2="625.8" y2="408.6"/><line x1="616.6" y1="421.4" x2="622.4" y2="423.0"/><line x1="612.5" y1="435.3" x2="623.9" y2="439.0"/><line x1="607.7" y1="448.9" x2="613.3" y2="451.1"/><line x1="602.1" y1="462.3" x2="607.6" y2="464.7"/><line x1="595.9" y1="475.3" x2="601.3" y2="478.0"/><line x1="589.0" y1="488.0" x2="594.2" y2="491.0"/><line x1="581.5" y1="500.3" x2="586.5" y2="503.6"/><line x1="573.3" y1="512.2" x2="583.0" y2="519.3"/><line x1="564.5" y1="523.7" x2="569.2" y2="527.5"/><line x1="555.1" y1="534.7" x2="559.6" y2="538.7"/><line x1="545.2" y1="545.2" x2="549.4" y2="549.4"/><line x1="534.7" y1="555.1" x2="538.7" y2="559.6"/><line x1="523.7" y1="564.5" x2="527.5" y2="569.2"/><line x1="512.2" y1="573.3" x2="525.2" y2="591.1"/><line x1="500.3" y1="581.5" x2="503.6" y2="586.5"/><line x1="488.0" y1="589.0" x2="491.0" y2="594.2"/><line x1="475.3" y1="595.9" x2="478.0" y2="601.3"/><line x1="462.3" y1="602.1" x2="464.7" y2="607.6"/><line x1="448.9" y1="607.7" x2="451.1" y2="613.3"/><line x1="435.3" y1="612.5" x2="439.0" y2="623.9"/><line x1="421.4" y1="616.6" x2="423.0" y2="622.4"/><line x1="407.4" y1="620.0" x2="408.6" y2="625.8"/><line x1="393.2" y1="622.6" x2="394.1" y2="628.5"/><line x1="378.8" y1="624.5" x2="379.5" y2="630.5"/><line x1="364.4" y1="625.6" x2="364.8" y2="631.6"/><line x1="350.0" y1="626.0" x2="350.0" y2="638.0"/><line x1="335.6" y1="625.6" x2="335.2" y2="631.6"/><line x1="321.2" y1="624.5" x2="320.5" y2="630.5"/><line x1="306.8" y1="622.6" x2="305.9" y2="628.5"/><line x1="292.6" y1="620.0" x2="291.4" y2="625.8"/><line x1="278.6" y1="616.6" x2="277.0" y2="622.4"/><line x1="264.7" y1="612.5" x2="261.0" y2="623.9"/><line x1="251.1" y1="607.7" x2="248.9" y2="613.3"/><line x1="237.7" y1="602.1" x2="235.3" y2="607.6"/><line x1="224.7" y1="595.9" x2="222.0" y2="601.3"/><line x1="212.0" y1="589.0" x2="209.0" y2="594.2"/><line x1="199.7" y1="581.5" x2="196.4" y2="586.5"/><line x1="187.8" y1="573.3" x2="174.8" y2="591.1"/><line x1="176.3" y1="564.5" x2="172.5" y2="569.2"/><line x1="165.3" y1="555.1" x2="161.3" y2="559.6"/><line x1="154.8" y1="545.2" x2="150.6" y2="549.4"/><line x1="144.9" y1="534.7" x2="140.4" y2="538.7"/><line x1="135.5" y1="523.7" x2="130.8" y2="527.5"/><line x1="126.7" y1="512.2" x2="117.0" y2="519.3"/><line x1="118.5" y1="500.3" x2="113.5" y2="503.6"/><line x1="111.0" y1="488.0" x2="105.8" y2="491.0"/><line x1="104.1" y1="475.3" x2="98.7" y2="478.0"/><line x1="97.9" y1="462.3" x2="92.4" y2="464.7"/><line x1="92.3" y1="448.9" x2="86.7" y2="451.1"/><line x1="87.5" y1="435.3" x2="76.1" y2="439.0"/><line x1="83.4" y1="421.4" x2="77.6" y2="423.0"/><line x1="80.0" y1="407.4" x2="74.2" y2="408.6"/><line x1="77.4" y1="393.2" x2="71.5" y2="394.1"/><line x1="75.5" y1="378.8" x2="69.5" y2="379.5"/><line x1="74.4" y1="364.4" x2="68.4" y2="364.8"/><line x1="74.0" y1="350.0" x2="62.0" y2="350.0"/><line x1="74.4" y1="335.6" x2="68.4" y2="335.2"/><line x1="75.5" y1="321.2" x2="69.5" y2="320.5"/><line x1="77.4" y1="306.8" x2="71.5" y2="305.9"/><line x1="80.0" y1="292.6" x2="74.2" y2="291.4"/><line x1="83.4" y1="278.6" x2="77.6" y2="277.0"/><line x1="87.5" y1="264.7" x2="66.6" y2="257.9"/><line x1="92.3" y1="251.1" x2="86.7" y2="248.9"/><line x1="97.9" y1="237.7" x2="92.4" y2="235.3"/><line x1="104.1" y1="224.7" x2="98.7" y2="222.0"/><line x1="111.0" y1="212.0" x2="105.8" y2="209.0"/><line x1="118.5" y1="199.7" x2="113.5" y2="196.4"/><line x1="126.7" y1="187.8" x2="117.0" y2="180.7"/><line x1="135.5" y1="176.3" x2="130.8" y2="172.5"/><line x1="144.9" y1="165.3" x2="140.4" y2="161.3"/><line x1="154.8" y1="154.8" x2="150.6" y2="150.6"/><line x1="165.3" y1="144.9" x2="161.3" y2="140.4"/><line x1="176.3" y1="135.5" x2="172.5" y2="130.8"/><line x1="187.8" y1="126.7" x2="180.7" y2="117.0"/><line x1="199.7" y1="118.5" x2="196.4" y2="113.5"/><line x1="212.0" y1="111.0" x2="209.0" y2="105.8"/><line x1="224.7" y1="104.1" x2="222.0" y2="98.7"/><line x1="237.7" y1="97.9" x2="235.3" y2="92.4"/><line x1="251.1" y1="92.3" x2="248.9" y2="86.7"/><line x1="264.7" y1="87.5" x2="261.0" y2="76.1"/><line x1="278.6" y1="83.4" x2="277.0" y2="77.6"/><line x1="292.6" y1="80.0" x2="291.4" y2="74.2"/><line x1="306.8" y1="77.4" x2="305.9" y2="71.5"/><line x1="321.2" y1="75.5" x2="320.5" y2="69.5"/><line x1="335.6" y1="74.4" x2="335.2" y2="68.4"/></g>
+    <circle class="cycle-cercle" cx="350" cy="350" r="262"/>
+    <circle class="cycle-arc" cx="350" cy="350" r="262" pathLength="1" transform="rotate(-90 350 350)"/>
+    <g class="cycle-noeud" data-noeud="0"><circle cx="350.0" cy="88.0" r="9"/><g class="cycle-libelle" data-x="350.0" data-y="26.0"><text x="350.0" y="28.0" text-anchor="middle" dominant-baseline="middle"><tspan class="cycle-libelle-num">01</tspan> Conception</text></g></g><g class="cycle-noeud" data-noeud="1"><circle cx="599.2" cy="269.0" r="9"/><g class="cycle-libelle" data-x="658.1" data-y="249.9"><text x="658.1" y="251.9" text-anchor="middle" dominant-baseline="middle"><tspan class="cycle-libelle-num">02</tspan> Gestion</text></g></g><g class="cycle-noeud" data-noeud="2"><circle cx="504.0" cy="562.0" r="9"/><g class="cycle-libelle" data-x="540.4" data-y="612.1"><text x="540.4" y="614.1" text-anchor="middle" dominant-baseline="middle"><tspan class="cycle-libelle-num">03</tspan> Transformation</text></g></g><g class="cycle-noeud" data-noeud="3"><circle cx="196.0" cy="562.0" r="9"/><g class="cycle-libelle" data-x="159.6" data-y="612.1"><text x="159.6" y="614.1" text-anchor="middle" dominant-baseline="middle"><tspan class="cycle-libelle-num">04</tspan> Transition</text></g></g><g class="cycle-noeud" data-noeud="4"><circle cx="100.8" cy="269.0" r="9"/><g class="cycle-libelle" data-x="41.9" data-y="249.9"><text x="41.9" y="251.9" text-anchor="middle" dominant-baseline="middle"><tspan class="cycle-libelle-num">05</tspan> Transmission</text></g></g>
+  </g>
+  <path class="cycle-repere" d="M340 41 L360 41 L350 56 Z"/>
+</svg>
+        <div class="cycle-disque">
+          <figure class="media cycle-image est-active" data-grok data-etape-image="0" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/cycle-conception-1168.webp" srcset="/assets/images/grok/cycle-conception-640.webp 640w, /assets/images/grok/cycle-conception-1168.webp 1168w" sizes="(max-width: 760px) 60vw, 34vw" alt="Plans d’un restaurant et échantillons de matériaux sur une table de travail (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><figure class="media cycle-image" data-grok data-etape-image="1" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/cycle-gestion-1168.webp" srcset="/assets/images/grok/cycle-gestion-640.webp 640w, /assets/images/grok/cycle-gestion-1168.webp 1168w" sizes="(max-width: 760px) 60vw, 34vw" alt="Passe d’une cuisine de restaurant en plein service (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><figure class="media cycle-image" data-grok data-etape-image="2" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/cycle-transformation-1168.webp" srcset="/assets/images/grok/cycle-transformation-640.webp 640w, /assets/images/grok/cycle-transformation-1168.webp 1168w" sizes="(max-width: 760px) 60vw, 34vw" alt="Salle de restaurant en travaux, une chaise dans un rayon de lumière (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><figure class="media cycle-image" data-grok data-etape-image="3" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/cycle-transition-1168.webp" srcset="/assets/images/grok/cycle-transition-640.webp 640w, /assets/images/grok/cycle-transition-1168.webp 1168w" sizes="(max-width: 760px) 60vw, 34vw" alt="Porte d’un hôtel de montagne entrouverte au lever du jour (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><figure class="media cycle-image" data-grok data-etape-image="4" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/cycle-transmission-1168.webp" srcset="/assets/images/grok/cycle-transmission-640.webp 640w, /assets/images/grok/cycle-transmission-1168.webp 1168w" sizes="(max-width: 760px) 60vw, 34vw" alt="Les mains d’un chef guident celles d’un apprenti pendant le dressage d’une assiette (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <canvas class="cycle-canvas" aria-hidden="true"></canvas>
+        </div>
+      </div>
+      <p class="cycle-compteur" aria-hidden="true"><span class="cycle-num">01</span><span class="cycle-total"> / 05</span></p>
+    </div>
+    <ol class="cycle-etapes" aria-label="Les cinq étapes du cycle">
+      <li class="cycle-etape" id="cycle-conception" data-etape="0">
+        <p class="cycle-etape-num">Étape 01 sur 05</p>
+        <h3>Conception</h3>
+        <p class="hashtags">#DESIGN #VIRTUEL #MARKETING #TOURISME</p>
+        <p class="cycle-accroche">Créer des concepts visionnaires et réalisables, en harmonie avec vos valeurs et vos ressources, tout en ouvrant la voie aux innovations qui façonneront demain.</p>
+        <a href="/expertises#conception" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Conception</span></a>
+      </li><li class="cycle-etape" id="cycle-gestion" data-etape="1">
+        <p class="cycle-etape-num">Étape 02 sur 05</p>
+        <h3>Gestion</h3>
+        <p class="hashtags">#FINANCIÈRE #OPÉRATIONNELLE #P&amp;L #COSTCONTROL</p>
+        <p class="cycle-accroche">J’accompagne vos opérations avec exigence et souplesse, pour viser l’excellence sans jamais perdre de vue l’essentiel : l’humain au cœur de votre organisation.</p>
+        <a href="/expertises#gestion" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Gestion</span></a>
+      </li><li class="cycle-etape" id="cycle-transformation" data-etape="2">
+        <p class="cycle-etape-num">Étape 03 sur 05</p>
+        <h3>Transformation</h3>
+        <p class="hashtags">#NUMÉRIQUE #OPÉRATIONNELLE #ARCHITECTURALE #DÉCORATIVE #REBRANDING</p>
+        <p class="cycle-accroche">Je transforme le changement en un mouvement fluide, durable et porteur de nouvelles opportunités.</p>
+        <a href="/expertises#transformation" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Transformation</span></a>
+      </li><li class="cycle-etape" id="cycle-transition" data-etape="3">
+        <p class="cycle-etape-num">Étape 04 sur 05</p>
+        <h3>Transition</h3>
+        <p class="hashtags">#ÉCOLOGIQUE #DIGITALE #ÉNERGÉTIQUE</p>
+        <p class="cycle-accroche">Je rends vos transitions stratégiques plus simples et sereines, en vous guidant avec une vision claire vers de nouveaux horizons.</p>
+        <a href="/expertises#transition" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Transition</span></a>
+      </li><li class="cycle-etape" id="cycle-transmission" data-etape="4">
+        <p class="cycle-etape-num">Étape 05 sur 05</p>
+        <h3>Transmission</h3>
+        <p class="hashtags">#ENSEIGNEMENT #FORMATION #ENTREPRISES #COMMERCES</p>
+        <p class="cycle-accroche">Je veille à ce que chaque passage de relais soit une transition harmonieuse, où savoir-faire et valeurs se transmettent avec respect, justesse et sens de la relation.</p>
+        <a href="/expertises#transmission" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Transmission</span></a>
+      </li>
+    </ol>
+  </div>
+  <div class="conteneur transversales">
+    <h3 class="petit-titre">Et tout au long du cycle</h3>
+    <ul class="transversales-liste" data-anime="cascade">
+      <li class="carte-expertise">
+        <figure class="media carte-expertise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/grok/expertise-recrutement-784.webp" srcset="/assets/images/grok/expertise-recrutement-640.webp 640w, /assets/images/grok/expertise-recrutement-784.webp 784w" sizes="150px" alt="Vestes de chef et tabliers suspendus dans un vestiaire (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div>
+          <h4>Recrutement &amp; Management</h4>
+          <p>J’identifie les talents porteurs d’avenir, je développe leur plein potentiel et je façonne une culture de leadership qui inspire et transforme durablement.</p>
+          <a href="/expertises#recrutement" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Recrutement &amp; Management</span></a>
+        </div>
+      </li><li class="carte-expertise">
+        <figure class="media carte-expertise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/grok/expertise-design-interieur-784.webp" srcset="/assets/images/grok/expertise-design-interieur-640.webp 640w, /assets/images/grok/expertise-design-interieur-784.webp 784w" sizes="150px" alt="Bar d’hôtel en noyer et laiton, vide, en lumière douce (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div>
+          <h4>Design d’intérieurs</h4>
+          <p>Imaginer des lieux où esthétique, confort et sens se rencontrent, pour que chaque client se sente à la fois accueilli et inspiré.</p>
+          <a href="/expertises#design-interieur" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Design d’intérieurs</span></a>
+        </div>
+      </li><li class="carte-expertise">
+        <figure class="media carte-expertise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/grok/expertise-durabilite-784.webp" srcset="/assets/images/grok/expertise-durabilite-640.webp 640w, /assets/images/grok/expertise-durabilite-784.webp 784w" sizes="150px" alt="Potager sur le toit d’un hôtel en ville, à l’heure dorée (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div>
+          <h4>Durabilité &amp; Digitalisation</h4>
+          <p>Une hospitalité où la technologie soutient l’humain, où l’innovation rime avec responsabilité, et où chaque geste compte.</p>
+          <a href="/expertises#durabilite" class="lien-fleche" data-libelle="Expertises">En savoir plus<span class="visuellement-cache"> : Durabilité &amp; Digitalisation</span></a>
+        </div>
+      </li>
+    </ul>
+    <p class="transversales-tout"><a href="/expertises" class="bouton bouton--contour" data-libelle="Expertises" data-survol="magnetique">Voir les huit expertises</a></p>
+  </div>
+</section>
+<section class="projets ecran epingle" id="projets" data-entete-cache data-fx="galerie">
+  <div class="conteneur galerie-tete">
+    <div>
+      <p class="surtitre">Les projets</p>
+      <h2 class="titre-section" data-anime="lignes">Chaque projet raconte une histoire</h2>
+    </div>
+    <p class="galerie-texte">Celle d’un défi relevé, d’une équipe mobilisée et d’un objectif atteint : du lancement d’un concept innovant à la réorganisation d’une structure complexe.</p>
+  </div>
+  <div class="piste galerie-piste" data-galerie tabindex="0" role="region" aria-label="Projets, défilement horizontal">
+    <article class="carte-projet" id="projet-distribotion">
+      <div class="carte-projet-visuel">
+        <figure class="media carte-projet-media" style="--cadrage:50% 55%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/projets/distribotion-photo-mobile-640.webp 640w, /assets/images/projets/distribotion-photo-mobile-768.webp 768w" sizes="(max-width: 760px) 80vw, 32vw">
+    <img src="/assets/images/projets/distribotion-photo-1280.webp" srcset="/assets/images/projets/distribotion-photo-640.webp 640w, /assets/images/projets/distribotion-photo-1280.webp 1280w, /assets/images/projets/distribotion-photo-1920.webp 1920w" sizes="(max-width: 760px) 80vw, 32vw" alt="distriBOtion.CH : bar équipé de distributeurs de vin au verre" width="1280" height="853" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Distribution</span><strong>2013 – 2020</strong></span></div>
+      </div>
+      <p class="carte-projet-num">01</p>
+      <h3>distriBOtion.CH</h3>
+      <p class="carte-projet-accroche">L’innovation au service de l’art de vivre</p>
+      <a href="/projets/distribotion" class="lien-fleche" data-libelle="distriBOtion.CH">Voir la fiche<span class="visuellement-cache"> : distriBOtion.CH</span></a>
+    </article><article class="carte-projet" id="projet-botaniq">
+      <div class="carte-projet-visuel">
+        <figure class="media carte-projet-media" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/projets/botaniq-02-1280.webp" srcset="/assets/images/projets/botaniq-02-640.webp 640w, /assets/images/projets/botaniq-02-1280.webp 1280w, /assets/images/projets/botaniq-02-1920.webp 1920w" sizes="(max-width: 760px) 80vw, 32vw" alt="BOtaniq.CH : rendu 3D du restaurant-boutique" width="1280" height="734" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Restauration et boutique</span><strong>Concept</strong></span></div>
+      </div>
+      <p class="carte-projet-num">02</p>
+      <h3>BOtaniq.CH</h3>
+      <p class="carte-projet-accroche">Mineral Food, Beverage &amp; Cosmetics</p>
+      <p class="carte-projet-bientot">Fiche détaillée dans la prochaine version</p>
+    </article><article class="carte-projet" id="projet-vers">
+      <div class="carte-projet-visuel">
+        <figure class="media carte-projet-media" style="--cadrage:45% 60%">
+  <picture>
+    <img src="/assets/images/projets/vers-01-1280.webp" srcset="/assets/images/projets/vers-01-640.webp 640w, /assets/images/projets/vers-01-1280.webp 1280w, /assets/images/projets/vers-01-1570.webp 1570w" sizes="(max-width: 760px) 80vw, 32vw" alt="VERS.CH : raccard valaisan éclairé au crépuscule" width="1280" height="952" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Éco-resort de montagne</span><strong>Concept</strong></span></div>
+      </div>
+      <p class="carte-projet-num">03</p>
+      <h3>VERS.CH</h3>
+      <p class="carte-projet-accroche">Un nouveau souffle pour l’hôtellerie de montagne</p>
+      <p class="carte-projet-bientot">Fiche détaillée dans la prochaine version</p>
+    </article><article class="carte-projet" id="projet-swisswaters">
+      <div class="carte-projet-visuel">
+        <figure class="media carte-projet-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/fiche-swisswaters-ambiance-1168.webp" srcset="/assets/images/grok/fiche-swisswaters-ambiance-640.webp 640w, /assets/images/grok/fiche-swisswaters-ambiance-1168.webp 1168w" sizes="(max-width: 760px) 80vw, 32vw" alt="Carafe d’eau pétillante sur une table dressée (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+        <div class="etiquette" data-effet="etiquette" data-superpose aria-hidden="true"><span class="etiquette-fil"></span><span class="etiquette-carte"><span class="etiquette-secteur">Purification d’eau</span><strong>Fontaines à eau</strong></span></div>
+      </div>
+      <p class="carte-projet-num">04</p>
+      <h3>SwissWaters.CH</h3>
+      <p class="carte-projet-accroche">La solution d’eau durable pour les professionnels</p>
+      <p class="carte-projet-bientot">Fiche détaillée dans la prochaine version</p>
+    </article>
+    <article class="carte-projet carte-projet--autres" id="projet-autres">
+      <div class="carte-projet-visuel">
+        <figure class="media carte-projet-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/accueil-autres-realisations-784.webp" srcset="/assets/images/grok/accueil-autres-realisations-640.webp 640w, /assets/images/grok/accueil-autres-realisations-784.webp 784w" sizes="(max-width: 760px) 80vw, 32vw" alt="Carnets, clé ancienne et pots d’échantillons sur du marbre (illustration)" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      </div>
+      <p class="carte-projet-num">+</p>
+      <h3>Et d’autres réalisations</h3>
+      <p class="carte-projet-accroche">moBOo.CH, BOestate.CH, ECOthic.CH, Drink’N’tec.CH, et les projets en cours.</p>
+      <a href="/projets" class="lien-fleche" data-libelle="Projets">Tous les projets</a>
+    </article>
+  </div>
+  <div class="galerie-pied conteneur"><div class="galerie-progres" aria-hidden="true"><span></span></div><p class="galerie-glisser">Faites glisser</p></div>
+</section>
+<section class="methode" id="methode">
+  <div class="conteneur methode-grille">
+    <div class="methode-texte">
+      <p class="surtitre">La méthode</p>
+      <h2 class="titre-section" data-anime="lignes">L’immersion d’abord</h2>
+      <p class="chapeau" data-anime>Chaque projet commence par une immersion dans votre univers. Grâce à des outils d’audit innovants, je révèle les forces cachées et les points à améliorer. Ensemble, nous transformons ces analyses en actions concrètes, créatives et durables.</p>
+      <h3 class="petit-titre">Mes outils</h3>
+      <ol class="outils-liste" data-anime="cascade">
+        <li><span class="pilier-num">01</span><h4>Audit opérationnel complet</h4><p>Indicateurs clés, benchmarks sectoriels, observations sur le terrain et entretiens ciblés.</p></li><li><span class="pilier-num">02</span><h4>Amélioration continue</h4><p>Des processus structurés, des indicateurs de suivi et une écoute active des équipes et des clients.</p></li><li><span class="pilier-num">03</span><h4>Formation et coaching</h4><p>Des programmes sur mesure, un accompagnement personnalisé et une pédagogie active.</p></li>
+      </ol>
+    </div>
+    <div class="methode-visuel">
+      <figure class="media methode-media" data-grok data-fx="zoom" data-fx-force="14" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/accueil-methode-1168.webp" srcset="/assets/images/grok/accueil-methode-640.webp 640w, /assets/images/grok/accueil-methode-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 46vw" alt="Carnet, stylo plume et espresso sur un comptoir de marbre (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      <div class="tableau" data-effet="audit" data-superpose data-visuel role="img" aria-label="Tableau de bord d’un audit (Données illustratives)">
+        <p class="tableau-tete"><span>Tableau de bord d’un audit</span><span class="tableau-demo">Données illustratives</span></p>
+        <ul class="tableau-kpi">
+          <li><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="jauge-fond" cx="40" cy="40" r="32"/><circle class="jauge" cx="40" cy="40" r="32" pathLength="100" data-valeur="31" style="--v:31" transform="rotate(-90 40 40)"/></svg><strong class="jauge-valeur" data-cible="31">31 %</strong><span>Coût matière</span></li><li><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="jauge-fond" cx="40" cy="40" r="32"/><circle class="jauge" cx="40" cy="40" r="32" pathLength="100" data-valeur="34" style="--v:34" transform="rotate(-90 40 40)"/></svg><strong class="jauge-valeur" data-cible="34">34 %</strong><span>Coût du personnel</span></li><li><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="jauge-fond" cx="40" cy="40" r="32"/><circle class="jauge" cx="40" cy="40" r="32" pathLength="100" data-valeur="92" style="--v:92" transform="rotate(-90 40 40)"/></svg><strong class="jauge-valeur" data-cible="92">92 %</strong><span>Satisfaction des clients</span></li><li><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="jauge-fond" cx="40" cy="40" r="32"/><circle class="jauge" cx="40" cy="40" r="32" pathLength="100" data-valeur="78" style="--v:78" transform="rotate(-90 40 40)"/></svg><strong class="jauge-valeur" data-cible="78">78 %</strong><span>Taux d’occupation</span></li>
+        </ul>
+        <div class="tableau-courbe">
+          <span class="tableau-legende">Chiffre d’affaires mensuel</span>
+          <svg viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true">
+            <path class="courbe-grille" d="M0 27.5H400M0 55H400M0 82.5H400"/>
+            <path class="courbe-aire" d="M0 92 C40 88 60 70 100 72 S170 52 200 58 S270 30 300 34 S370 14 400 10 V110 H0 Z"/>
+            <path class="courbe" pathLength="1" d="M0 92 C40 88 60 70 100 72 S170 52 200 58 S270 30 300 34 S370 14 400 10"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="ruban-section" aria-label="Pourquoi Artic!Agency ?" role="region">
+  <p class="ruban-titre">Pourquoi <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> ?</p>
+  <div class="ruban" id="ruban-engagements" data-boucle-css data-ruban><p>Des méthodes efficaces · Des délais tenus · Des prix justes · Des pratiques durables · <span aria-hidden="true">Des méthodes efficaces · Des délais tenus · Des prix justes · Des pratiques durables ·</span></p></div>
+  <button type="button" class="ruban-pause" data-pause-pour="ruban-engagements" data-libelle-pause="Pause" data-libelle-lecture="Lecture"><span data-libelle-bouton>Pause</span></button>
+</div>
+<section class="portrait" id="portrait">
+  <div class="conteneur portrait-grille">
+    <figure class="media portrait-media" data-anime="rideau" style="--cadrage:50% 30%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/portraits/michel-grand-mobile-640.webp 640w" sizes="(max-width: 760px) 70vw, 26vw">
+    <img src="/assets/images/portraits/michel-grand-1232.webp" srcset="/assets/images/portraits/michel-grand-640.webp 640w, /assets/images/portraits/michel-grand-1232.webp 1232w" sizes="(max-width: 760px) 70vw, 26vw" alt="Portrait de Michel Grand" width="1232" height="1277" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <div class="portrait-texte">
+      <p class="surtitre">Le parcours</p>
+      <h2 class="titre-section" data-anime="lignes">De la brigade à la direction, sur plusieurs continents</h2>
+      <p class="chapeau" data-anime>Cuisinier, sommelier, diplômé de l’EHL, directeur F&amp;B en Afrique et en Asie, directeur d’unités à Londres, Dublin et Oslo, entrepreneur et enseignant : j’ai fondé <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> en 2021 pour mettre cette expérience au service de vos projets.</p>
+      <ol class="portrait-jalons" data-anime="cascade">
+        <li><span class="jalon-date">1988 – 1991</span><strong>Cuisinier</strong></li><li><span class="jalon-date">1993 – 1995</span><strong>Master EHL</strong></li><li><span class="jalon-date">1996 – 2001</span><strong>Directeur F&amp;B</strong></li><li><span class="jalon-date">2002 – 2007</span><strong>Directeur d’unités</strong></li><li><span class="jalon-date">2013 – 2020</span><strong>distriBOtion.CH</strong></li><li><span class="jalon-date">Depuis 2021</span><strong><span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span></strong></li>
+      </ol>
+      <p><a href="/a-propos#parcours" class="lien-fleche" data-libelle="À propos">Lire mon parcours</a></p>
+    </div>
+  </div>
+</section>
+<section class="confiance" id="confiance">
+  <div class="conteneur confiance-tete">
+    <div>
+      <p class="surtitre">Confiance</p>
+      <h2 class="titre-section" data-anime="lignes">Ils me font confiance</h2>
+    </div>
+    <figure class="media confiance-media" data-grok data-fx="parallaxe" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/accueil-confiance-verres-1168.webp" srcset="/assets/images/grok/accueil-confiance-verres-640.webp 640w, /assets/images/grok/accueil-confiance-verres-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 44vw" alt="Verres de cristal alignés sur un comptoir (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+  <div class="logos-section">
+    <div class="logos-ruban" id="ruban-logos" data-boucle-css data-ruban role="region" aria-label="Logos de clients">
+      <ul class="logos-liste"><li><img src="/assets/images/logos/clients/accor.webp" alt="Accor" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/akris.webp" alt="Akris" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/bacchus.webp" alt="Le Caveau de Bacchus" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/baur-au-lac.webp" alt="Baur au Lac" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/gategroup.webp" alt="Gategroup" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/geneve-servette.webp" alt="Genève-Servette HC" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/hilton.webp" alt="Hilton" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/philippe-chevrier.webp" alt="Philippe Chevrier" width="160" height="64" loading="lazy" decoding="async"></li></ul>
+      <ul class="logos-liste" aria-hidden="true"><li><img src="/assets/images/logos/clients/accor.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/akris.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/bacchus.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/baur-au-lac.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/gategroup.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/geneve-servette.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/hilton.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/philippe-chevrier.webp" alt="" width="160" height="64" loading="lazy" decoding="async"></li></ul>
+    </div>
+    <button type="button" class="ruban-pause" data-pause-pour="ruban-logos" data-libelle-pause="Pause" data-libelle-lecture="Lecture"><span data-libelle-bouton>Pause</span></button>
+  </div>
+  <div class="conteneur temoignages">
+    <h3 class="petit-titre">Ils en parlent</h3>
+    <ul class="temoignages-liste" data-effet="cartes-menu">
+      <li class="temoignage" style="--r:-4deg">
+        <figure>
+          <blockquote>
+            <p class="temoignage-extrait">« Le statu quo ne fait pas partie de son vocabulaire. »</p>
+            <details class="temoignage-suite"><summary>Lire tout le témoignage<span class="visuellement-cache"> : Graham Pawson</span></summary><p>J’ai eu l’opportunité de collaborer avec Michel lorsqu’il occupait un poste de direction. Grâce à son caractère affirmé, à ses compétences et à son savoir-faire, il a su conduire le changement avec succès au sein des départements sous sa responsabilité, toujours animé par la volonté de concrétiser des améliorations tangibles.</p><p>Michel dispose d’une vision stratégique claire et d’une capacité remarquable à mobiliser, motiver et orienter ses équipes en parfaite cohérence avec les objectifs de l’organisation. Il a le talent d’aller au-delà des standards de réussite définis par l’entreprise, en apportant toujours une valeur ajoutée supplémentaire. Le statu quo ne fait pas partie de son vocabulaire : il est constamment en recherche de nouvelles voies de transformation pour garder une longueur d’avance dans son domaine d’expertise.</p></details>
+          </blockquote>
+          <figcaption><strong>Graham Pawson</strong><span>Director of Operations</span></figcaption>
+        </figure>
+      </li><li class="temoignage" style="--r:3deg">
+        <figure>
+          <blockquote>
+            <p class="temoignage-extrait">« Il parvient à atteindre des résultats que beaucoup jugeraient inaccessibles. »</p>
+            <details class="temoignage-suite"><summary>Lire tout le témoignage<span class="visuellement-cache"> : Dominic Higgins</span></summary><p>Michel est un consultant d’une grande compétence et d’une détermination exemplaire. Il parvient à atteindre des résultats que beaucoup jugeraient inaccessibles, permettant ainsi à ses clients de repousser leurs limites et de dépasser leurs objectifs. Doté d’une vision stratégique affirmée, il sait également se montrer opérationnel et impliqué sur le terrain lorsque la situation l’exige.</p><p>Très performant, travailleur acharné et engagé, Michel conjugue exigence et dynamisme. L’expression peut sembler galvaudée, mais elle s’applique parfaitement à lui : Michel Grand, de nom comme de nature, est véritablement grand.</p></details>
+          </blockquote>
+          <figcaption><strong>Dominic Higgins</strong><span>Senior Finance Systems Business Analyst</span></figcaption>
+        </figure>
+      </li><li class="temoignage" style="--r:-2deg">
+        <figure>
+          <blockquote>
+            <p class="temoignage-extrait">« Une aptitude exceptionnelle à transmettre avec clarté des concepts complexes. »</p>
+            <details class="temoignage-suite"><summary>Lire tout le témoignage<span class="visuellement-cache"> : Marek Slavicky</span></summary><p>J’ai eu le privilège de bénéficier de l’expertise de Michel lors d’une formation d’une semaine. Je puis affirmer sans réserve que son expertise ainsi que la passion qu’il voue à son métier constituent une source d’inspiration remarquable. Sa vaste connaissance du domaine et sa volonté constante de partager son expérience ont considérablement enrichi mon apprentissage.</p><p>Michel se distingue par une aptitude exceptionnelle à transmettre avec clarté des concepts complexes, rendant le processus d’acquisition des connaissances à la fois stimulant et agréable. Sa passion pour sa profession se manifeste pleinement dans sa démarche pédagogique, où il sait transformer la créativité en opportunités concrètes de développement. Je recommande vivement Michel en qualité de formateur pour l’excellence de son savoir et son engagement à favoriser l’épanouissement et la réussite de ses apprenants.</p></details>
+          </blockquote>
+          <figcaption><strong>Marek Slavicky</strong><span>Musicien et entrepreneur</span></figcaption>
+        </figure>
+      </li><li class="temoignage" style="--r:5deg">
+        <figure>
+          <blockquote>
+            <p class="temoignage-extrait">« Tout a été parfaitement respecté. »</p>
+            <details class="temoignage-suite"><summary>Lire tout le témoignage<span class="visuellement-cache"> : François Berner</span></summary><p>La collaboration avec M. Grand a été parfaite ; les conseils, les explications, la recommandation des produits, l’efficacité, le délai, tout a été parfaitement respecté.</p><p>Je remercie Monsieur Grand pour son excellent travail et son grand professionnalisme.</p></details>
+          </blockquote>
+          <figcaption><strong>François Berner</strong><span>Chef d’entreprise, groupe F&amp;B</span></figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="fin" id="fin">
+  <div class="conteneur fin-grille">
+    <figure class="media fin-media" data-grok data-anime="rideau" style="--cadrage:50% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/accueil-contact-mobile-640.webp 640w, /assets/images/grok/accueil-contact-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 44vw">
+    <img src="/assets/images/grok/accueil-contact-1168.webp" srcset="/assets/images/grok/accueil-contact-640.webp 640w, /assets/images/grok/accueil-contact-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 44vw" alt="Entrée d’un hôtel au crépuscule, porte entrouverte (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div class="fin-texte">
+      <svg class="point-final" viewBox="0 0 60 220" aria-hidden="true" data-effet="point-final"><path class="point-final-barre" d="M30 8 L30 148" pathLength="1"/><circle class="point-final-point" cx="30" cy="196" r="16"/></svg>
+      <h2 class="titre-section" data-anime="lignes">Prêt à parler de vos projets de transformation, de transition ou de transmission ?</h2>
+      <p data-anime>Je serai heureux de vous écouter et de construire avec vous une stratégie sur mesure, innovante et éthique.</p>
+      <p class="fin-actions" data-anime>
+        <a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-survol="magnetique">Demander un premier échange</a>
+        <a class="lien-fleche" href="tel:+41786300272">+41 78 630 02 72</a>
+        <a class="lien-fleche" href="mailto:michel@artic.agency">michel@artic.agency</a>
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <p class="pied-titre">Contact</p>
+      <p>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</p>
+      <p><a href="tel:+41786300272">+41 78 630 02 72</a><br><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil" aria-current="page">Accueil</a></li><li><a href="/expertises" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" data-libelle="À propos">À propos</a></li><li><a href="/journal" data-libelle="Journal">Journal</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/mentions-legales" data-libelle="Mentions légales">Mentions légales</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Suivre</p>
+      <ul><li><a href="https://www.instagram.com/artic.agency/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Instagram</a></li><li><a href="https://www.linkedin.com/company/michel-grand-ch/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">LinkedIn</a></li></ul>
+    </div>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-marque" aria-hidden="true" data-typo-ignorer><span>ARTIC<span class="logo-point">!</span></span><span class="pied-agence">AGENCY</span></div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le client.</p><p>© <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> · Orbe</p></div>
+  <p id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</p>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+41786300272">Appeler</a>
+  <a href="/contact" class="bouton" data-libelle="Contact">Premier échange</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "clients": [
+    {
+      "nom": "Accor",
+      "logo": "logos/clients/accor"
+    },
+    {
+      "nom": "Akris",
+      "logo": "logos/clients/akris"
+    },
+    {
+      "nom": "Le Caveau de Bacchus",
+      "logo": "logos/clients/bacchus"
+    },
+    {
+      "nom": "Baur au Lac",
+      "logo": "logos/clients/baur-au-lac"
+    },
+    {
+      "nom": "Gategroup",
+      "logo": "logos/clients/gategroup"
+    },
+    {
+      "nom": "Genève-Servette HC",
+      "logo": "logos/clients/geneve-servette"
+    },
+    {
+      "nom": "Hilton",
+      "logo": "logos/clients/hilton"
+    },
+    {
+      "nom": "Philippe Chevrier",
+      "logo": "logos/clients/philippe-chevrier"
+    }
+  ],
+  "formateurs": [
+    {
+      "nom": "Provins",
+      "logo": "logos/formateurs/provins"
+    },
+    {
+      "nom": "distriBOtion.CH",
+      "logo": "logos/distribotion"
+    },
+    {
+      "nom": "Sheraton",
+      "logo": "logos/formateurs/sheraton"
+    },
+    {
+      "nom": "Hilton",
+      "logo": "logos/clients/hilton"
+    },
+    {
+      "nom": "Accor",
+      "logo": "logos/clients/accor"
+    },
+    {
+      "nom": "Gategroup",
+      "logo": "logos/clients/gategroup"
+    }
+  ],
+  "presse": [
+    {
+      "nom": "Bilan",
+      "logo": "logos/presse/bilan"
+    },
+    {
+      "nom": "24 heures",
+      "logo": "logos/presse/24-heures"
+    },
+    {
+      "nom": "Le Cafetier",
+      "logo": "logos/presse/le-cafetier"
+    },
+    {
+      "nom": "Neue Zürcher Zeitung",
+      "logo": "logos/presse/nzz"
+    },
+    {
+      "nom": "L’Hebdo",
+      "logo": "logos/presse/hebdo"
+    },
+    {
+      "nom": "PME Magazine",
+      "logo": "logos/presse/pme"
+    },
+    {
+      "nom": "Tribune de Genève",
+      "logo": "logos/presse/tribune-de-geneve"
+    },
+    {
+      "nom": "Vinum",
+      "logo": "logos/presse/vinum"
+    }
+  ]
+}

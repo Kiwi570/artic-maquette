@@ -1,0 +1,38 @@
+[
+  {
+    "nom": "Graham Pawson",
+    "fonction": "Director of Operations",
+    "extrait": "Le statu quo ne fait pas partie de son vocabulaire.",
+    "texte": [
+      "J’ai eu l’opportunité de collaborer avec Michel lorsqu’il occupait un poste de direction. Grâce à son caractère affirmé, à ses compétences et à son savoir-faire, il a su conduire le changement avec succès au sein des départements sous sa responsabilité, toujours animé par la volonté de concrétiser des améliorations tangibles.",
+      "Michel dispose d’une vision stratégique claire et d’une capacité remarquable à mobiliser, motiver et orienter ses équipes en parfaite cohérence avec les objectifs de l’organisation. Il a le talent d’aller au-delà des standards de réussite définis par l’entreprise, en apportant toujours une valeur ajoutée supplémentaire. Le statu quo ne fait pas partie de son vocabulaire : il est constamment en recherche de nouvelles voies de transformation pour garder une longueur d’avance dans son domaine d’expertise."
+    ]
+  },
+  {
+    "nom": "Dominic Higgins",
+    "fonction": "Senior Finance Systems Business Analyst",
+    "extrait": "Il parvient à atteindre des résultats que beaucoup jugeraient inaccessibles.",
+    "texte": [
+      "Michel est un consultant d’une grande compétence et d’une détermination exemplaire. Il parvient à atteindre des résultats que beaucoup jugeraient inaccessibles, permettant ainsi à ses clients de repousser leurs limites et de dépasser leurs objectifs. Doté d’une vision stratégique affirmée, il sait également se montrer opérationnel et impliqué sur le terrain lorsque la situation l’exige.",
+      "Très performant, travailleur acharné et engagé, Michel conjugue exigence et dynamisme. L’expression peut sembler galvaudée, mais elle s’applique parfaitement à lui : Michel Grand, de nom comme de nature, est véritablement grand."
+    ]
+  },
+  {
+    "nom": "Marek Slavicky",
+    "fonction": "Musicien et entrepreneur",
+    "extrait": "Une aptitude exceptionnelle à transmettre avec clarté des concepts complexes.",
+    "texte": [
+      "J’ai eu le privilège de bénéficier de l’expertise de Michel lors d’une formation d’une semaine. Je puis affirmer sans réserve que son expertise ainsi que la passion qu’il voue à son métier constituent une source d’inspiration remarquable. Sa vaste connaissance du domaine et sa volonté constante de partager son expérience ont considérablement enrichi mon apprentissage.",
+      "Michel se distingue par une aptitude exceptionnelle à transmettre avec clarté des concepts complexes, rendant le processus d’acquisition des connaissances à la fois stimulant et agréable. Sa passion pour sa profession se manifeste pleinement dans sa démarche pédagogique, où il sait transformer la créativité en opportunités concrètes de développement. Je recommande vivement Michel en qualité de formateur pour l’excellence de son savoir et son engagement à favoriser l’épanouissement et la réussite de ses apprenants."
+    ]
+  },
+  {
+    "nom": "François Berner",
+    "fonction": "Chef d’entreprise, groupe F&B",
+    "extrait": "Tout a été parfaitement respecté.",
+    "texte": [
+      "La collaboration avec M. Grand a été parfaite ; les conseils, les explications, la recommandation des produits, l’efficacité, le délai, tout a été parfaitement respecté.",
+      "Je remercie Monsieur Grand pour son excellent travail et son grand professionnalisme."
+    ]
+  }
+]

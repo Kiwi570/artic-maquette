@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur data-page="mentions-legales">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mentions légales : Artic!Agency</title>
+<meta name="description" content="Éditeur, hébergeur, crédits et confidentialité du site Artic!Agency.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://artic-maquette.vercel.app/mentions-legales">
+<style>:root{--fond:#f3eee4;--texte:#161412;--voile-fond:#e4d9c6;--ouverture-fond:#f3eee4;--menu-fond:#161412}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(innerWidth<720){d.classList.add('nav-compacte');setTimeout(function(){if(!d.classList.contains('demarre'))d.classList.remove('nav-compacte');},2000);}})();</script>
+<link rel="preload" href="/assets/polices/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f3eee4">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artic!Agency">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Mentions légales : Artic!Agency">
+<meta property="og:description" content="Éditeur, hébergeur, crédits et confidentialité du site Artic!Agency.">
+<meta property="og:url" content="https://artic-maquette.vercel.app/mentions-legales">
+<meta property="og:image" content="https://artic-maquette.vercel.app/assets/partage/mentions-legales-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mentions légales d’Artic!Agency">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Artic!Agency","description":"Conseil et gestion en hôtellerie-restauration : conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.","slogan":"L’Art de l’Intelligence Commerciale en Hospitalité","email":"michel@artic.agency","telephone":"+41 78 630 02 72","address":{"@type":"PostalAddress","streetAddress":"Rue des Remparts 2","postalCode":"1350","addressLocality":"Orbe","addressRegion":"Vaud","addressCountry":"CH"},"founder":{"@type":"Person","name":"Michel Grand","jobTitle":"Fondateur"},"foundingDate":"2021","areaServed":"CH","sameAs":["https://www.instagram.com/artic.agency/","https://www.linkedin.com/company/michel-grand-ch/"],"url":"https://www.artic.agency"}</script>
+</head>
+<body id="haut">
+<div data-voile aria-hidden="true"><div class="voile-contenu"><span class="voile-logo" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span data-voile-libelle>Mentions légales</span></div></div>
+<div class="ouverture-panneau" data-ouverture data-gouttiere="#f3eee4" aria-hidden="true">
+  <div class="intro-demi intro-demi--haut"></div>
+  <div class="intro-demi intro-demi--bas"></div>
+  <p class="intro-phrase" data-typo-ignorer><span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="0">A</span><span class="intro-c" data-garde="1">R</span><span class="intro-c" data-garde="2">T</span></span> <span class="intro-p"><span class="intro-c">D</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="3">I</span><span class="intro-c">N</span><span class="intro-c">T</span><span class="intro-c">E</span><span class="intro-c">L</span><span class="intro-c">L</span><span class="intro-c">I</span><span class="intro-c">G</span><span class="intro-c">E</span><span class="intro-c">N</span><span class="intro-c">C</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c" data-garde="4">C</span><span class="intro-c">O</span><span class="intro-c">M</span><span class="intro-c">M</span><span class="intro-c">E</span><span class="intro-c">R</span><span class="intro-c">C</span><span class="intro-c">I</span><span class="intro-c">A</span><span class="intro-c">L</span><span class="intro-c">E</span></span> </p>
+  <p class="intro-mot" data-typo-ignorer data-effet="bouchon"><span class="intro-l">A</span><span class="intro-l">R</span><span class="intro-l">T</span><span class="intro-l">I</span><span class="intro-l">C</span><span class="intro-point">!</span></p>
+  <span class="intro-onde"></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Artic!Agency, retour à l’accueil"><span class="logo-mot" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span class="logo-agence">AGENCY</span></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/expertises" class="nav-lien" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" class="nav-lien" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" class="nav-lien" data-libelle="À propos">À propos</a></li><li><a href="/journal" class="nav-lien" data-libelle="Journal">Journal</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a href="/contact" class="bouton bouton--entete" data-libelle="Contact" data-survol="magnetique">Premier échange</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span class="menu-icone" aria-hidden="true"><span></span><span></span></span><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-grille">
+    <ul><li style="--i:0"><span class="menu-num" aria-hidden="true">01</span><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><span class="menu-num" aria-hidden="true">02</span><a href="/expertises" class="menu-lien" data-libelle="Expertises">Expertises</a></li><li style="--i:2"><span class="menu-num" aria-hidden="true">03</span><a href="/projets" class="menu-lien" data-libelle="Projets">Projets</a></li><li style="--i:3"><span class="menu-num" aria-hidden="true">04</span><a href="/a-propos" class="menu-lien" data-libelle="À propos">À propos</a></li><li style="--i:4"><span class="menu-num" aria-hidden="true">05</span><a href="/journal" class="menu-lien" data-libelle="Journal">Journal</a></li><li style="--i:5"><span class="menu-num" aria-hidden="true">06</span><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+    <div class="menu-infos">
+      <p><a class="bouton bouton--clair" href="tel:+41786300272">Appeler +41 78 630 02 72</a></p>
+      <p><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+      <p>Rue des Remparts 2<br>1350 Orbe</p>
+      <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+    </div>
+  </div>
+</div>
+<main id="contenu" tabindex="-1" data-sans-action data-sans-effet>
+<div data-barre-lecture aria-hidden="true"></div>
+<section class="page-tete page-tete--court" id="debut">
+  <div class="conteneur page-tete-grille">
+    <div>
+      <h1>Mentions légales</h1>
+      <nav data-sommaire aria-label="Sommaire"><ul><li><a href="#fiche">À fournir par le client</a></li><li><a href="#editeur">Éditeur</a></li><li><a href="#hebergeur">Hébergeur</a></li><li><a href="#credits">Crédits</a></li><li><a href="#confidentialite">Confidentialité</a></li><li><a href="#droit">Droit applicable</a></li></ul></nav>
+    </div>
+    <figure class="media page-tete-media" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/legal-mentions-1168.webp" srcset="/assets/images/grok/legal-mentions-640.webp 640w, /assets/images/grok/legal-mentions-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 40vw" alt="Papier crème et stylo plume sur un bureau (illustration)" width="1168" height="784" fetchpriority="high" loading="eager" decoding="sync">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<div class="texte-long conteneur" data-sans-visuel>
+  <section id="fiche" class="fiche-completer"><h2>À fournir par le client</h2><p>Numéro IDE (CHE-…) et inscription au registre du commerce du canton de Vaud · numéro de TVA · forme juridique exacte (<span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> Sàrl ou MichelGrand.CH Consulting) · politique de confidentialité conforme à la nLPD · autorisations d’utiliser les logos des clients et les coupures de presse · crédits des photographies · statut actuel de BOtaniq.CH, VERS.CH et SwissWaters.CH.</p></section><section id="editeur" class=""><h2>Éditeur</h2><p><span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> (forme juridique à confirmer), Rue des Remparts 2, 1350 Orbe, Suisse. E-mail : michel@artic.agency. Téléphone : +41 78 630 02 72. Responsable de la publication : Michel Grand. Numéro IDE et TVA : à compléter.</p></section><section id="hebergeur" class=""><h2>Hébergeur</h2><p>Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis.</p></section><section id="credits" class=""><h2>Crédits</h2><p>Photographies des projets, du parcours et des articles : Michel Grand et sources du site actuel (crédits à compléter). Logos : propriété de leurs titulaires respectifs. Les images marquées « Illustration générée » ont été créées par intelligence artificielle.</p></section><section id="confidentialite" class=""><h2>Confidentialité</h2><p>Politique de confidentialité à compléter, conforme à la loi fédérale sur la protection des données (nLPD) : données recueillies par le formulaire de contact, finalité, durée de conservation, droits d’accès et de rectification, sous-traitants et transferts à l’étranger.</p></section><section id="droit" class=""><h2>Droit applicable</h2><p>Le site est soumis au droit suisse. For juridique : à compléter.</p></section>
+</div>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <p class="pied-titre">Contact</p>
+      <p>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</p>
+      <p><a href="tel:+41786300272">+41 78 630 02 72</a><br><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/expertises" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" data-libelle="À propos">À propos</a></li><li><a href="/journal" data-libelle="Journal">Journal</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/mentions-legales" data-libelle="Mentions légales" aria-current="page">Mentions légales</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Suivre</p>
+      <ul><li><a href="https://www.instagram.com/artic.agency/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Instagram</a></li><li><a href="https://www.linkedin.com/company/michel-grand-ch/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">LinkedIn</a></li></ul>
+    </div>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-marque" aria-hidden="true" data-typo-ignorer><span>ARTIC<span class="logo-point">!</span></span><span class="pied-agence">AGENCY</span></div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le client.</p><p>© <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> · Orbe</p></div>
+  <p id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</p>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+41786300272">Appeler</a>
+  <a href="/contact" class="bouton" data-libelle="Contact">Premier échange</a>
+</div>
+</body>
+</html>

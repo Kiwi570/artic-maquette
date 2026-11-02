@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur data-page="journal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Journal : Artic!Agency</title>
+<meta name="description" content="Les réflexions personnelles, les chroniques et les souvenirs de terrain de Michel Grand.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://artic-maquette.vercel.app/journal">
+<style>:root{--fond:#f3eee4;--texte:#161412;--voile-fond:#e4d9c6;--ouverture-fond:#f3eee4;--menu-fond:#161412}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(innerWidth<720){d.classList.add('nav-compacte');setTimeout(function(){if(!d.classList.contains('demarre'))d.classList.remove('nav-compacte');},2000);}})();</script>
+<link rel="preload" href="/assets/polices/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f3eee4">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artic!Agency">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Journal : Artic!Agency">
+<meta property="og:description" content="Les réflexions personnelles, les chroniques et les souvenirs de terrain de Michel Grand.">
+<meta property="og:url" content="https://artic-maquette.vercel.app/journal">
+<meta property="og:image" content="https://artic-maquette.vercel.app/assets/partage/journal-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Le journal d’Artic!Agency">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Artic!Agency","description":"Conseil et gestion en hôtellerie-restauration : conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.","slogan":"L’Art de l’Intelligence Commerciale en Hospitalité","email":"michel@artic.agency","telephone":"+41 78 630 02 72","address":{"@type":"PostalAddress","streetAddress":"Rue des Remparts 2","postalCode":"1350","addressLocality":"Orbe","addressRegion":"Vaud","addressCountry":"CH"},"founder":{"@type":"Person","name":"Michel Grand","jobTitle":"Fondateur"},"foundingDate":"2021","areaServed":"CH","sameAs":["https://www.instagram.com/artic.agency/","https://www.linkedin.com/company/michel-grand-ch/"],"url":"https://www.artic.agency"}</script>
+</head>
+<body id="haut">
+<div data-voile aria-hidden="true"><div class="voile-contenu"><span class="voile-logo" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span data-voile-libelle>Journal</span></div></div>
+<div class="ouverture-panneau" data-ouverture data-gouttiere="#f3eee4" aria-hidden="true">
+  <div class="intro-demi intro-demi--haut"></div>
+  <div class="intro-demi intro-demi--bas"></div>
+  <p class="intro-phrase" data-typo-ignorer><span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="0">A</span><span class="intro-c" data-garde="1">R</span><span class="intro-c" data-garde="2">T</span></span> <span class="intro-p"><span class="intro-c">D</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="3">I</span><span class="intro-c">N</span><span class="intro-c">T</span><span class="intro-c">E</span><span class="intro-c">L</span><span class="intro-c">L</span><span class="intro-c">I</span><span class="intro-c">G</span><span class="intro-c">E</span><span class="intro-c">N</span><span class="intro-c">C</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c" data-garde="4">C</span><span class="intro-c">O</span><span class="intro-c">M</span><span class="intro-c">M</span><span class="intro-c">E</span><span class="intro-c">R</span><span class="intro-c">C</span><span class="intro-c">I</span><span class="intro-c">A</span><span class="intro-c">L</span><span class="intro-c">E</span></span> </p>
+  <p class="intro-mot" data-typo-ignorer data-effet="bouchon"><span class="intro-l">A</span><span class="intro-l">R</span><span class="intro-l">T</span><span class="intro-l">I</span><span class="intro-l">C</span><span class="intro-point">!</span></p>
+  <span class="intro-onde"></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Artic!Agency, retour à l’accueil"><span class="logo-mot" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span class="logo-agence">AGENCY</span></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/expertises" class="nav-lien" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" class="nav-lien" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" class="nav-lien" data-libelle="À propos">À propos</a></li><li><a href="/journal" class="nav-lien" data-libelle="Journal" aria-current="page">Journal</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a href="/contact" class="bouton bouton--entete" data-libelle="Contact" data-survol="magnetique">Premier échange</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span class="menu-icone" aria-hidden="true"><span></span><span></span></span><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-grille">
+    <ul><li style="--i:0"><span class="menu-num" aria-hidden="true">01</span><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><span class="menu-num" aria-hidden="true">02</span><a href="/expertises" class="menu-lien" data-libelle="Expertises">Expertises</a></li><li style="--i:2"><span class="menu-num" aria-hidden="true">03</span><a href="/projets" class="menu-lien" data-libelle="Projets">Projets</a></li><li style="--i:3"><span class="menu-num" aria-hidden="true">04</span><a href="/a-propos" class="menu-lien" data-libelle="À propos">À propos</a></li><li style="--i:4"><span class="menu-num" aria-hidden="true">05</span><a href="/journal" class="menu-lien" data-libelle="Journal" aria-current="page">Journal</a></li><li style="--i:5"><span class="menu-num" aria-hidden="true">06</span><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+    <div class="menu-infos">
+      <p><a class="bouton bouton--clair" href="tel:+41786300272">Appeler +41 78 630 02 72</a></p>
+      <p><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+      <p>Rue des Remparts 2<br>1350 Orbe</p>
+      <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+    </div>
+  </div>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="page-tete" id="debut">
+  <div class="conteneur page-tete-grille">
+    <div>
+      <p class="surtitre">Journal</p>
+      <h1 data-anime="lignes">Le journal</h1>
+      <p class="chapeau" data-anime>Réflexions personnelles, chroniques et souvenirs de terrain, écrits par Michel Grand depuis 2020.</p>
+      <p data-anime><a href="/journal/s02-e06-parler-fort-agir-en-silence" class="bouton bouton--grand" data-libelle="Entre ceux qui parlent fort…" data-action-principale data-survol="magnetique">Lire le dernier article</a></p>
+    </div>
+    <figure class="media page-tete-media" data-grok data-fx="parallaxe" style="--cadrage:45% 55%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/journal-ouverture-mobile-640.webp 640w, /assets/images/grok/journal-ouverture-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 46vw">
+    <img src="/assets/images/grok/journal-ouverture-1168.webp" srcset="/assets/images/grok/journal-ouverture-640.webp 640w, /assets/images/grok/journal-ouverture-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 46vw" alt="Table de café avec journal plié et cappuccino (illustration)" width="1168" height="784" fetchpriority="high" loading="eager" decoding="sync">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+</section>
+<section class="une conteneur" id="une">
+  <p class="petit-titre">À la une</p>
+  <article class="une-carte">
+    <figure class="media une-media" data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:1 / 1">
+  <picture>
+    <img src="/assets/images/journal/s02e06-1024.webp" srcset="/assets/images/journal/s02e06-640.webp 640w, /assets/images/journal/s02e06-1024.webp 1024w" sizes="(max-width: 760px) 100vw, 40vw" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <div>
+      <p class="carte-article-meta"><span>S02 · E06</span><span>21 octobre 2025 · 2 min de lecture</span></p>
+      <h2 class="titre-section" data-anime="lignes">Entre ceux qui parlent fort et ceux qui agissent en silence</h2>
+      <p class="chapeau">Il y a deux types de profils dans le monde professionnel : ceux qui se mettent en avant, et ceux qui agissent en silence, qui ne postent pas leurs succès mais les construisent.</p>
+      <a href="/journal/s02-e06-parler-fort-agir-en-silence" class="bouton bouton--contour" data-libelle="Entre ceux qui parlent fort…" data-survol="magnetique">Lire l’article</a>
+    </div>
+  </article>
+</section>
+<section class="archives conteneur" id="articles" data-journal>
+  <div class="archives-outils">
+    <div class="filtres" role="group" aria-label="Filtrer par saison">
+      <button type="button" class="filtre" data-filtre="" aria-pressed="true">Tout</button>
+      <button type="button" class="filtre" data-filtre="s02" aria-pressed="false">Saison 2<span class="filtre-sous"> · Réflexions personnelles</span></button><button type="button" class="filtre" data-filtre="s01" aria-pressed="false">Saison 1<span class="filtre-sous"> · J’ai créé…</span></button><button type="button" class="filtre" data-filtre="chroniques" aria-pressed="false">Chroniques<span class="filtre-sous"> · Tendances et parcours</span></button>
+    </div>
+    <div class="recherche">
+      <label for="recherche-journal">Rechercher un article</label>
+      <input id="recherche-journal" type="search" name="q" placeholder="Un mot, un thème…" autocomplete="off">
+    </div>
+    <p class="archives-compte" aria-live="polite" data-compte data-un="1 article" data-plusieurs="{n} articles">19 articles</p>
+  </div>
+  <ul class="archives-liste" data-anime="cascade">
+    <li class="carte-article" data-saison="s02" data-texte="faut-il repenser la clause du besoin en restauration ? en suisse, la clause du besoin a disparu depuis plusieurs annees : aujourd’hui, toute personne disposant d’une patente peut ouvrir un etablissement public. s02 · e05">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s02e05-1024.webp" srcset="/assets/images/journal/s02e05-640.webp 640w, /assets/images/journal/s02e05-1024.webp 1024w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1024" height="1536" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S02 · E05</span><span>21 octobre 2025</span></p>
+      <h3><span>Faut-il repenser la clause du besoin en restauration ?</span></h3>
+      <p class="carte-article-extrait">En Suisse, la clause du besoin a disparu depuis plusieurs années : aujourd’hui, toute personne disposant d’une patente peut ouvrir un établissement public.</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="s02" data-texte="le « leche-bottes », ce faux raccourci vers le succes dans chaque organisation, il y a ces profils bien connus… s02 · e04">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s02e04-1024.webp" srcset="/assets/images/journal/s02e04-640.webp 640w, /assets/images/journal/s02e04-1024.webp 1024w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S02 · E04</span><span>19 septembre 2025</span></p>
+      <h3><span>Le « lèche-bottes », ce faux raccourci vers le succès</span></h3>
+      <p class="carte-article-extrait">Dans chaque organisation, il y a ces profils bien connus…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="s02" data-texte="quand le copinage prend le dessus en suisse, nous aimons dire que notre force repose sur la qualite, la rigueur… s02 · e03">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s02e03-1024.webp" srcset="/assets/images/journal/s02e03-640.webp 640w, /assets/images/journal/s02e03-1024.webp 1024w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S02 · E03</span><span>18 septembre 2025</span></p>
+      <h3><span>Quand le copinage prend le dessus</span></h3>
+      <p class="carte-article-extrait">En Suisse, nous aimons dire que notre force repose sur la qualité, la rigueur…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="s02" data-texte="quand la reconnaissance arrive… bien apres nos efforts il existe un moment tres particulier dans une vie… s02 · e02">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s02e02-1024.webp" srcset="/assets/images/journal/s02e02-640.webp 640w, /assets/images/journal/s02e02-1024.webp 1024w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S02 · E02</span><span>18 septembre 2025</span></p>
+      <h3><span>Quand la reconnaissance arrive… bien après nos efforts</span></h3>
+      <p class="carte-article-extrait">Il existe un moment très particulier dans une vie…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="s02" data-texte="commencer petit sur un grand chemin il y a quelques annees, j’ai decide de marcher de constance au cap finisterre… s02 · e01">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s02e01-1024.webp" srcset="/assets/images/journal/s02e01-640.webp 640w, /assets/images/journal/s02e01-1024.webp 1024w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1024" height="1024" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S02 · E01</span><span>18 septembre 2025</span></p>
+      <h3><span>Commencer petit sur un grand chemin</span></h3>
+      <p class="carte-article-extrait">Il y a quelques années, j’ai décidé de marcher de Constance au cap Finisterre…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="s01" data-texte="j’ai cree le verre de cocktails de demain : cocktailsmachine.ch (2015 – 2020) depuis quelque temps, mon entourage professionnel me pose, en toute simplicite, deux questions bien distinctes… s01 · e04">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s01e04-cocktailsmachine-1280.webp" srcset="/assets/images/journal/s01e04-cocktailsmachine-640.webp 640w, /assets/images/journal/s01e04-cocktailsmachine-1280.webp 1280w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1280" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S01 · E04</span><span>8 juillet 2022</span></p>
+      <h3><span>J’ai créé le verre de cocktails de demain : CocktailsMachine.CH (2015 – 2020)</span></h3>
+      <p class="carte-article-extrait">Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+      <p class="carte-article-video">Avec vidéo</p>
+    </li><li class="carte-article" data-saison="s01" data-texte="j’ai installe des vitrines a vin, charcuterie, fromage et chocolat : vitrines-expo.ch (2010 – 2020) depuis quelque temps, mon entourage professionnel me pose, en toute simplicite, deux questions bien distinctes… s01 · e03">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s01e03-vitrines-expo-640.webp" srcset="/assets/images/journal/s01e03-vitrines-expo-640.webp 640w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="640" height="480" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S01 · E03</span><span>30 juin 2022</span></p>
+      <h3><span>J’ai installé des vitrines à vin, charcuterie, fromage et chocolat : Vitrines-Expo.CH (2010 – 2020)</span></h3>
+      <p class="carte-article-extrait">Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+      <p class="carte-article-video">Avec vidéo</p>
+    </li><li class="carte-article" data-saison="s01" data-texte="j’ai cree le verre de biere de demain : reversetap.ch (2016 – 2020) depuis quelque temps, mon entourage professionnel me pose, en toute simplicite, deux questions bien distinctes… s01 · e02">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s01e02-reversetap-1280.webp" srcset="/assets/images/journal/s01e02-reversetap-640.webp 640w, /assets/images/journal/s01e02-reversetap-1280.webp 1280w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1280" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S01 · E02</span><span>24 juin 2022</span></p>
+      <h3><span>J’ai créé le verre de bière de demain : ReverseTap.CH (2016 – 2020)</span></h3>
+      <p class="carte-article-extrait">Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+      <p class="carte-article-video">Avec vidéo</p>
+    </li><li class="carte-article" data-saison="s01" data-texte="j’ai cree le verre de vin de demain : wineemotion.ch (2013 – 2020) depuis quelque temps, mon entourage professionnel me pose, en toute simplicite, deux questions bien distinctes… s01 · e01">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/s01e01-wineemotion-1280.webp" srcset="/assets/images/journal/s01e01-wineemotion-640.webp 640w, /assets/images/journal/s01e01-wineemotion-1280.webp 1280w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1280" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>S01 · E01</span><span>18 juin 2022</span></p>
+      <h3><span>J’ai créé le verre de vin de demain : WineEmotion.CH (2013 – 2020)</span></h3>
+      <p class="carte-article-extrait">Depuis quelque temps, mon entourage professionnel me pose, en toute simplicité, deux questions bien distinctes…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+      <p class="carte-article-video">Avec vidéo</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="optimisme, bien-etre, spiritualite et meditation en chambres… etre optimiste pour cette nouvelle annee, vivre avec la notion de bien-etre, l’approche de la spiritualite et la pratique de la meditation… chronique">
+      <div class="vignette-dessin vignette-dessin--0" data-visuel><span class="vignette-ep" aria-hidden="true">Chronique</span><span class="vignette-point" aria-hidden="true">!</span><p class="vignette-citation">Être optimiste pour cette nouvelle année, vivre avec la notion de bien-être, l’approche de la spiritualité et…</p></div>
+      <p class="carte-article-meta"><span>Chronique</span><span>25 janvier 2022</span></p>
+      <h3><span>Optimisme, bien-être, spiritualité et méditation en chambres…</span></h3>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="melting-pot de noel : neige, montagne, pics, spiritualite et differenciation… nous voila deja en decembre, a l’approche imminente de noel. malgre la joie des decorations et des tombees de neige… chronique">
+      <div class="vignette-dessin vignette-dessin--1" data-visuel><span class="vignette-ep" aria-hidden="true">Chronique</span><span class="vignette-point" aria-hidden="true">!</span><p class="vignette-citation">Nous voilà déjà en décembre, à l’approche imminente de Noël. Malgré la joie des décorations et des tombées de…</p></div>
+      <p class="carte-article-meta"><span>Chronique</span><span>13 décembre 2021</span></p>
+      <h3><span>Melting-pot de Noël : neige, montagne, pics, spiritualité et différenciation…</span></h3>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="mais, quel service de… durant cette periode de covid, nous parlons essentiellement de couts, d’aides financieres, de manque de main-d’œuvre… mais qu’en est-il du service ? chronique">
+      <div class="vignette-dessin vignette-dessin--2" data-visuel><span class="vignette-ep" aria-hidden="true">Chronique</span><span class="vignette-point" aria-hidden="true">!</span><p class="vignette-citation">Durant cette période de COVID, nous parlons essentiellement de coûts, d’aides financières, de manque de…</p></div>
+      <p class="carte-article-meta"><span>Chronique</span><span>17 novembre 2021</span></p>
+      <h3><span>Mais, quel service de…</span></h3>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="rebondir en tendances en 2021… depuis quelques semaines, l’economie horeca reprend doucement, mais avec des lueurs d’espoir. chronique">
+      <div class="vignette-dessin vignette-dessin--0" data-visuel><span class="vignette-ep" aria-hidden="true">Chronique</span><span class="vignette-point" aria-hidden="true">!</span><p class="vignette-citation">Depuis quelques semaines, l’économie HORECA reprend doucement, mais avec des lueurs d’espoir…</p></div>
+      <p class="carte-article-meta"><span>Chronique</span><span>11 octobre 2021</span></p>
+      <h3><span>Rebondir en tendances en 2021…</span></h3>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="le crowdfunding, ou financement participatif, en hotellerie et restauration je me souviens lorsque, en 2012, j’ai cree la premiere plateforme de financement participatif de suisse romande, moboo.ch… chronique">
+      <div class="vignette-dessin vignette-dessin--1" data-visuel><span class="vignette-ep" aria-hidden="true">Chronique</span><span class="vignette-point" aria-hidden="true">!</span><p class="vignette-citation">Je me souviens lorsque, en 2012, j’ai créé la première plateforme de financement participatif de Suisse…</p></div>
+      <p class="carte-article-meta"><span>Chronique</span><span>31 août 2021</span></p>
+      <h3><span>Le crowdfunding, ou financement participatif, en hôtellerie et restauration</span></h3>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="les trois regles de la reussite, selon l’universite de harvard… un article de la harvard business review propose trois regles de reussite communes aux grandes entreprises du monde entier. chronique">
+      <div class="vignette-dessin vignette-dessin--2" data-visuel><span class="vignette-ep" aria-hidden="true">Chronique</span><span class="vignette-point" aria-hidden="true">!</span><p class="vignette-citation">Un article de la Harvard Business Review propose trois règles de réussite communes aux grandes entreprises du…</p></div>
+      <p class="carte-article-meta"><span>Chronique</span><span>23 mai 2021</span></p>
+      <h3><span>Les trois règles de la réussite, selon l’université de Harvard…</span></h3>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="tendance de consommation : les restaurants emportent et servent leur nourriture sur la route les food trucks avaient en quelque sorte disparu des projecteurs ces dernieres annees. mais la pandemie mondiale prolongee… chronique">
+      <div class="vignette-dessin vignette-dessin--0" data-visuel><span class="vignette-ep" aria-hidden="true">Chronique</span><span class="vignette-point" aria-hidden="true">!</span><p class="vignette-citation">Les food trucks avaient en quelque sorte disparu des projecteurs ces dernières années. Mais la pandémie…</p></div>
+      <p class="carte-article-meta"><span>Chronique</span><span>4 mai 2021</span></p>
+      <h3><span>Tendance de consommation : les restaurants emportent et servent leur nourriture sur la route</span></h3>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="mon parcours de vie professionnelle : 21e etape ce n’est pas un hasard : la 21e etape commence a la nouvelle annee 2021. un nouveau depart, une envie de donner plus de sens a ma vie… parcours">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/2021-01-etape-21-1280.webp" srcset="/assets/images/journal/2021-01-etape-21-640.webp 640w, /assets/images/journal/2021-01-etape-21-1280.webp 1280w, /assets/images/journal/2021-01-etape-21-1920.webp 1920w, /assets/images/journal/2021-01-etape-21-2312.webp 2312w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1280" height="1272" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>Parcours</span><span>18 janvier 2021</span></p>
+      <h3><span>Mon parcours de vie professionnelle : 21e étape</span></h3>
+      <p class="carte-article-extrait">Ce n’est pas un hasard : la 21e étape commence à la nouvelle année 2021. Un nouveau départ, une envie de donner plus de sens à ma vie…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="mon parcours de vie professionnelle : 20e etape pelerinage… trekking en pelerin de constance, en allemagne, au cap finisterre, en espagne, en passant par saint-jacques-de-compostelle… parcours">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/2020-12-etape-20-1280.webp" srcset="/assets/images/journal/2020-12-etape-20-640.webp 640w, /assets/images/journal/2020-12-etape-20-1280.webp 1280w, /assets/images/journal/2020-12-etape-20-1920.webp 1920w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1280" height="1707" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>Parcours</span><span>24 décembre 2020</span></p>
+      <h3><span>Mon parcours de vie professionnelle : 20e étape</span></h3>
+      <p class="carte-article-extrait">Pèlerinage… Trekking en pèlerin de Constance, en Allemagne, au cap Finisterre, en Espagne, en passant par Saint-Jacques-de-Compostelle…</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li><li class="carte-article" data-saison="chroniques" data-texte="mon parcours de vie professionnelle : 19e etape senior lecturer a l’international management institute (imi) de lucerne… une passion est nee : enseigner la gestion a des etudiants de mba. parcours">
+      <figure class="media carte-article-media" style="--cadrage:50% 12%;aspect-ratio:4 / 3">
+  <picture>
+    <img src="/assets/images/journal/2020-12-etape-19-1024.webp" srcset="/assets/images/journal/2020-12-etape-19-640.webp 640w, /assets/images/journal/2020-12-etape-19-1024.webp 1024w" sizes="(max-width: 760px) 90vw, 30vw" alt="" width="1024" height="683" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <p class="carte-article-meta"><span>Parcours</span><span>21 décembre 2020</span></p>
+      <h3><span>Mon parcours de vie professionnelle : 19e étape</span></h3>
+      <p class="carte-article-extrait">Senior Lecturer à l’International Management Institute (IMI) de Lucerne… Une passion est née : enseigner la gestion à des étudiants de MBA.</p>
+      <p class="carte-article-bientot">Article complet dans la prochaine version</p>
+    </li>
+  </ul>
+  <p class="archives-vide" data-vide hidden>Aucun article ne correspond à cette recherche.</p>
+</section>
+<section class="fin fin--court" id="fin">
+  <div class="conteneur fin-grille">
+    <figure class="media fin-media" data-grok data-fx="zoom" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/fiche-botaniq-ambiance-1168.webp" srcset="/assets/images/grok/fiche-botaniq-ambiance-640.webp 640w, /assets/images/grok/fiche-botaniq-ambiance-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 40vw" alt="Légumes racines et pierres sur une ardoise (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div class="fin-texte">
+      <h2 class="titre-section" data-anime="lignes">Envie d’en parler ?</h2>
+      <p data-anime>Ces réflexions nourrissent chaque mission. Parlons de la vôtre.</p>
+      <p class="fin-actions" data-anime><a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-survol="magnetique">Demander un premier échange</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <p class="pied-titre">Contact</p>
+      <p>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</p>
+      <p><a href="tel:+41786300272">+41 78 630 02 72</a><br><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/expertises" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" data-libelle="À propos">À propos</a></li><li><a href="/journal" data-libelle="Journal" aria-current="page">Journal</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/mentions-legales" data-libelle="Mentions légales">Mentions légales</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Suivre</p>
+      <ul><li><a href="https://www.instagram.com/artic.agency/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Instagram</a></li><li><a href="https://www.linkedin.com/company/michel-grand-ch/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">LinkedIn</a></li></ul>
+    </div>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-marque" aria-hidden="true" data-typo-ignorer><span>ARTIC<span class="logo-point">!</span></span><span class="pied-agence">AGENCY</span></div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le client.</p><p>© <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> · Orbe</p></div>
+  <p id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</p>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+41786300272">Appeler</a>
+  <a href="/contact" class="bouton" data-libelle="Contact">Premier échange</a>
+</div>
+</body>
+</html>

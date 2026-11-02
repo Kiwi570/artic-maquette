@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="fr" data-v="1" data-curseur data-page="a-propos">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Michel Grand : à propos d’Artic!Agency</title>
+<meta name="description" content="Cuisinier, sommelier, diplômé de l’EHL, directeur F&amp;B, entrepreneur et enseignant : le parcours de Michel Grand.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://artic-maquette.vercel.app/a-propos">
+<style>:root{--fond:#f3eee4;--texte:#161412;--voile-fond:#e4d9c6;--ouverture-fond:#f3eee4;--menu-fond:#161412}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<script>(function(){var d=document.documentElement;if(innerWidth<720){d.classList.add('nav-compacte');setTimeout(function(){if(!d.classList.contains('demarre'))d.classList.remove('nav-compacte');},2000);}})();</script>
+<link rel="preload" href="/assets/polices/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f3eee4">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artic!Agency">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Michel Grand : à propos d’Artic!Agency">
+<meta property="og:description" content="Cuisinier, sommelier, diplômé de l’EHL, directeur F&amp;B, entrepreneur et enseignant : le parcours de Michel Grand.">
+<meta property="og:url" content="https://artic-maquette.vercel.app/a-propos">
+<meta property="og:image" content="https://artic-maquette.vercel.app/assets/partage/a-propos-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Michel Grand, fondateur d’Artic!Agency">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Artic!Agency","description":"Conseil et gestion en hôtellerie-restauration : conception, gestion, transformation, transition, transmission, recrutement et management, design d’intérieurs, durabilité et digitalisation.","slogan":"L’Art de l’Intelligence Commerciale en Hospitalité","email":"michel@artic.agency","telephone":"+41 78 630 02 72","address":{"@type":"PostalAddress","streetAddress":"Rue des Remparts 2","postalCode":"1350","addressLocality":"Orbe","addressRegion":"Vaud","addressCountry":"CH"},"founder":{"@type":"Person","name":"Michel Grand","jobTitle":"Fondateur"},"foundingDate":"2021","areaServed":"CH","sameAs":["https://www.instagram.com/artic.agency/","https://www.linkedin.com/company/michel-grand-ch/"],"url":"https://www.artic.agency"}</script>
+</head>
+<body id="haut">
+<div data-voile aria-hidden="true"><div class="voile-contenu"><span class="voile-logo" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span data-voile-libelle>À propos</span></div></div>
+<div class="ouverture-panneau" data-ouverture data-gouttiere="#f3eee4" aria-hidden="true">
+  <div class="intro-demi intro-demi--haut"></div>
+  <div class="intro-demi intro-demi--bas"></div>
+  <p class="intro-phrase" data-typo-ignorer><span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="0">A</span><span class="intro-c" data-garde="1">R</span><span class="intro-c" data-garde="2">T</span></span> <span class="intro-p"><span class="intro-c">D</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c">L</span><span class="intro-c">’</span><span class="intro-c" data-garde="3">I</span><span class="intro-c">N</span><span class="intro-c">T</span><span class="intro-c">E</span><span class="intro-c">L</span><span class="intro-c">L</span><span class="intro-c">I</span><span class="intro-c">G</span><span class="intro-c">E</span><span class="intro-c">N</span><span class="intro-c">C</span><span class="intro-c">E</span></span> <span class="intro-p"><span class="intro-c" data-garde="4">C</span><span class="intro-c">O</span><span class="intro-c">M</span><span class="intro-c">M</span><span class="intro-c">E</span><span class="intro-c">R</span><span class="intro-c">C</span><span class="intro-c">I</span><span class="intro-c">A</span><span class="intro-c">L</span><span class="intro-c">E</span></span> </p>
+  <p class="intro-mot" data-typo-ignorer data-effet="bouchon"><span class="intro-l">A</span><span class="intro-l">R</span><span class="intro-l">T</span><span class="intro-l">I</span><span class="intro-l">C</span><span class="intro-point">!</span></p>
+  <span class="intro-onde"></span>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil" aria-label="Artic!Agency, retour à l’accueil"><span class="logo-mot" data-typo-ignorer>ARTIC<span class="logo-point">!</span></span><span class="logo-agence">AGENCY</span></a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/expertises" class="nav-lien" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" class="nav-lien" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" class="nav-lien" data-libelle="À propos" aria-current="page">À propos</a></li><li><a href="/journal" class="nav-lien" data-libelle="Journal">Journal</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a href="/contact" class="bouton bouton--entete" data-libelle="Contact" data-survol="magnetique">Premier échange</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span class="menu-icone" aria-hidden="true"><span></span><span></span></span><span data-libelle-bouton>Menu</span></button>
+    </div>
+  </div>
+</header>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-grille">
+    <ul><li style="--i:0"><span class="menu-num" aria-hidden="true">01</span><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><span class="menu-num" aria-hidden="true">02</span><a href="/expertises" class="menu-lien" data-libelle="Expertises">Expertises</a></li><li style="--i:2"><span class="menu-num" aria-hidden="true">03</span><a href="/projets" class="menu-lien" data-libelle="Projets">Projets</a></li><li style="--i:3"><span class="menu-num" aria-hidden="true">04</span><a href="/a-propos" class="menu-lien" data-libelle="À propos" aria-current="page">À propos</a></li><li style="--i:4"><span class="menu-num" aria-hidden="true">05</span><a href="/journal" class="menu-lien" data-libelle="Journal">Journal</a></li><li style="--i:5"><span class="menu-num" aria-hidden="true">06</span><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+    <div class="menu-infos">
+      <p><a class="bouton bouton--clair" href="tel:+41786300272">Appeler +41 78 630 02 72</a></p>
+      <p><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+      <p>Rue des Remparts 2<br>1350 Orbe</p>
+      <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+    </div>
+  </div>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="page-tete page-tete--portrait" id="debut">
+  <div class="conteneur page-tete-grille">
+    <div>
+      <p class="surtitre">À propos</p>
+      <h1 data-anime="lignes">Michel Grand</h1>
+      <p class="credo" data-anime>Mon credo : rigueur, créativité, curiosité et profit éthique.</p>
+      <p class="chapeau" data-anime>Avec une expérience internationale dans l’hôtellerie, la gastronomie, le management et l’entrepreneuriat, j’ai piloté des projets ambitieux sur plusieurs continents. Aujourd’hui, je mets cette expertise au service des entreprises et des personnes en quête de transformation positive et durable.</p>
+      <p data-anime><a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-action-principale data-survol="magnetique">Demander un premier échange</a></p>
+    </div>
+    <figure class="media page-tete-media" data-anime="rideau" style="--cadrage:42% 35%;--cadrage-mobile:42% 30%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/portraits/michel-orbe-mobile-640.webp 640w, /assets/images/portraits/michel-orbe-mobile-1080.webp 1080w, /assets/images/portraits/michel-orbe-mobile-1292.webp 1292w" sizes="(max-width: 760px) 100vw, 46vw">
+    <img src="/assets/images/portraits/michel-orbe-1280.webp" srcset="/assets/images/portraits/michel-orbe-640.webp 640w, /assets/images/portraits/michel-orbe-1280.webp 1280w, /assets/images/portraits/michel-orbe-1920.webp 1920w, /assets/images/portraits/michel-orbe-2312.webp 2312w" sizes="(max-width: 760px) 100vw, 46vw" alt="Portrait de Michel Grand" width="1280" height="1272" fetchpriority="high" loading="eager" decoding="sync">
+  </picture>
+</figure>
+  </div>
+</section>
+<section class="parcours" id="carte">
+  <div class="conteneur parcours-grille">
+    <div class="parcours-carte " data-effet="parcours">
+  <p class="carte-annee" aria-hidden="true"><span class="carte-annee-lib">Année</span><span class="carte-annee-val">1988 – 1995</span></p>
+  <svg class="carte-svg" viewBox="0 0 1000 992" role="img" aria-label="Carte du parcours de Michel Grand, de 1988 à 2021">
+    <rect class="carte-fond" width="1000" height="992" rx="6"/>
+    <path class="carte-grille" d="M72.5 0V992M217.4 0V992M362.3 0V992M507.2 0V992M652.2 0V992M797.1 0V992M942.0 0V992M0 969.5H1000M0 744.0H1000M0 518.5H1000M0 293.1H1000M0 67.6H1000"/>
+    <g class="carte-route"><path class="carte-seg" data-seg="0" data-vers="afrique" d="M553.6 671.9 Q531.4 848.8 637.7 992.0"/><path class="carte-seg" data-seg="1" data-vers="asie" d="M637.7 992.0 Q751.6 712.5 1000.0 541.1"/><path class="carte-seg" data-seg="2" data-vers="londres" d="M1000.0 541.1 Q689.0 412.7 356.8 466.7"/><path class="carte-seg" data-seg="3" data-vers="dublin" d="M356.8 466.7 Q247.0 455.8 180.9 367.5"/><path class="carte-seg" data-seg="4" data-vers="oslo" d="M180.9 367.5 Q471.6 293.3 673.9 71.7"/><path class="carte-seg" data-seg="5" data-vers="monaco" d="M673.9 71.7 Q723.7 449.4 577.4 801.3"/><path class="carte-seg" data-seg="6" data-vers="suisse" d="M577.4 801.3 Q607.6 731.9 576.8 662.8"/><path class="carte-seg" data-seg="7" data-vers="constance" d="M576.8 662.8 Q593.9 632.2 628.1 624.1"/><path class="carte-seg" data-seg="8" data-vers="geneve" d="M628.1 624.1 Q569.7 637.7 540.3 689.9"/><path class="carte-seg" data-seg="9" data-vers="lepuy" d="M540.3 689.9 Q519.0 730.5 474.8 742.2"/><path class="carte-seg" data-seg="10" data-vers="stjean" d="M474.8 742.2 Q381.9 751.9 326.4 827.0"/><path class="carte-seg" data-seg="11" data-vers="santiago" d="M326.4 827.0 Q223.4 879.8 114.8 839.6"/><path class="carte-seg" data-seg="12" data-vers="finisterre" d="M114.8 839.6 Q104.3 835.0 93.9 839.6"/><path class="carte-seg" data-seg="13" data-vers="orbe" d="M93.9 839.6 Q294.7 679.0 551.6 666.4"/></g>
+    <g class="carte-lieux"><g class="carte-lieu" data-lieu="vaud" data-periode="1988 – 1995"></g><g class="carte-lieu" data-lieu="afrique" data-periode="1996 – 2001"><path class="carte-fleche" d="M628.6811594202898 976 L646.6811594202898 976 L637.6811594202898 990 Z"/><text class="carte-nom" x="637.7" y="974.0" text-anchor="middle">Afrique</text></g><g class="carte-lieu" data-lieu="asie" data-periode="1996 – 2001"><path class="carte-fleche" d="M984 532.090909090909 L984 550.090909090909 L998 541.090909090909 Z"/><text class="carte-nom" x="986.0" y="525.1" text-anchor="end">Asie</text></g><g class="carte-lieu" data-lieu="londres" data-periode="2002 – 2007"><circle class="carte-point" cx="356.8" cy="466.7" r="6" data-repere/><text class="carte-nom" x="368.8" y="471.7" text-anchor="start">Londres Gatwick</text></g><g class="carte-lieu" data-lieu="dublin" data-periode="2002 – 2007"><circle class="carte-point" cx="180.9" cy="367.5" r="6" data-repere/><text class="carte-nom" x="168.9" y="372.5" text-anchor="end">Dublin</text></g><g class="carte-lieu" data-lieu="oslo" data-periode="2002 – 2007"><circle class="carte-point" cx="673.9" cy="71.7" r="6" data-repere/><text class="carte-nom" x="685.9" y="76.7" text-anchor="start">Oslo</text></g><g class="carte-lieu" data-lieu="monaco" data-periode="2008"><circle class="carte-point" cx="577.4" cy="801.3" r="6" data-repere/><text class="carte-nom" x="589.4" y="819.3" text-anchor="start">Monaco</text></g><g class="carte-lieu" data-lieu="suisse" data-periode="2009 – 2020"><circle class="carte-point" cx="576.8" cy="662.8" r="6" data-repere/><text class="carte-nom" x="592.8" y="688.8" text-anchor="start">Suisse</text></g><g class="carte-lieu" data-lieu="constance" data-periode="2020"><circle class="carte-point" cx="628.1" cy="624.1" r="6" data-repere/><text class="carte-nom" x="640.1" y="616.1" text-anchor="start">Constance</text></g><g class="carte-lieu" data-lieu="geneve" data-periode="2020"><circle class="carte-point" cx="540.3" cy="689.9" r="6" data-repere/></g><g class="carte-lieu" data-lieu="lepuy" data-periode="2020"><circle class="carte-point" cx="474.8" cy="742.2" r="6" data-repere/><text class="carte-nom" x="462.8" y="747.2" text-anchor="end">Le Puy-en-Velay</text></g><g class="carte-lieu" data-lieu="stjean" data-periode="2020"><circle class="carte-point" cx="326.4" cy="827.0" r="6" data-repere/><text class="carte-nom" x="316.4" y="813.0" text-anchor="end">Saint-Jean-Pied-de-Port</text></g><g class="carte-lieu" data-lieu="santiago" data-periode="2020"><circle class="carte-point" cx="114.8" cy="839.6" r="6" data-repere/><text class="carte-nom" x="126.8" y="871.6" text-anchor="start">Compostelle</text></g><g class="carte-lieu" data-lieu="finisterre" data-periode="2020"><circle class="carte-point" cx="93.9" cy="839.6" r="6" data-repere/><text class="carte-nom" x="99.9" y="899.6" text-anchor="start">Finisterre</text></g><g class="carte-lieu" data-lieu="orbe" data-periode="2021"><circle class="carte-point carte-point--fin" cx="551.6" cy="666.4" r="9" data-repere/><text class="carte-nom carte-nom--fin" x="537.6" y="652.4" text-anchor="end">Orbe, 2021</text></g></g>
+  </svg>
+  <ol class="visuellement-cache"><li>Vaud : 1988 – 1995</li><li>Afrique : 1996 – 2001</li><li>Asie : 1996 – 2001</li><li>Londres Gatwick : 2002 – 2007</li><li>Dublin : 2002 – 2007</li><li>Oslo : 2002 – 2007</li><li>Monaco : 2008</li><li>Suisse : 2009 – 2020</li><li>Constance : 2020</li><li>Genève : 2020</li><li>Le Puy-en-Velay : 2020</li><li>Saint-Jean-Pied-de-Port : 2020</li><li>Saint-Jacques-de-Compostelle : 2020</li><li>Cap Finisterre : 2020</li><li>Orbe : 2021</li></ol>
+</div>
+    <div class="parcours-texte">
+      <h2 class="titre-section" data-anime="lignes">Sur plusieurs continents</h2>
+      <p class="chapeau" data-anime>Vaud, l’Afrique et l’Asie, Londres, Dublin et Oslo, Monaco, la Suisse, puis 2 643 km à pied de Constance au cap Finisterre, avant Orbe.</p>
+    </div>
+  </div>
+</section>
+<section class="frise" id="parcours">
+  <div class="conteneur">
+    <div class="autres-tete">
+      <h2 class="titre-section" data-anime="lignes">Le parcours</h2>
+      <p>Douze étapes, de l’apprentissage de cuisinier à la création d’<span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span>.</p>
+    </div>
+    <div class="frise-corps" data-effet="fil-du-temps">
+      <span class="frise-fil" aria-hidden="true"><span></span></span>
+      <ol class="frise-liste">
+        <li class="frise-etape">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/parcours/1988-cuisinier-1280.webp" srcset="/assets/images/parcours/1988-cuisinier-640.webp 640w, /assets/images/parcours/1988-cuisinier-1280.webp 1280w, /assets/images/parcours/1988-cuisinier-1920.webp 1920w, /assets/images/parcours/1988-cuisinier-4032.webp 4032w" sizes="(max-width: 760px) 34vw, 14vw" alt="Cuisinier" width="1280" height="960" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">1988 – 1991</p>
+            <h3>Cuisinier</h3>
+            <p>Apprentissage de cuisinier de trois ans, CFC obtenu avec mention très bien.</p>
+          </div>
+        </li><li class="frise-etape frise-etape--droite">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/parcours/1991-sommelier-1280.webp" srcset="/assets/images/parcours/1991-sommelier-640.webp 640w, /assets/images/parcours/1991-sommelier-1280.webp 1280w" sizes="(max-width: 760px) 34vw, 14vw" alt="Sommelier" width="1280" height="893" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">1991 – 1992</p>
+            <h3>Sommelier</h3>
+            <p>Apprentissage de sommelier, CFC avec mention très bien : premier apprenti du canton de Vaud, quatrième de Suisse.</p>
+          </div>
+        </li><li class="frise-etape">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/grok/parcours-ecole-784.webp" srcset="/assets/images/grok/parcours-ecole-640.webp 640w, /assets/images/grok/parcours-ecole-784.webp 784w" sizes="(max-width: 760px) 34vw, 14vw" alt="Master EHL" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">1993 – 1995</p>
+            <h3>Master EHL</h3>
+            <p>Études hôtelières avec spécialisation en restauration et obtention d’un master. Premier prix du cours, avec les honneurs.</p>
+          </div>
+        </li><li class="frise-etape frise-etape--droite">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/parcours/1994-armee-1081.webp" srcset="/assets/images/parcours/1994-armee-640.webp 640w, /assets/images/parcours/1994-armee-1081.webp 1081w" sizes="(max-width: 760px) 34vw, 14vw" alt="Armée suisse" width="1081" height="716" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">1994</p>
+            <h3>Armée suisse</h3>
+            <p>Pilote puis commandant de char Leopard II, de soldat à caporal. École de fourrier à Thoune.</p>
+          </div>
+        </li><li class="frise-etape">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/grok/fiche-distribotion-salon-1168.webp" srcset="/assets/images/grok/fiche-distribotion-salon-640.webp 640w, /assets/images/grok/fiche-distribotion-salon-1168.webp 1168w" sizes="(max-width: 760px) 34vw, 14vw" alt="Directeur F&amp;B" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">1996 – 2001</p>
+            <h3>Directeur F&amp;B</h3>
+            <p>Spécialiste des ouvertures d’hôtels en Afrique et en Asie pour les groupes Hilton, Sheraton et Accor.</p>
+          </div>
+        </li><li class="frise-etape frise-etape--droite">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/grok/parcours-catering-aerien-784.webp" srcset="/assets/images/grok/parcours-catering-aerien-640.webp 640w, /assets/images/grok/parcours-catering-aerien-784.webp 784w" sizes="(max-width: 760px) 34vw, 14vw" alt="Directeur d’unités" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">2002 – 2007</p>
+            <h3>Directeur d’unités</h3>
+            <p>Direction des unités de Londres Gatwick, Dublin et Oslo pour Gate Gourmet, comme chef d’unité et chef de projets.</p>
+          </div>
+        </li><li class="frise-etape">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/grok/parcours-mba-784.webp" srcset="/assets/images/grok/parcours-mba-640.webp 640w, /assets/images/grok/parcours-mba-784.webp 784w" sizes="(max-width: 760px) 34vw, 14vw" alt="MBA" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">2008</p>
+            <h3>MBA</h3>
+            <p>Master of Business Administration à Monaco, spécialisations Entrepreneurship et Luxury Goods Management. GPA 3,7.</p>
+          </div>
+        </li><li class="frise-etape frise-etape--droite">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" data-grok style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/grok/parcours-vin-784.webp" srcset="/assets/images/grok/parcours-vin-640.webp 640w, /assets/images/grok/parcours-vin-784.webp 784w" sizes="(max-width: 760px) 34vw, 14vw" alt="Directeur" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">2009 – 2013</p>
+            <h3>Directeur</h3>
+            <p>Gestion et développement de la distribution d’Enomatic et d’autres produits autour du vin, en Suisse et en Autriche.</p>
+          </div>
+        </li><li class="frise-etape">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/parcours/2014-distribotion-1280.webp" srcset="/assets/images/parcours/2014-distribotion-640.webp 640w, /assets/images/parcours/2014-distribotion-1280.webp 1280w, /assets/images/parcours/2014-distribotion-1920.webp 1920w" sizes="(max-width: 760px) 34vw, 14vw" alt="distriBOtion.CH" width="1280" height="1288" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">2013 – 2020</p>
+            <h3>distriBOtion.CH</h3>
+            <p>Fondation et direction d’une société de distribution de produits innovants au service du vin et de la gastronomie en Suisse.</p>
+          </div>
+        </li><li class="frise-etape frise-etape--droite">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/parcours/2014-enseignement-1024.webp" srcset="/assets/images/parcours/2014-enseignement-640.webp 640w, /assets/images/parcours/2014-enseignement-1024.webp 1024w" sizes="(max-width: 760px) 34vw, 14vw" alt="Senior Lecturer" width="1024" height="683" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">Depuis 2014</p>
+            <h3>Senior Lecturer</h3>
+            <p>Enseignement de modules de Food &amp; Beverage et d’Hospitality Management à des étudiants de MBA, de master et de bachelor.</p>
+          </div>
+        </li><li class="frise-etape">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/parcours/2020-pelerin-1124.webp" srcset="/assets/images/parcours/2020-pelerin-640.webp 640w, /assets/images/parcours/2020-pelerin-1124.webp 1124w" sizes="(max-width: 760px) 34vw, 14vw" alt="Pèlerin" width="1124" height="1920" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">Sept. – déc. 2020</p>
+            <h3>Pèlerin</h3>
+            <p>Trois mois de marche et 2 643 km, de Constance à Genève, Le Puy-en-Velay, Saint-Jean-Pied-de-Port, Saint-Jacques-de-Compostelle et le cap Finisterre.</p>
+          </div>
+        </li><li class="frise-etape frise-etape--droite">
+          <span class="frise-point" aria-hidden="true"></span>
+          <figure class="media frise-media" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/parcours/2021-artic-1189.webp" srcset="/assets/images/parcours/2021-artic-640.webp 640w, /assets/images/parcours/2021-artic-1189.webp 1189w" sizes="(max-width: 760px) 34vw, 14vw" alt="Artic!Agency" width="1189" height="661" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="frise-texte">
+            <p class="frise-periode">Depuis 2021</p>
+            <h3><span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span></h3>
+            <p>Création de l’agence : conseil et gestion spécialisés dans la transformation et la transition culinaire et hôtelière en Suisse.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="outils" id="outils">
+  <div class="conteneur outils-grille">
+    <div>
+      <h2 class="titre-section" data-anime="lignes">Mes outils</h2>
+      <p class="chapeau" data-anime>Chaque projet commence par une immersion dans votre univers. Ma mission : vous offrir des solutions sur mesure qui valorisent vos équipes, renforcent vos performances et donnent à vos projets une nouvelle dimension, éthique et inspirante.</p>
+      <figure class="media outils-media" data-grok data-fx="parallaxe" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/apropos-outils-1168.webp" srcset="/assets/images/grok/apropos-outils-640.webp 640w, /assets/images/grok/apropos-outils-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 40vw" alt="Atelier avec notes et tableau blanc (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </div>
+    <ol class="outils-liste outils-liste--longue" data-anime="cascade">
+      <li><span class="pilier-num">01</span><h3>Audit opérationnel complet</h3><p>Des outils d’analyse innovants, des indicateurs de performance clés (KPI), des benchmarks sectoriels, des observations sur le terrain et des entretiens ciblés, pour un audit opérationnel complet de votre hôtel ou restaurant. L’objectif : identifier les forces, révéler les points d’amélioration et faire de vos opérations un modèle d’efficacité, de durabilité et d’excellence humaine.</p></li><li><span class="pilier-num">02</span><h3>Amélioration continue</h3><p>Grâce à des processus structurés, des indicateurs de suivi et une écoute active des équipes et des clients, j’installe une culture d’amélioration continue au cœur de votre hôtel ou restaurant. Chaque expérience devient un apprentissage, chaque détail une opportunité, et chaque progrès un pas vers l’excellence.</p></li><li><span class="pilier-num">03</span><h3>Formation et coaching</h3><p>Avec des programmes sur mesure, un accompagnement personnalisé et une pédagogie active, j’aide vos équipes à développer leurs compétences et leur confiance. La formation transmet le savoir, le coaching libère le potentiel : ensemble, ils créent une dynamique d’excellence durable.</p></li>
+    </ol>
+  </div>
+</section>
+<section class="milieux conteneur" id="milieux">
+  <h2 class="titre-section" data-anime="lignes">Mes milieux d’expertise</h2>
+  <ul class="milieux-liste" data-anime="cascade">
+    <li><figure class="media milieu-media" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%;aspect-ratio:1 / 1">
+  <picture>
+    <img src="/assets/images/grok/apropos-food-1168.webp" srcset="/assets/images/grok/apropos-food-640.webp 640w, /assets/images/grok/apropos-food-1168.webp 1168w" sizes="(max-width: 760px) 45vw, 22vw" alt="Poste de travail d’un chef avec la mise en place (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><p>Food</p></li><li><figure class="media milieu-media" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%;aspect-ratio:1 / 1">
+  <picture>
+    <img src="/assets/images/grok/apropos-beverage-1168.webp" srcset="/assets/images/grok/apropos-beverage-640.webp 640w, /assets/images/grok/apropos-beverage-1168.webp 1168w" sizes="(max-width: 760px) 45vw, 22vw" alt="Poste d’un barman avec shaker et verres (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><p>Beverage</p></li><li><figure class="media milieu-media" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%;aspect-ratio:1 / 1">
+  <picture>
+    <img src="/assets/images/grok/apropos-retail-1168.webp" srcset="/assets/images/grok/apropos-retail-640.webp 640w, /assets/images/grok/apropos-retail-1168.webp 1168w" sizes="(max-width: 760px) 45vw, 22vw" alt="Étagères d’une épicerie fine (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><p>Retail</p></li><li><figure class="media milieu-media" data-grok data-fx="zoom" data-fx-force="10" style="--cadrage:50% 50%;aspect-ratio:1 / 1">
+  <picture>
+    <img src="/assets/images/grok/apropos-catering-1168.webp" srcset="/assets/images/grok/apropos-catering-640.webp 640w, /assets/images/grok/apropos-catering-1168.webp 1168w" sizes="(max-width: 760px) 45vw, 22vw" alt="Cloches de service argentées sur un chariot (illustration)" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><p>Catering</p></li>
+  </ul>
+</section>
+<section class="valeurs" id="valeurs">
+  <div class="conteneur">
+    <h2 class="titre-section" data-anime="lignes">Mes valeurs</h2>
+    <p data-anime>Les mots qui guident chaque mission.</p>
+    <ul class="valeurs-liste" data-anime="cascade" data-visuel><li>#CURIOSITÉ</li><li>#RESPECT</li><li>#AMOUR</li><li>#EMPATHIE</li><li>#HUMILITÉ</li><li>#TEAMSPIRIT</li><li>#PARTAGE</li><li>#BIENVEILLANCE</li><li>#SENS</li><li>#HONNÊTETÉ</li><li>#ENTRAIDE</li></ul>
+  </div>
+</section>
+<section class="formateurs conteneur" id="formateurs" data-sans-visuel>
+  <h2 class="titre-section" data-anime="lignes">Les entreprises qui m’ont formé</h2>
+  <ul class="formateurs-liste" data-anime="cascade" data-visuel><li><img src="/assets/images/logos/formateurs/provins.webp" alt="Provins" height="44" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/distribotion.webp" alt="distriBOtion.CH" height="44" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/formateurs/sheraton.webp" alt="Sheraton" height="44" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/hilton.webp" alt="Hilton" height="44" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/accor.webp" alt="Accor" height="44" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/clients/gategroup.webp" alt="Gategroup" height="44" loading="lazy" decoding="async"></li></ul>
+</section>
+<section class="presse" id="presse">
+  <div class="conteneur presse-grille">
+    <div>
+      <h2 class="titre-section" data-anime="lignes">On en a parlé</h2>
+      <p data-anime>Coupures de presse tirées de michelgrand.ch : titres, dates et autorisations de reproduction à compléter.</p>
+      <ul class="presse-logos" data-anime="cascade"><li><img src="/assets/images/logos/presse/bilan.webp" alt="Bilan" height="28" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/presse/24-heures.webp" alt="24 heures" height="28" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/presse/le-cafetier.webp" alt="Le Cafetier" height="28" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/presse/nzz.webp" alt="Neue Zürcher Zeitung" height="28" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/presse/hebdo.webp" alt="L’Hebdo" height="28" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/presse/pme.webp" alt="PME Magazine" height="28" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/presse/tribune-de-geneve.webp" alt="Tribune de Genève" height="28" loading="lazy" decoding="async"></li><li><img src="/assets/images/logos/presse/vinum.webp" alt="Vinum" height="28" loading="lazy" decoding="async"></li></ul>
+    </div>
+    <ul class="eventail" data-effet="eventail" aria-label="On en a parlé">
+      <li style="--k:-3.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-01-1280.webp" srcset="/assets/images/presse/coupure-01-640.webp 640w, /assets/images/presse/coupure-01-1280.webp 1280w, /assets/images/presse/coupure-01-1558.webp 1558w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 1" width="1280" height="1898" loading="lazy" decoding="async">
+  </picture>
+</figure></li><li style="--k:-2.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-02-640.webp" srcset="/assets/images/presse/coupure-02-640.webp 640w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 2" width="640" height="1001" loading="lazy" decoding="async">
+  </picture>
+</figure></li><li style="--k:-1.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-03-540.webp" srcset="/assets/images/presse/coupure-03-540.webp 540w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 3" width="540" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure></li><li style="--k:-0.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-04-1153.webp" srcset="/assets/images/presse/coupure-04-640.webp 640w, /assets/images/presse/coupure-04-1153.webp 1153w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 4" width="1153" height="1501" loading="lazy" decoding="async">
+  </picture>
+</figure></li><li style="--k:0.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-05-1244.webp" srcset="/assets/images/presse/coupure-05-640.webp 640w, /assets/images/presse/coupure-05-1244.webp 1244w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 5" width="1244" height="2252" loading="lazy" decoding="async">
+  </picture>
+</figure></li><li style="--k:1.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-06-1280.webp" srcset="/assets/images/presse/coupure-06-640.webp 640w, /assets/images/presse/coupure-06-1280.webp 1280w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 6" width="1280" height="1775" loading="lazy" decoding="async">
+  </picture>
+</figure></li><li style="--k:2.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-07-640.webp" srcset="/assets/images/presse/coupure-07-640.webp 640w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 7" width="640" height="903" loading="lazy" decoding="async">
+  </picture>
+</figure></li><li style="--k:3.5"><figure class="media coupure" style="--cadrage:50% 15%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/presse/coupure-08-1280.webp" srcset="/assets/images/presse/coupure-08-640.webp 640w, /assets/images/presse/coupure-08-1280.webp 1280w, /assets/images/presse/coupure-08-1750.webp 1750w" sizes="(max-width: 760px) 40vw, 14vw" alt="Coupure de presse 8" width="1280" height="1760" loading="lazy" decoding="async">
+  </picture>
+</figure></li>
+    </ul>
+  </div>
+</section>
+<section class="fin fin--court" id="fin">
+  <div class="conteneur fin-grille">
+    <figure class="media fin-media" data-fx="zoom" style="--cadrage:50% 28%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/portraits/michel-grand-mobile-640.webp 640w" sizes="(max-width: 760px) 100vw, 40vw">
+    <img src="/assets/images/portraits/michel-grand-1232.webp" srcset="/assets/images/portraits/michel-grand-640.webp 640w, /assets/images/portraits/michel-grand-1232.webp 1232w" sizes="(max-width: 760px) 100vw, 40vw" alt="Portrait de Michel Grand" width="1232" height="1277" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <div class="fin-texte">
+      <h2 class="titre-section" data-anime="lignes">Un regard neuf sur votre établissement ?</h2>
+      <p data-anime>J’apporte une écoute attentive et des solutions sur mesure.</p>
+      <p class="fin-actions" data-anime><a href="/contact" class="bouton bouton--grand" data-libelle="Contact" data-survol="magnetique">Demander un premier échange</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <p class="pied-titre">Contact</p>
+      <p>Rue des Remparts 2<br>1350 Orbe<br>Vaud, Suisse</p>
+      <p><a href="tel:+41786300272">+41 78 630 02 72</a><br><a href="mailto:michel@artic.agency">michel@artic.agency</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p class="pied-titre">Sommaire</p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/expertises" data-libelle="Expertises">Expertises</a></li><li><a href="/projets" data-libelle="Projets">Projets</a></li><li><a href="/a-propos" data-libelle="À propos" aria-current="page">À propos</a></li><li><a href="/journal" data-libelle="Journal">Journal</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/mentions-legales" data-libelle="Mentions légales">Mentions légales</a></li></ul>
+    </nav>
+    <div>
+      <p class="pied-titre">Suivre</p>
+      <ul><li><a href="https://www.instagram.com/artic.agency/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">Instagram</a></li><li><a href="https://www.linkedin.com/company/michel-grand-ch/" target="_blank" rel="noopener" aria-describedby="nouvel-onglet">LinkedIn</a></li></ul>
+    </div>
+    <div>
+      <p class="pied-titre">Confort de lecture</p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-marque" aria-hidden="true" data-typo-ignorer><span>ARTIC<span class="logo-point">!</span></span><span class="pied-agence">AGENCY</span></div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le client.</p><p>© <span class="marque" data-typo-ignorer>Artic<span class="marque-point">!</span>Agency</span> · Orbe</p></div>
+  <p id="nouvel-onglet" hidden>s’ouvre dans un nouvel onglet</p>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+41786300272">Appeler</a>
+  <a href="/contact" class="bouton" data-libelle="Contact">Premier échange</a>
+</div>
+</body>
+</html>
